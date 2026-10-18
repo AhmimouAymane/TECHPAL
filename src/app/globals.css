@@ -1,0 +1,502 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   TECHPAL STUDIO — editorial theme
+   Light "paper" canvas, near-black ink, TechPal blue + red as accents.
+   Typography: Instrument Serif (display) · Space Grotesk (sans) ·
+   IBM Plex Mono (meta/labels).
+   ===================================================================== */
+
+@theme {
+  --color-paper: #f4f4fb;
+  --color-paper-2: #ebebf6;
+  --color-card: #ffffff;
+  --color-ink: #0a0a14;
+  --color-ink-soft: #1b1b2c;
+  --color-muted: #6b6b80;
+  --color-line: #e1e1ee;
+  --color-line-soft: #ececf5;
+  --color-brand: #03118a;
+  --color-brand-soft: #e5e7ff;
+  --color-accent: #c93a38;
+
+  --radius-site: 1.25rem;
+  --radius-pill: 999px;
+
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------- */
+* {
+  min-width: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Film grain / subtle noise overlay (fixed, pointer-events none) */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Cinematic vignette — darkens the frame edges over the animated background */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 130% 100% at 50% 38%, transparent 50%, rgba(10, 10, 20, 0.08) 100%);
+}
+
+/* ---------------------------------------------------------------------
+   Animated site background (video layer + CSS fallback)
+   --------------------------------------------------------------------- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--color-paper);
+}
+.site-bg__video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.site-bg__aurora {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 46% at 18% 24%, rgba(3, 17, 138, 0.52), rgba(3, 17, 138, 0) 66%),
+    radial-gradient(34% 38% at 84% 30%, rgba(201, 58, 56, 0.42), rgba(201, 58, 56, 0) 64%),
+    radial-gradient(46% 50% at 62% 86%, rgba(3, 17, 138, 0.34), rgba(3, 17, 138, 0) 70%);
+  will-change: transform;
+  animation: fx-drift 26s ease-in-out infinite alternate;
+}
+.site-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(10, 10, 20, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 10, 20, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
+  animation: fx-grid 20s linear infinite;
+}
+.site-bg__veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 110% 85% at 50% 32%, rgba(244, 244, 251, 0.25), rgba(244, 244, 251, 0.72));
+}
+@keyframes fx-drift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.16) translate3d(3%, -2%, 0);
+  }
+  100% {
+    transform: scale(1.06) translate3d(-4%, 3%, 0);
+  }
+}
+@keyframes fx-grid {
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+/* Hero-local parallax grid (moves with scroll inside the pinned hero) */
+.hero-grid {
+  position: absolute;
+  inset: -8% -8%;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(10, 10, 20, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 10, 20, 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 62% at 50% 46%, black 8%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 46%, black 8%, transparent 78%);
+  animation: fx-grid 22s linear infinite;
+  will-change: transform;
+}
+
+/* ---------------------------------------------------------------------
+   Typography helpers
+   --------------------------------------------------------------------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+.display-xl {
+  font-size: clamp(2.75rem, 8.5vw, 8.5rem);
+}
+.display-lg {
+  font-size: clamp(2.25rem, 6vw, 5.5rem);
+}
+.display-md {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------------
+   Split text (word/char reveal)
+   --------------------------------------------------------------------- */
+.split-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.split-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ---------------------------------------------------------------------
+   Animated gradient-stroke button + roll text
+   --------------------------------------------------------------------- */
+@property --btn-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.stroke-btn {
+  position: relative;
+  isolation: isolate;
+}
+.stroke-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: conic-gradient(
+    from var(--btn-angle),
+    rgba(3, 17, 138, 0) 0%,
+    var(--color-brand) 12%,
+    var(--color-accent) 30%,
+    rgba(201, 58, 56, 0) 52%,
+    rgba(3, 17, 138, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: btn-angle 6s linear infinite;
+  z-index: -1;
+}
+@keyframes btn-angle {
+  to {
+    --btn-angle: 360deg;
+  }
+}
+
+/* Roll text: two stacked labels slide on hover */
+.roll {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+.roll > span {
+  display: block;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.roll > span + span {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+}
+a:hover .roll > span,
+button:hover .roll > span {
+  transform: translateY(-100%);
+}
+
+/* Underline link */
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.link-line:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------------------
+   Animated gradient text (light canvas / dark band)
+   --------------------------------------------------------------------- */
+.text-gradient,
+.text-gradient-paper {
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 9s linear infinite;
+}
+.text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-brand) 0%,
+    var(--color-accent) 26%,
+    #6d7bff 52%,
+    var(--color-brand) 76%,
+    var(--color-accent) 100%
+  );
+}
+.text-gradient-paper {
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffd7d6 26%,
+    #b9c1ff 52%,
+    #ffffff 76%,
+    #ffd7d6 100%
+  );
+}
+@keyframes gradient-pan {
+  to {
+    background-position: 220% 0;
+  }
+}
+
+/* Button hover sheen */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 34%, rgba(255, 255, 255, 0.45) 50%, transparent 66%);
+  transform: translateX(-135%);
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.btn-shine:hover::after {
+  transform: translateX(135%);
+}
+
+/* ---------------------------------------------------------------------
+   Marquee
+   --------------------------------------------------------------------- */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Custom cursor
+   --------------------------------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none,
+  .cursor-none * {
+    cursor: none !important;
+  }
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 999px;
+  mix-blend-mode: difference;
+}
+.cursor-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.5rem;
+  max-width: 6.5rem;
+  padding: 0 0.4rem;
+  pointer-events: none;
+  opacity: 0;
+  text-align: center;
+  line-height: 1.15;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------
+   View transitions (page navigation)
+   --------------------------------------------------------------------- */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(.morph) {
+  animation-duration: 420ms;
+}
+::view-transition-old(.nav-forward) {
+  --slide-offset: -56px;
+  animation: 180ms ease-in both vt-fade reverse, 420ms ease-in-out both vt-slide reverse;
+}
+::view-transition-new(.nav-forward) {
+  --slide-offset: 56px;
+  animation: 240ms ease-out 150ms both vt-fade, 460ms ease-in-out both vt-slide;
+}
+::view-transition-old(.nav-back) {
+  --slide-offset: 56px;
+  animation: 180ms ease-in both vt-fade reverse, 420ms ease-in-out both vt-slide reverse;
+}
+::view-transition-new(.nav-back) {
+  --slide-offset: -56px;
+  animation: 240ms ease-out 150ms both vt-fade, 460ms ease-in-out both vt-slide;
+}
+@keyframes vt-fade {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes vt-slide {
+  from {
+    translate: var(--slide-offset);
+  }
+  to {
+    translate: 0;
+  }
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* ---------------------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .marquee {
+    animation: none;
+  }
+  .text-gradient,
+  .text-gradient-paper {
+    animation: none;
+  }
+  .stroke-btn::before {
+    animation: none;
+  }
+  .site-bg__aurora,
+  .site-bg__grid,
+  .hero-grid {
+    animation: none;
+  }
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
