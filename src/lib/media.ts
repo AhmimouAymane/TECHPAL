@@ -20,3 +20,4 @@ export function getBackgroundVideo(): string | undefined {
   }
   return undefined;
 }
+

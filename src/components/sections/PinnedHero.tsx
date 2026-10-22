@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion";
 import type { Dict } from "@/content/fr";
 import type { Locale } from "@/lib/i18n";
 import { GradientButton } from "../motion/GradientButton";
 import { KineticText } from "../motion/KineticText";
+import { CircuitHeart } from "../art/CircuitHeart";
 import { Container } from "../ui/Container";
 
 type Scene = Dict["hero"]["scenes"][number];
@@ -50,8 +51,24 @@ function SceneBlock({
       aria-hidden={!active}
     >
       <span className="label text-accent">{scene.label}</span>
-      <KineticText as="h2" text={scene.title} active={active} className="display display-xl mt-6 max-w-[16ch] text-balance" />
+      <KineticText as="h2" text={scene.title} active={active} className="display mt-6 max-w-[16ch] text-balance text-[clamp(2.75rem,7.5vw,7.25rem)] leading-[0.92]" />
       <p className="mt-6 max-w-[46ch] text-lg text-muted md:text-xl">{scene.text}</p>
+    </motion.div>
+  );
+}
+
+/** Cœur circuit : présent sur les 5 scènes, dérive lente vers le haut. */
+function HeroHeart({ progress }: { progress: MotionValue<number> }) {
+  const y = useTransform(progress, [0, 1], [0, -64]);
+  const scale = useTransform(progress, [0, 1], [0.97, 1.06]);
+
+  return (
+    <motion.div
+      aria-hidden
+      style={{ y, scale }}
+      className="pointer-events-none absolute bottom-[-8%] right-[-4%] z-0 flex w-[44vw] will-change-transform sm:inset-y-0 sm:bottom-auto sm:right-0 sm:w-[min(40vw,500px)] sm:translate-y-12 sm:items-center sm:justify-end md:translate-y-20"
+    >
+      <CircuitHeart delay={0.2} className="w-full opacity-25 sm:opacity-100" />
     </motion.div>
   );
 }
@@ -80,6 +97,26 @@ export function PinnedHero({ locale, dict }: { locale: Locale; dict: Dict }) {
   const haloR = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const gridY = useTransform(scrollYProgress, [0, 1], [0, -160]);
   const aura = useTransform(scrollYProgress, [0, 0.5, 1], [0.35, 0.7, 0.35]);
+
+  // Cœur circuit : visible sur la scène 01 uniquement (fenêtre gérée dans
+  // HeroHeart, même mécanique que SceneBlock).
+  const seg = 1 / scenes.length;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        document.documentElement.classList.toggle("hero-live", entry.isIntersecting);
+      },
+      { threshold: 0.02 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      document.documentElement.classList.remove("hero-live");
+    };
+  }, []);
 
   if (reduce) {
     return (
@@ -119,7 +156,8 @@ export function PinnedHero({ locale, dict }: { locale: Locale; dict: Dict }) {
         />
 
         <Container className="relative flex flex-1 flex-col justify-center">
-          <div className="relative h-[58vh] md:h-[54vh]">
+          <div className="relative h-[62vh] md:h-[58vh]">
+            <HeroHeart progress={scrollYProgress} />
             {scenes.map((s, i) => (
               <SceneBlock
                 key={s.title}
@@ -150,11 +188,6 @@ export function PinnedHero({ locale, dict }: { locale: Locale; dict: Dict }) {
             <span>{String(scenes.length).padStart(2, "0")}</span>
           </span>
         </Container>
-
-        {/* barre de progression verticale */}
-        <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-line md:block" aria-hidden>
-          <motion.div className="w-px origin-top bg-ink" style={{ scaleY: scrollYProgress, height: "100%" }} />
-        </div>
       </div>
     </section>
   );

@@ -123,16 +123,24 @@ html.lenis body {
   animation: fx-drift 26s ease-in-out infinite alternate;
 }
 .site-bg__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(10, 10, 20, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 10, 20, 0.06) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
-  animation: fx-grid 20s linear infinite;
-}
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(10, 10, 20, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 10, 20, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 38%, black 18%, transparent 82%);
+    animation: fx-grid 20s linear infinite;
+    transition: opacity 0.5s var(--ease-out-expo);
+  }
+
+  /* While the hero (with its own parallax grid) is on screen, hide the
+     global grid — two superimposed 64px grids would slide against each
+     other and produce doubled/misaligned tiles. */
+  html.hero-live .site-bg__grid {
+    opacity: 0;
+  }
 .site-bg__veil {
   position: absolute;
   inset: 0;
@@ -498,5 +506,188 @@ button:hover .roll > span {
   ::view-transition-group(*) {
     animation-duration: 0s !important;
     animation-delay: 0s !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Cœur circuit (CircuitHeart) — pistes PCB, glow, bloom, impulsions
+   --------------------------------------------------------------------- */
+/* Halo : lueur serrée sur les pistes (net, sans nappe large) */
+.tp-glow {
+  filter: drop-shadow(0 0 3px rgba(201, 58, 56, 0.55))
+    drop-shadow(0 0 12px rgba(201, 58, 56, 0.3));
+}
+/* Bloom : halo néon derrière les pistes, respiration lente */
+.tp-bloom {
+  stroke: #e04a47;
+  opacity: 0.3;
+  filter: blur(2px);
+}
+.tp-bloom path {
+  opacity: 0;
+  animation: tp-bloom-in 1.6s ease 0.6s forwards,
+    tp-bloom-breathe 7s ease-in-out 2.2s infinite;
+}
+/* Onde de sonar qui part du centre */
+.tp-ping {
+  fill: none;
+  stroke: rgba(240, 128, 125, 0.35);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tp-ping 5s ease-out infinite;
+}
+/* Anneau de pulsation sur les nœuds */
+.tp-ring {
+  fill: none;
+  stroke: #f0807d;
+  stroke-width: 1.6;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tp-ring 3s ease-out infinite;
+}
+@keyframes tp-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@keyframes tp-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes tp-flow {
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+@keyframes tp-ping {
+  0% {
+    transform: scale(0.05);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes tp-fadein {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tp-pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes tp-bloom-in {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes tp-bloom-breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.44;
+  }
+}
+.tp-track {
+  stroke: #c93a38;
+  stroke-width: 4.2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: tp-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+/* Cœur de la piste : filament clair fin, très contrasté (look PCB) */
+.tp-core {
+  stroke: #ffbfba;
+  stroke-width: 1.25;
+}
+.tp-current {
+  stroke: #fbd0ce;
+  stroke-width: 2.8;
+  stroke-dasharray: 0.03 0.97;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: tp-flow 3.2s linear infinite, tp-fadein 0.7s ease forwards;
+  animation-delay: var(--d, 1.2s), var(--d, 1.2s);
+}
+.tp-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tp-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* Le dessin reste figé à sa première frame tant que le composant n'est
+   pas entré dans le viewport (.ch-live posé par l'IntersectionObserver) */
+.ch-root .tp-track,
+.ch-root .tp-bloom path,
+.ch-root .tp-dot,
+.ch-root .tp-current,
+.ch-root .tp-ring,
+.ch-root .tp-ping {
+  animation-play-state: paused;
+}
+.ch-root.ch-live .tp-track,
+.ch-root.ch-live .tp-bloom path,
+.ch-root.ch-live .tp-dot,
+.ch-root.ch-live .tp-current,
+.ch-root.ch-live .tp-ring,
+.ch-root.ch-live .tp-ping {
+  animation-play-state: running;
+}
+.band-navy {
+  background: #0a1130;
+  color: var(--color-paper);
+}
+/* grille claire sur fond navy (la grille par défaut est en encre) */
+.band-navy .hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(235, 240, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(235, 240, 255, 0.06) 1px, transparent 1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-visual,
+  .tp-bloom path {
+    animation: none;
+  }
+  /* Version figée : le circuit reste complet, sans flux ni onde */
+  .tp-track {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .tp-dot {
+    animation: none;
+    transform: none;
+  }
+  .tp-current {
+    opacity: 0;
+  }
+  .tp-ring,
+  .tp-ping {
+    animation: none;
+    opacity: 0;
+  }
+  .tp-bloom path {
+    opacity: 0.3;
   }
 }

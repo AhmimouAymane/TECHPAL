@@ -75,13 +75,14 @@ export function HorizontalWork({ locale, dict }: { locale: Locale; dict: Dict })
           </div>
         </Container>
 
-        <motion.ul ref={trackRef} style={{ x }} className="mt-6 flex gap-6 px-6 will-change-transform md:px-10">
+        <motion.ul ref={trackRef} style={{ x }} className="mt-10 flex gap-6 px-6 will-change-transform md:gap-8 md:px-10">
           {projects.map((p, i) => {
             const title = locale === "fr" ? p.titleFr : p.titleEn;
             const category = locale === "fr" ? p.categoryFr : p.categoryEn;
+            const year = p.date;
             const num = String(i + 1).padStart(2, "0");
             return (
-              <li key={p.slug} className="w-[78vw] shrink-0 md:w-[38vw] md:max-w-[560px]">
+              <li key={p.slug} className={`w-[78vw] shrink-0 md:w-[44vw] md:max-w-[640px] ${i % 2 === 1 ? "md:translate-y-10" : ""}`}>
                 <TiltCard max={4}>
                   <Link
                     href={`/${locale}/projets/${p.slug}`}
@@ -89,38 +90,55 @@ export function HorizontalWork({ locale, dict }: { locale: Locale; dict: Dict })
                     data-cursor-label={cursorLabel}
                     className="group block"
                   >
-                    <article className="overflow-hidden rounded-[var(--radius-site)] border border-line bg-card transition-colors duration-300 hover:border-ink/30">
+                    <article className="relative h-[52vh] overflow-hidden rounded-[var(--radius-site)] border border-white/10 bg-ink shadow-[0_40px_80px_-40px_rgba(10,10,20,0.5)] transition-shadow duration-500 group-hover:border-white/20">
                       <ViewTransition name={`project-${p.slug}`} share="morph" default="none">
-                        <div className="relative h-[38vh] w-full overflow-hidden bg-brand-soft">
+                        <div className="absolute inset-0 transition-transform duration-[1200ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]">
                           {p.image ? (
                             <Image
                               src={p.image}
                               alt={title}
                               fill
-                              sizes="(min-width: 768px) 38vw, 78vw"
-                              className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                              sizes="(min-width: 768px) 44vw, 78vw"
+                              className="object-cover"
                             />
                           ) : (
-                            <div className="flex h-full w-full items-center justify-center">
-                              <span className="display select-none text-[20vh] leading-none text-brand/12">{num}</span>
+                            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(160deg,var(--color-brand),var(--color-ink))]">
+                              <span className="display select-none text-[18vh] leading-none text-paper/15">{num}</span>
                             </div>
                           )}
                         </div>
                       </ViewTransition>
 
-                      <div className="flex items-center justify-between gap-4 p-5 md:p-6">
-                        <div>
-                          <p className="label text-accent">{category}</p>
-                          <h3 className="display mt-1.5 text-[clamp(1.5rem,2.4vw,2.25rem)] leading-tight">
-                            {p.confidential ? t.confidential : title}
-                          </h3>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/5 transition-opacity duration-500 group-hover:from-ink/95" />
+
+                      <span className="absolute top-5 left-5 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:left-6">
+                        {num}
+                      </span>
+                      <span className="absolute top-5 right-5 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:right-6">
+                        {year}
+                      </span>
+
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-paper md:p-7">
+                        <p className="mb-2 translate-y-3 font-mono text-[11px] uppercase tracking-wider text-paper/70 opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100 md:mb-3">
+                          <span className="block">{p.stack.join(" / ")}</span>
+                        </p>
+                        <div className="flex items-end justify-between gap-4">
+                          <div>
+                            <p className="label text-paper/60">{category}</p>
+                            <h3 className="display mt-2 text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.1] text-paper">
+                              {p.confidential ? t.confidential : title}
+                            </h3>
+                          </div>
+                          <span
+                            aria-hidden
+                            className="grid size-11 shrink-0 place-items-center rounded-full border border-paper/30 text-paper transition-all duration-300 group-hover:border-accent group-hover:bg-accent md:size-12"
+                          >
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M5 12h14" />
+                              <path d="m13 6 6 6-6 6" />
+                            </svg>
+                          </span>
                         </div>
-                        <span
-                          aria-hidden
-                          className="text-xl text-muted transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent"
-                        >
-                          →
-                        </span>
                       </div>
                     </article>
                   </Link>
@@ -130,7 +148,7 @@ export function HorizontalWork({ locale, dict }: { locale: Locale; dict: Dict })
           })}
         </motion.ul>
 
-        <Container className="mt-6">
+        <Container className="mt-12 md:mt-16">
           <div className="flex items-center gap-4">
             <span className="label shrink-0 text-muted">
               {String(projects.length).padStart(2, "0")} {locale === "fr" ? "projets" : "projects"}

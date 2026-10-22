@@ -4,8 +4,9 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /**
- * Intro loader: 000% -> 100% then a curtain reveal. First visit per session.
- * Skipped entirely for reduced-motion.
+ * Intro loader: 000% -> 100% puis un rideau qui se lève. Joué à chaque
+ * chargement (refresh compris) ; le refresh replace aussi la page en haut.
+ * Entièrement coupé pour prefers-reduced-motion.
  */
 export function Preloader() {
   const reduce = useReducedMotion();
@@ -14,15 +15,18 @@ export function Preloader() {
   const [active, setActive] = useState(true);
 
   useEffect(() => {
-    const seen = sessionStorage.getItem("tp-intro");
-    if (reduce || seen) {
+    // Refresh = départ propre en haut de page (pas de restauration navigateur)
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    if (nav?.type === "reload") window.scrollTo(0, 0);
+
+    if (reduce) {
       const id = requestAnimationFrame(() => {
         setActive(false);
         setDone(true);
       });
       return () => cancelAnimationFrame(id);
     }
-    sessionStorage.setItem("tp-intro", "1");
 
     let current = 0;
     const id = window.setInterval(() => {
@@ -36,8 +40,15 @@ export function Preloader() {
     return () => window.clearInterval(id);
   }, [reduce]);
 
+  // Démonte le rideau une fois l'animation de sortie jouée (0.7s)
+  useEffect(() => {
+    if (!done) return;
+    const id = window.setTimeout(() => setActive(false), 750);
+    return () => window.clearTimeout(id);
+  }, [done]);
+
   return (
-    <AnimatePresence onExitComplete={() => setActive(false)}>
+    <AnimatePresence>
       {active && (
         <motion.div
           key="preloader"

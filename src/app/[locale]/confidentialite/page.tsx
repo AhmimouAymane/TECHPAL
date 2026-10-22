@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = locale === "fr" ? fr : en;
-  return { title: `${dict.legal.privacyTitle} | TECHPAL Studio` };
+  return { title: `${dict.legal.privacyTitle} | TECHPAL` };
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ViewTransition } from "react";
@@ -23,7 +24,7 @@ export async function generateMetadata({
   const p = getProject(slug);
   if (!p || !isLocale(locale)) return {};
   const title = locale === "fr" ? p.titleFr : p.titleEn;
-  return { title: `${title} | TECHPAL Studio` };
+  return { title: `${title} | TECHPAL` };
 }
 
 export default async function ProjectPage({
@@ -39,6 +40,8 @@ export default async function ProjectPage({
   const title = locale === "fr" ? p.titleFr : p.titleEn;
   const category = locale === "fr" ? p.categoryFr : p.categoryEn;
   const summary = locale === "fr" ? p.summaryFr : p.summaryEn;
+  const story = locale === "fr" ? p.storyFr : p.storyEn;
+  const points = locale === "fr" ? p.pointsFr : p.pointsEn;
   const labels = dict.work.labels;
 
   const meta = [
@@ -65,16 +68,56 @@ export default async function ProjectPage({
       <section className="py-10 md:py-16">
         <Container>
           <ViewTransition name={`project-${p.slug}`} share="morph" default="none">
-            <div className="aspect-[16/9] overflow-hidden rounded-[var(--radius-site)] border border-line bg-paper-2">
-              <div className="flex h-full w-full items-center justify-center">
-                <span className="display select-none text-[20vw] leading-none text-ink/[0.06] md:text-[12vw]">
-                  {String(projects.findIndex((x) => x.slug === p.slug) + 1).padStart(2, "0")}
-                </span>
-              </div>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-site)] border border-line bg-paper-2">
+              {p.image ? (
+                <Image src={p.image} alt={title} fill sizes="100vw" className="object-cover" priority />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center">
+                  <span className="display select-none text-[20vw] leading-none text-ink/[0.06] md:text-[12vw]">
+                    {String(projects.findIndex((x) => x.slug === p.slug) + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              )}
             </div>
           </ViewTransition>
         </Container>
       </section>
+
+      {story?.length ? (
+        <section className="pb-16 md:pb-24">
+          <Container className="grid gap-8 md:grid-cols-[0.4fr_1fr] md:gap-16">
+            <span className="label text-muted">{labels.story}</span>
+            <div className="max-w-[70ch] space-y-6">
+              {story.map((para, i) => (
+                <p key={i} className={i === 0 ? "text-lg leading-relaxed" : "leading-relaxed text-muted"}>
+                  {para}
+                </p>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
+      {points?.length ? (
+        <section className="border-t border-line py-16 md:py-24">
+          <Container>
+            <span className="label text-muted">{labels.points}</span>
+            <ul className="mt-10 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {points.map((pt, i) => (
+                <li key={i} className="flex gap-4 border-t border-line pt-5">
+                  <span className="font-mono text-sm text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="text-sm leading-relaxed">{pt}</p>
+                </li>
+              ))}
+            </ul>
+            {p.href ? (
+              <a href={p.href} target="_blank" rel="noopener noreferrer" className="link-line mt-10 inline-flex items-center gap-2 text-sm text-muted">
+                {p.href.replace(/^https?:\/\//, "")} <span aria-hidden>↗</span>
+              </a>
+            ) : null}
+          </Container>
+        </section>
+      ) : null}
 
       <section className="py-16 md:py-24">
         <Container>

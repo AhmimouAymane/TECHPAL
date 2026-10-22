@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { PinnedHero } from "@/components/sections/PinnedHero";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
+import { ScrollReel } from "@/components/sections/ScrollReel";
 import { ServicesIndex } from "@/components/sections/ServicesIndex";
 import { HorizontalWork } from "@/components/sections/HorizontalWork";
 import { StatsRow } from "@/components/sections/StatsRow";
@@ -19,6 +20,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <h1 className="sr-only">{dict.meta.home.title}</h1>
       <PinnedHero locale={locale} dict={dict} />
       <LogoMarquee label={dict.marquee.label} />
+      <ScrollReel dict={dict} />
       <ServicesIndex locale={locale} dict={dict} />
       <HorizontalWork locale={locale} dict={dict} />
       <StatsRow dict={dict} />

@@ -97,7 +97,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
 
         <div className="mt-20 flex flex-col gap-6 border-t border-paper/15 pt-8 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-paper/50">
-            <span>© {new Date().getFullYear()} {site.fullName}. {dict.footer.rights}</span>
+            <span>© 2022–{new Date().getFullYear()} {site.fullName}. {dict.footer.rights}</span>
             <Link href={`/${locale}/mentions-legales`} className="link-line hover:text-paper">
               {dict.footer.legal}
             </Link>

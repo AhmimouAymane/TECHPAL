@@ -51,56 +51,49 @@ export function WorkCards({
                     data-cursor-label={cursorLabel}
                     className="group block"
                   >
-                    <article className="overflow-hidden rounded-[var(--radius-site)] border border-line bg-card transition-colors duration-300 hover:border-ink/30">
+                    <article className="relative aspect-[16/11] overflow-hidden rounded-[var(--radius-site)] border border-white/10 bg-ink shadow-[0_30px_60px_-40px_rgba(10,10,20,0.5)] transition-shadow duration-500 group-hover:border-white/20 md:aspect-[21/9]">
                       <ViewTransition name={`project-${p.slug}`} share="morph" default="none">
-                        <div className="relative aspect-[16/10] overflow-hidden bg-brand-soft md:aspect-[21/9]">
+                        <div className="absolute inset-0 transition-transform duration-[1200ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.05]">
                           {p.image ? (
                             <Image
                               src={p.image}
                               alt={title}
                               fill
                               sizes="100vw"
-                              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                              className="object-cover"
                             />
                           ) : (
-                            <div className="flex h-full w-full items-center justify-center">
-                              <span className="display select-none text-[22vw] leading-none text-brand/15 md:text-[14vw]">{num}</span>
+                            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(160deg,var(--color-brand),var(--color-ink))]">
+                              <span className="display select-none text-[24vw] leading-none text-paper/15 md:text-[13vw]">{num}</span>
                             </div>
                           )}
-
-                          {/* overlay meta au survol */}
-                          <div className="absolute inset-0 flex translate-y-full flex-col justify-center gap-4 bg-brand/95 p-6 text-paper opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100 md:p-10">
-                            <dl className="grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs md:grid-cols-4">
-                              <div>
-                                <dt className="text-paper/40">{t.labels.createdAt}</dt>
-                                <dd className="mt-1">{p.date}</dd>
-                              </div>
-                              <div>
-                                <dt className="text-paper/40">{t.labels.name}</dt>
-                                <dd className="mt-1">{title}</dd>
-                              </div>
-                              <div>
-                                <dt className="text-paper/40">{t.labels.type}</dt>
-                                <dd className="mt-1">{p.type}</dd>
-                              </div>
-                              <div>
-                                <dt className="text-paper/40">{t.labels.stack}</dt>
-                                <dd className="mt-1">{p.stack.join(", ")}</dd>
-                              </div>
-                            </dl>
-                          </div>
                         </div>
                       </ViewTransition>
 
-                      <div className="flex flex-wrap items-center justify-between gap-4 p-6 md:p-8">
-                        <div>
-                          <p className="label text-accent">{category}</p>
-                          <h3 className="display display-md mt-2">{p.confidential ? t.confidential : title}</h3>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{p.scope.join(" / ")}</span>
-                          <span aria-hidden className="text-xl text-muted transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent">
-                            →
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/5 transition-opacity duration-500 group-hover:from-ink/95" />
+
+                      <span className="absolute top-4 left-4 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:left-6">
+                        {num}
+                      </span>
+                      <span className="absolute top-4 right-4 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:right-6">
+                        {p.date}
+                      </span>
+
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-paper md:p-8">
+                        <div className="flex items-end justify-between gap-4">
+                          <div>
+                            <p className="label text-paper/60">{category}</p>
+                            <h3 className="display display-md mt-2 leading-[1.05] text-paper">{p.confidential ? t.confidential : title}</h3>
+                            <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-paper/60">{p.stack.join(" / ")}</p>
+                          </div>
+                          <span
+                            aria-hidden
+                            className="grid size-11 shrink-0 place-items-center rounded-full border border-paper/30 text-paper transition-all duration-300 group-hover:border-accent group-hover:bg-accent md:size-14"
+                          >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M5 12h14" />
+                              <path d="m13 6 6 6-6 6" />
+                            </svg>
                           </span>
                         </div>
                       </div>

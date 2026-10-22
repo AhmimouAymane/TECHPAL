@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n";
 
 export const site = {
   name: "TECHPAL",
-  fullName: "TECHPAL Studio",
+  fullName: "TECHPAL",
   url: "https://www.techpalservices.com",
   email: "contact@techpalservices.com",
   phone: "+212 7 10 77 77 20",
@@ -32,10 +32,11 @@ export const socials: { label: string; href: string }[] = [
   { label: "Instagram", href: site.instagram },
 ];
 
-export type NavKey = "expertise" | "projets" | "apropos" | "contact";
+export type NavKey = "expertise" | "staffing" | "projets" | "apropos" | "contact";
 
 export const routes: { key: NavKey; path: string }[] = [
   { key: "expertise", path: "expertise" },
+  { key: "staffing", path: "staffing" },
   { key: "projets", path: "projets" },
   { key: "apropos", path: "a-propos" },
   { key: "contact", path: "contact" },
@@ -47,7 +48,7 @@ export function href(locale: Locale, path = ""): string {
 
 /** Sequence of pages for the "[ next page ]" flow. */
 export function nextPage(locale: Locale, currentPath: string): { label: string; href: string } {
-  const order = ["", "expertise", "projets", "a-propos", "contact"];
+  const order = ["", "expertise", "staffing", "projets", "a-propos", "contact"];
   const clean = currentPath.split("/")[2] ?? "";
   const base = order.includes(clean) ? clean : "";
   const idx = order.indexOf(base);
