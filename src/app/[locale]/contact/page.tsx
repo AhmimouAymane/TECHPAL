@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { NeuralHero } from "@/components/ia/NeuralHero";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { site } from "@/content/site";
@@ -33,8 +33,16 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <PageHero kicker={c.kicker} title={c.title} intro={c.intro} />
-      <section className="pb-24 md:pb-36">
+      <NeuralHero
+        kicker={c.kicker}
+        title={c.title}
+        intro={c.intro}
+        words={c.heroWords}
+        hint={c.heroHint}
+        ctaLabel={c.formLabel}
+        ctaHref="#formulaire"
+      />
+      <section id="formulaire" className="scroll-mt-24 border-t border-line pb-24 pt-20 md:pb-36 md:pt-28">
         <Container className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
           <div>
             <h2 className="label text-muted">{c.infoTitle}</h2>

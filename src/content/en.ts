@@ -1,11 +1,13 @@
 import type { Dict } from "./fr";
 
-/** English dictionary — same keys as the French source of truth. */
+/** English dictionary - same keys as the French source of truth. */
 const en: Dict = {
   nav: {
     expertise: "Expertise",
+    ia: "TechPal AI",
+    produits: "Hardware",
     staffing: "Staffing",
-    projets: "Work",
+    projets: "Projects",
     apropos: "About",
     contact: "Contact",
     cta: "Start a project",
@@ -20,7 +22,7 @@ const en: Dict = {
     scenes: [
       {
         label: "Digital engineering · Casablanca",
-        title: "Your trusted IT partner.",
+        title: "Your One-Stop Shop for All Your IT Needs.",
         text: "From IT support to software engineering, we cover every part of your technology stack.",
       },
       {
@@ -54,9 +56,12 @@ const en: Dict = {
   },
   services: {
     kicker: "What we do",
-    title: "We design and run digital products for ambitious teams.",
+    title: "From idea to production.",
     intro:
-      "From launch sites to full business platforms. We start with why, then design and build the rest.",
+      "We design, build and operate digital solutions for ambitious teams. From launch sites to full business platforms.",
+    heroWords: ["Software engineering", "Artificial intelligence", "Cloud & infrastructure", "Network & hardware", "Support & managed IT"],
+    heroHint: "Five practices, one team - from strategy to support",
+    anchor: "The five practices",
     link: "More about us",
     items: [
       {
@@ -98,12 +103,20 @@ const en: Dict = {
     ],
   },
   work: {
-    kicker: "Selected work",
-    title: "A selection of projects where design and engineering meet.",
-    intro: "Several engagements are covered by confidentiality agreements.",
-    viewAll: "View all projects",
-    confidential: "Confidential project",
-    labels: { createdAt: "Created at", name: "Name", type: "Type", scope: "Scope", stack: "Stack", story: "The project", points: "Key features" },
+    kicker: "Solution families",
+    title: "Seven solution families, one standard: production.",
+    intro: "Our work is grouped by product type, from mobile marketplaces to HRIS. Deliberately anonymized: engagements covered by confidentiality agreements are not published.",
+    viewAll: "See what we build",
+    confidential: "Confidential engagement",
+    labels: { createdAt: "Period", name: "Name", type: "Type", scope: "Scope", stack: "Stack", story: "Our approach", points: "What we deliver" },
+    heroTitle: "Products in production, not mockups.",
+    heroWords: ["Marketplaces", "E-commerce", "Online booking", "Immersive training", "Collaborative ERP", "E-learning", "HRIS"],
+    heroHint: "7 solution families - client names not published",
+    technosKicker: "Technologies",
+    technosTitle: "The technologies behind these builds.",
+    clientsKicker: "Clients & partners",
+    clientsTitle: "They trust us.",
+    clientsIntro: "Each logo links to the organization's website. Our case studies deliberately stay separate from our clients.",
   },
   stats: {
     kicker: "By the numbers",
@@ -131,7 +144,7 @@ const en: Dict = {
   cta: {
     kicker: "Stay in touch",
     title: "Let's build something memorable.",
-    text: "An idea, a product, a vision? Tell us about it — we reply within 24 business hours.",
+    text: "An idea, a product, a vision? Tell us about it - we reply within 24 business hours.",
     button: "Start a project",
   },
   staffing: {
@@ -139,6 +152,9 @@ const en: Dict = {
     title: "The right profiles, right on time.",
     intro:
       "TECHPAL Staffing places pre-vetted IT talent inside your teams: developers, data, cloud and support. Fast onboarding, replacement guarantee, zero paperwork.",
+    heroWords: ["Developers", "Data & AI", "Cloud & DevOps", "Support & network"],
+    heroHint: "Vetted, tested, onboarded - within 48 business hours",
+    anchor: "The process",
     unitsKicker: "Who you can strengthen",
     unitsTitle: "Profiles that join your team, not your paperwork.",
     units: [
@@ -181,7 +197,7 @@ const en: Dict = {
     partnerKicker: "Partnerships",
     partnerTitle: "Teams that grow with us.",
     partnerText:
-      "Our staffing continuously powers the teams of partners like Klaim, the Dubai-based health fintech: pre-vetted profiles, quality reviews and committed outcomes.",
+      "Our staffing continuously powers the teams of partners like Klaim, Novo Nordisk, CBA, ICE Maghreb and Naviro: pre-vetted profiles, quality reviews and committed outcomes.",
     faqKicker: "FAQ",
     faqTitle: "Frequently asked questions.",
     faq: [
@@ -209,11 +225,181 @@ const en: Dict = {
       button: "Request profiles",
     },
   },
+  ia: {
+    kicker: "TechPal AI",
+    title: "AI in production, not on display.",
+    intro: "Concrete, measurable use cases, deployed for our clients.",
+    heroWords: ["Assistants over your data", "Document automation", "Decision agents", "Semantic search"],
+    heroHint: "Live neural network · move your cursor",
+    sections: [
+      {
+        id: "integration",
+        title: "AI integration",
+        text: "Models connected to your tools and your data, without disrupting what already runs.",
+        items: ["Assistants over your data", "Document search", "APIs & workflows"],
+      },
+      {
+        id: "automatisation",
+        title: "Automation",
+        text: "Repetitive tasks handled automatically, with fewer errors.",
+        items: ["Document processing", "Business workflows", "Automated reporting"],
+      },
+      {
+        id: "applications",
+        title: "Intelligent applications",
+        text: "AI at the heart of the product: recommendation, prediction, decision.",
+        items: ["Decision support", "Detection & prediction", "Conversational interfaces"],
+      },
+    ],
+    casesKicker: "Our AI work",
+    casesTitle: "Delivered use cases.",
+    casesIntro: "Several engagements are under NDA: client names are not published.",
+    cases: [
+      {
+        title: "Document assistant",
+        text: "Application to query an internal knowledge base: semantic search, summaries and cited answers.",
+        tag: "RAG · LLM",
+      },
+      {
+        title: "Back-office automation",
+        text: "Automatic document extraction and processing, integrated with the company's business tools.",
+        tag: "OCR · Workflows",
+      },
+      {
+        title: "Decision-support agent",
+        text: "Predictive analysis and automatic alerts to steer day-to-day operations.",
+        tag: "ML · Prediction",
+      },
+    ],
+    stackTitle: "The tech stack we use.",
+    viz: {
+      chatUser: "What is the status of claim #4521?",
+      chatAi: [
+        "Cited answer: clause 4.2, page 12 of the 2024 contract - 15,000 MAD/month cap.",
+        "An expert review was consulted, the full history is attached.",
+      ],
+      files: ["invoice_2024.pdf", "purchase_order.pdf", "contract_v3.pdf"],
+      chartLeft: "T + 0",
+      chartRight: "T + 4",
+      chartAlert: "predicted alert",
+    },
+    stack: [
+      { name: "LangChain", logo: "/ai/langchain.svg" },
+      { name: "Python", logo: "/ai/python.svg" },
+      { name: "Next.js", logo: "/ai/nextjs.svg" },
+      { name: "OpenAI", logo: "/ai/openai.svg" },
+      { name: "AWS", logo: "/ai/aws.svg" },
+      { name: "Kubernetes", logo: "/ai/kubernetes.svg" },
+      { name: "PyTorch", logo: "/ai/pytorch.svg" },
+      { name: "Hugging Face", logo: "/ai/huggingface.svg" },
+      { name: "Claude", logo: "/ai/claude.svg" },
+      { name: "Gemini", logo: "/ai/gemini.svg" },
+    ],
+    ctaTitle: "An AI use case to explore?",
+    ctaText: "Describe your need: feasibility and return on investment assessed within 24 business hours.",
+    cta: "Discuss your project",
+  },
+  produits: {
+    kicker: "Hardware",
+    title: "IT hardware & products, supplied and maintained.",
+    intro:
+      "Supply, installation and maintenance of your hardware, by product family, with a single point of contact.",
+    heroWords: ["Computers", "Printing", "Network & security", "Servers & data center", "Video surveillance", "Software & licenses", "Accessories"],
+    heroHint: "Supplied, installed, maintained - one point of contact",
+    anchor: "The full range",
+    brandsLabel: "Partner brands",
+    typesLabel: "Product lines",
+    categories: [
+      {
+        id: "ordinateurs",
+        title: "Computers",
+        text: "Complete workstation equipment, supplied, installed and warranted.",
+        types: ["Laptops", "Desktops", "All-in-one", "Monitors"],
+        brands: [
+          { name: "HP", logo: "/tech/hp.svg" },
+          { name: "Dell", logo: "/tech/dell.svg" },
+          { name: "Lenovo", logo: "/brands/lenovo.svg" },
+          { name: "Asus", logo: "/brands/asus.svg" },
+        ],
+      },
+      {
+        id: "impression",
+        title: "Printing & supplies",
+        text: "A print fleet sized to your volumes, toners and maintenance included.",
+        types: ["Printer", "Copier", "Scanner", "Plotter", "Supplies"],
+        brands: [
+          { name: "Canon", logo: "/brands/canon.png" },
+          { name: "Brother", logo: "/brands/brother.svg" },
+          { name: "Epson", logo: "/brands/epson.svg" },
+          { name: "HP", logo: "/tech/hp.svg" },
+        ],
+      },
+      {
+        id: "reseau",
+        title: "Network & security",
+        text: "Switching, enterprise Wi-Fi, firewalls: a reliable, segmented infrastructure.",
+        types: ["Switch", "Router", "Access point", "Network security"],
+        brands: [
+          { name: "Cisco", logo: "/tech/cisco.svg" },
+          { name: "Fortinet", logo: "/tech/fortinet.svg" },
+          { name: "Ubiquiti", logo: "/tech/ubiquiti.svg" },
+          { name: "Huawei", logo: "/brands/huawei.svg" },
+        ],
+      },
+      {
+        id: "serveurs",
+        title: "Servers, storage & data center",
+        text: "Server rooms, NAS storage, racks and backup, sized and operated.",
+        types: ["Server", "Hyper-converged", "Rack & PDU", "KVM", "Storage", "Backup"],
+        brands: [
+          { name: "Dell", logo: "/tech/dell.svg" },
+          { name: "APC", logo: "/brands/apc.png" },
+          { name: "Synology", logo: "/brands/synology.svg" },
+          { name: "QNAP", logo: "/brands/qnap.svg" },
+        ],
+      },
+      {
+        id: "videosurveillance",
+        title: "Video surveillance",
+        text: "IP cameras and NVR recording for the security of your sites.",
+        types: ["Surveillance camera", "Recording unit"],
+        brands: [{ name: "Hikvision", logo: "/brands/hikvision.svg" }],
+      },
+      {
+        id: "logiciels",
+        title: "Software & licenses",
+        text: "OEM licenses, cloud suites and security, activated and managed.",
+        types: ["Microsoft OEM", "Cloud suite", "Antivirus"],
+        brands: [
+          { name: "Microsoft", logo: "/brands/microsoft.svg" },
+          { name: "Microsoft 365", logo: "/tech/microsoft-365.svg" },
+        ],
+      },
+      {
+        id: "accessoires",
+        title: "Accessories & peripherals",
+        text: "All the everyday equipment: peripherals, memory, cabling.",
+        types: ["Cables", "Hard drives", "Memory", "Keyboards & mice", "Webcams", "Audio"],
+        brands: [
+          { name: "Logitech", logo: "/brands/logitech.svg" },
+          { name: "ADATA", logo: "/brands/adata.png" },
+        ],
+      },
+    ],
+    servicesTitle: "Our support",
+    services: ["Advisory and sizing", "Supply and installation", "Maintenance and replacement", "Fleet managed services"],
+    ctaTitle: "Need a hardware quote?",
+    ctaText: "Describe your fleet or project: firm free quote within 24 business hours.",
+    cta: "Request a quote",
+  },
   about: {
     kicker: "About",
     title: "An IT partner that thinks product.",
     intro:
       "TECHPAL brings together software engineering and the traditional IT trades to give businesses a single partner, from the workstation to the digital product.",
+    heroWords: ["Rigor", "Proximity", "Transparency", "Reliability"],
+    heroHint: "From the workstation to the digital product",
+    anchor: "Our values",
     values: [
       { title: "Rigor", text: "Quotes kept, deadlines met, documented work." },
       { title: "Proximity", text: "Based in Casablanca, reachable and present on site." },
@@ -224,8 +410,8 @@ const en: Dict = {
     teamText: "A multidisciplinary team based in Casablanca, combining field expertise and software engineering.",
     members: [
       { name: "Basma Bennasser", role: "Chief Executive Officer", photo: "/team/basma-bennasser.png", tags: ["Strategy", "Management", "Partnerships"] },
-      { name: "Abdelhadi Laasi", role: "Web developer & Odoo", photo: "/team/abdelhadi-laasi.png", tags: ["Web", "Odoo", "Slave"] },
-      { name: "Aymane Ahmimou", role: "R&D engineer — mobile & AI", photo: "/team/aymane-ahmimou.jpeg", tags: ["Mobile", "AI", "R&D"] },
+      { name: "Abdelhadi Laasi", role: "Web developer & Odoo", photo: "/team/abdelhadi-laasi.png", tags: ["Fullstack", "Odoo", "ERP"] },
+      { name: "Aymane Ahmimou", role: "R&D engineer - mobile & AI", photo: "/team/aymane-ahmimou.jpeg", tags: ["Mobile", "AI", "R&D"] },
       { name: "Youssef Maimouni", role: "Data science & AI engineer", photo: "/team/youssef-maimouni.jpg", tags: ["NLP", "Data science", "AI Agents"] },
       { name: "Abderrahman Barni", role: "IT support technician", photo: "/team/abderrahman-barni.png", tags: ["Support", "Hardware", "Helpdesk"] },
       
@@ -237,7 +423,10 @@ const en: Dict = {
   contactPage: {
     kicker: "Contact",
     title: "Let's talk about your project.",
-    intro: "Describe your need — we get back to you within 24 business hours.",
+    intro: "Describe your need - we get back to you within 24 business hours.",
+    heroWords: ["Reply within 24 h", "30 min brief", "Detailed quote", "No strings attached"],
+    heroHint: "Casablanca - Monday to Friday, 9am-6pm",
+    formLabel: "Open the form",
     infoTitle: "Details",
     form: {
       name: "Full name",
@@ -246,7 +435,10 @@ const en: Dict = {
       message: "Your message",
       messagePh: "Describe your need in a few lines…",
       send: "Send request",
-      note: "Demo form — not connected yet.",
+      note: "Replies within 24 business hours. Your information stays confidential.",
+      sending: "Sending…",
+      success: "Message sent - we will get back to you shortly.",
+      error: "Sending failed. Please try again or write to us directly.",
     },
   },
   legal: {
@@ -275,7 +467,15 @@ const en: Dict = {
     },
     expertise: { title: "Expertise | TECHPAL", description: "Software engineering, AI, cloud, networks, support and managed IT." },
     staffing: { title: "IT Staffing | TECHPAL", description: "Pre-vetted IT talent embedded in your teams: dev, data, cloud and support. Profiles within 48 business hours." },
-    projets: { title: "Work | TECHPAL", description: "TECHPAL's projects: business platforms, applications, infrastructure." },
+    projets: { title: "Projects | TECHPAL", description: "TECHPAL case studies: business platforms, applications, infrastructure. Client references on request." },
+    ia: {
+      title: "TechPal AI | TECHPAL",
+      description: "AI integration, automation and intelligent applications for businesses. Concrete use cases, in production.",
+    },
+    produits: {
+      title: "Hardware & products | TECHPAL",
+      description: "Supply, installation and maintenance of IT hardware: Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+    },
     apropos: { title: "About | TECHPAL", description: "TECHPAL, a digital engineering partner based in Casablanca." },
     contact: { title: "Contact | TECHPAL", description: "Start your project with TECHPAL in Casablanca. Reply within 24 business hours." },
   },

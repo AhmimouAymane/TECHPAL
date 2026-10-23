@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Accès au serveur de dev depuis le réseau local (téléphone, autre PC)
   allowedDevOrigins: ["192.168.100.5"],
+  // Masque le badge Next.js en bas d'écran en mode dev
+  devIndicators: false,
   async redirects() {
     return [
       { source: "/", destination: "/fr", permanent: false },

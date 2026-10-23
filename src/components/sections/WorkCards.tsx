@@ -13,23 +13,27 @@ export function WorkCards({
   locale,
   dict,
   standalone = false,
+  hideHeading = false,
 }: {
   locale: Locale;
   dict: Dict;
   standalone?: boolean;
+  hideHeading?: boolean;
 }) {
   if (projects.length === 0) return null;
   const t = dict.work;
-  const cursorLabel = locale === "fr" ? "Voir le projet" : "View project";
+  const cursorLabel = locale === "fr" ? "Découvrir" : "Explore";
 
   return (
     <section className="py-24 md:py-36">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <div>
-            <SectionLabel>{t.kicker}</SectionLabel>
-            <SplitText as="h2" text={t.title} className="display display-md mt-6 max-w-[22ch]" />
-          </div>
+          {!hideHeading && (
+            <div>
+              <SectionLabel>{t.kicker}</SectionLabel>
+              <SplitText as="h2" text={t.title} className="display display-md mt-6 max-w-[22ch]" />
+            </div>
+          )}
           {!standalone && (
             <Link href={`/${locale}/projets`} className="link-line inline-flex items-center gap-2 text-sm font-medium">
               {t.viewAll} <span aria-hidden>→</span>
@@ -72,9 +76,6 @@ export function WorkCards({
 
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/5 transition-opacity duration-500 group-hover:from-ink/95" />
 
-                      <span className="absolute top-4 left-4 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:left-6">
-                        {num}
-                      </span>
                       <span className="absolute top-4 right-4 rounded-full border border-paper/25 px-3 py-1 font-mono text-[11px] tracking-widest text-paper/85 backdrop-blur-sm md:top-6 md:right-6">
                         {p.date}
                       </span>

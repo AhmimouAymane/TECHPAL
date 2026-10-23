@@ -10,6 +10,7 @@ import { SiteBackground } from "@/components/background/SiteBackground";
 import { getBackgroundVideo } from "@/lib/media";
 import { MagneticCursor } from "@/components/motion/MagneticCursor";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { ScrollToTop } from "@/components/motion/ScrollToTop";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { site } from "@/content/site";
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
         <SmoothScroll />
         <SiteBackground videoSrc={bgVideo} />
         <ScrollProgress />
+        <ScrollToTop />
         <MagneticCursor />
         <Preloader />
         <Header locale={locale} nav={dict.nav} />

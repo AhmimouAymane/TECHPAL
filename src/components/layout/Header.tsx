@@ -46,6 +46,9 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
 
   const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
 
+  const DARK_HERO_PATHS = ["ia", "projets", "expertise", "staffing", "a-propos", "contact", "produits"];
+  const onDark = DARK_HERO_PATHS.some((p) => pathname === `/${locale}/${p}`) && !scrolled && !open;
+
   return (
     <>
       <header
@@ -60,7 +63,14 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
       >
         <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-6 md:h-[72px] md:px-10">
           <Link href={`/${locale}`} aria-label="TECHPAL" className="relative z-10 flex items-center">
-            <Image src="/logo-techpal.webp" alt="TECHPAL" width={211} height={45} priority className="h-8 w-auto md:h-9" />
+            <Image
+              src="/logo-techpal.webp"
+              alt="TECHPAL"
+              width={211}
+              height={45}
+              priority
+              className={cn("h-8 w-auto md:h-9", onDark && "brightness-0 invert")}
+            />
           </Link>
 
           <nav aria-label="Navigation" className="hidden items-center gap-8 lg:flex">
@@ -71,7 +81,13 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
                 transitionTypes={[isActive(l.path) ? "nav-back" : "nav-forward"]}
                 className={cn(
                   "link-line text-sm font-medium transition-colors",
-                  isActive(l.path) ? "text-ink" : "text-muted hover:text-ink"
+                  isActive(l.path)
+                    ? onDark
+                      ? "text-paper"
+                      : "text-ink"
+                    : onDark
+                      ? "text-paper/60 hover:text-paper"
+                      : "text-muted hover:text-ink"
                 )}
               >
                 {l.label}
@@ -80,7 +96,14 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <div className="flex items-center overflow-hidden rounded-full border border-line" role="group" aria-label={nav.language}>
+            <div
+              className={cn(
+                "flex items-center overflow-hidden rounded-full border",
+                onDark ? "border-paper/25" : "border-line"
+              )}
+              role="group"
+              aria-label={nav.language}
+            >
               {locales.map((l) => (
                 <Link
                   key={l}
@@ -88,7 +111,13 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
                   aria-current={l === locale ? "true" : undefined}
                   className={cn(
                     "px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider transition-colors",
-                    l === locale ? "bg-ink text-paper" : "text-muted hover:text-ink"
+                    l === locale
+                      ? onDark
+                        ? "bg-paper text-ink"
+                        : "bg-ink text-paper"
+                      : onDark
+                        ? "text-paper/60 hover:text-paper"
+                        : "text-muted hover:text-ink"
                   )}
                 >
                   {l}
@@ -105,18 +134,23 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? nav.close : nav.menu}
-            className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper/60 lg:hidden"
+            className={cn(
+              "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border lg:hidden",
+              onDark ? "border-paper/30 bg-transparent" : "border-line bg-paper/60"
+            )}
           >
             <span className="relative block h-3 w-5" aria-hidden>
               <span
                 className={cn(
-                  "absolute left-0 h-px w-5 bg-ink transition-all duration-300",
+                  "absolute left-0 h-px w-5 transition-all duration-300",
+                  onDark ? "bg-paper" : "bg-ink",
                   open ? "top-1.5 rotate-45" : "top-0"
                 )}
               />
               <span
                 className={cn(
-                  "absolute left-0 h-px w-5 bg-ink transition-all duration-300",
+                  "absolute left-0 h-px w-5 transition-all duration-300",
+                  onDark ? "bg-paper" : "bg-ink",
                   open ? "top-1.5 -rotate-45" : "top-3"
                 )}
               />

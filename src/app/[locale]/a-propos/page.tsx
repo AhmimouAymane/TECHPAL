@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
+import { NeuralHero } from "@/components/ia/NeuralHero";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale, locales } from "@/lib/i18n";
@@ -27,9 +27,19 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <>
-      <PageHero kicker={a.kicker} title={a.title} intro={a.intro} />
+      <NeuralHero
+        kicker={a.kicker}
+        title={a.title}
+        intro={a.intro}
+        words={a.heroWords}
+        hint={a.heroHint}
+        ctaLabel={dict.cta.button}
+        ctaHref={`/${locale}/contact`}
+        secondaryLabel={`${a.anchor} ↓`}
+        secondaryHref={`/${locale}/a-propos#valeurs`}
+      />
 
-      <section className="pb-24 md:pb-32">
+      <section id="valeurs" className="scroll-mt-24 border-t border-line py-20 md:py-28">
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {a.values.map((v, i) => (

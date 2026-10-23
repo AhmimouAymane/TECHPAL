@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { GradientButton } from "@/components/motion/GradientButton";
+import { NeuralHero } from "@/components/ia/NeuralHero";
+import { partners } from "@/content/site";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale, locales } from "@/lib/i18n";
@@ -27,10 +29,20 @@ export default async function StaffingPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <PageHero kicker={s.kicker} title={s.title} intro={s.intro} />
+      <NeuralHero
+        kicker={s.kicker}
+        title={s.title}
+        intro={s.intro}
+        words={s.heroWords}
+        hint={s.heroHint}
+        ctaLabel={s.cta.button}
+        ctaHref={`/${locale}/contact`}
+        secondaryLabel={`${s.anchor} ↓`}
+        secondaryHref={`/${locale}/staffing#processus`}
+      />
 
       {/* Qui pouvez-vous renforcer */}
-      <section className="pb-24 md:pb-32">
+      <section className="border-t border-line py-20 md:py-28">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.4fr_1fr] md:gap-16">
             <span className="label text-muted">{s.unitsKicker}</span>
@@ -51,7 +63,7 @@ export default async function StaffingPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Comment ça marche */}
-      <section className="border-t border-line py-24 md:py-32">
+      <section id="processus" className="scroll-mt-24 border-t border-line py-24 md:py-32">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.4fr_1fr] md:gap-16">
             <span className="label text-muted">{s.processKicker}</span>
@@ -124,6 +136,29 @@ export default async function StaffingPage({ params }: { params: Promise<{ local
           <div>
             <h2 className="display display-md max-w-[20ch] text-balance">{s.partnerTitle}</h2>
             <p className="mt-6 max-w-[58ch] font-mono text-xs leading-relaxed text-[rgba(226,232,255,0.66)]">{s.partnerText}</p>
+            <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {partners.map((p) => (
+                <li key={p.name}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={p.name}
+                    className="group flex h-full items-center justify-center rounded-[var(--radius-site)] bg-paper p-5 transition-transform duration-300 hover:-translate-y-1"
+                  >
+                    <span className="relative flex h-14 w-full max-w-[210px] items-center justify-center">
+                      <Image
+                        src={p.logo}
+                        alt={p.name}
+                        fill
+                        sizes="(min-width:1024px) 210px, 45vw"
+                        className={`object-contain transition-opacity duration-300 group-hover:opacity-80 ${p.tall ? "p-2" : ""}`}
+                      />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>

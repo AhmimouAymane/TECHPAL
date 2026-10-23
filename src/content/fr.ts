@@ -1,10 +1,12 @@
 /**
- * Contenu français — source de vérité du type `Dict`.
+ * Contenu français - source de vérité du type `Dict`.
  * Textes de structure (placeholders) : à remplacer par la copie définitive.
  */
 const fr = {
   nav: {
     expertise: "Expertise",
+    ia: "TechPal IA",
+    produits: "Produits",
     staffing: "Staffing",
     projets: "Projets",
     apropos: "À propos",
@@ -21,7 +23,7 @@ const fr = {
     scenes: [
       {
         label: "Ingénierie digitale · Casablanca",
-        title: "Votre partenaire IT de confiance.",
+        title: "Un seul partenaire, toutes vos ambitions digitales.",
         text: "Du support informatique à l'ingénierie logicielle, nous couvrons l'ensemble de vos besoins technologiques.",
       },
       {
@@ -55,9 +57,12 @@ const fr = {
   },
   services: {
     kicker: "Ce que nous faisons",
-    title: "Nous concevons et exploitons des produits digitaux pour des entreprises ambitieuses.",
+    title: "De l'idée à la production.",
     intro:
-      "Du site de lancement à la plateforme métier complète. On commence par le pourquoi, puis on conçoit et on construit le reste.",
+      "Nous concevons, construisons et opérons le digital des équipes ambitieuses. Du site de lancement à la plateforme métier complète.",
+    heroWords: ["Ingénierie logicielle", "Intelligence artificielle", "Cloud & infrastructure", "Réseau & hardware", "Support & infogérance"],
+    heroHint: "5 pôles, une seule équipe - du cadrage au support",
+    anchor: "Nos cinq pôles",
     link: "En savoir plus sur nous",
     items: [
       {
@@ -99,12 +104,20 @@ const fr = {
     ],
   },
   work: {
-    kicker: "Projets sélectionnés",
-    title: "Une sélection de projets où le design et la technique se rejoignent.",
-    intro: "Plusieurs missions sont couvertes par des accords de confidentialité.",
-    viewAll: "Voir tous les projets",
-    confidential: "Réalisation confidentielle",
-    labels: { createdAt: "Réalisé le", name: "Nom", type: "Type", scope: "Périmètre", stack: "Stack", story: "Le projet", points: "Points clés" },
+    kicker: "Familles de solutions",
+    title: "Sept familles de solutions, une seule exigence : la production.",
+    intro: "Nos réalisations sont regroupées par nature de produit, de la marketplace mobile au SIRH. Présentation volontairement anonymisée : les missions couvertes par des accords de confidentialité ne sont pas publiées.",
+    viewAll: "Voir nos réalisations",
+    confidential: "Mission confidentielle",
+    labels: { createdAt: "Période", name: "Nom", type: "Type", scope: "Périmètre", stack: "Stack", story: "Notre approche", points: "Ce que nous livrons" },
+    heroTitle: "Des produits en production, pas des maquettes.",
+    heroWords: ["Marketplaces", "E-commerce", "Réservation en ligne", "Formation immersive", "ERP collaboratif", "E-learning", "SIRH"],
+    heroHint: "7 familles de solutions - noms de clients non publiés",
+    technosKicker: "Technologies",
+    technosTitle: "Les technologies derrière ces réalisations.",
+    clientsKicker: "Clients & partenaires",
+    clientsTitle: "Ils nous font confiance.",
+    clientsIntro: "Chaque logo renvoie vers le site de l'organisation. Nos études de cas restent volontairement séparées de nos clients.",
   },
   stats: {
     kicker: "En chiffres",
@@ -140,6 +153,9 @@ const fr = {
     title: "Les bons profils, au bon moment.",
     intro:
       "TECHPAL Staffing place des talents IT pré-qualifiés dans vos équipes : développeurs, data, cloud et support. Intégration rapide, remplacement garanti, zéro paperasse.",
+    heroWords: ["Développeurs", "Data & IA", "Cloud & DevOps", "Support & réseau"],
+    heroHint: "Recruté, testé, intégré - sous 48 h",
+    anchor: "Le processus",
     unitsKicker: "Qui pouvez-vous renforcer",
     unitsTitle: "Des profils qui rejoignent vos équipes, pas votre paperasse.",
     units: [
@@ -182,7 +198,7 @@ const fr = {
     partnerKicker: "Partenariats",
     partnerTitle: "Des équipes qui grandissent avec nous.",
     partnerText:
-      "Notre staffing alimente en continu les équipes de partenaires comme Klaim, la fintech santé basée à Dubaï : profils pré-qualifiés, suivi de qualité et engagement de résultat.",
+      "Notre staffing alimente en continu les équipes de partenaires comme Klaim, Novo Nordisk, CBA, ICE Maghreb ou Naviro : profils pré-qualifiés, suivi de qualité et engagement de résultat.",
     faqKicker: "FAQ",
     faqTitle: "Questions fréquentes.",
     faq: [
@@ -210,11 +226,181 @@ const fr = {
       button: "Demander des profils",
     },
   },
+  ia: {
+    kicker: "TechPal IA",
+    title: "L'IA en production, pas en vitrine.",
+    intro: "Des usages concrets, mesurables, déployés chez nos clients.",
+    heroWords: ["Assistants sur vos données", "Automatisation documentaire", "Agents de décision", "Recherche sémantique"],
+    heroHint: "Réseau neuronal live · déplacez votre curseur",
+    sections: [
+      {
+        id: "integration",
+        title: "Intégration d'IA",
+        text: "Des modèles connectés à vos outils et à vos données, sans perturber l'existant.",
+        items: ["Assistants sur vos données", "Recherche documentaire", "APIs & workflows"],
+      },
+      {
+        id: "automatisation",
+        title: "Automatisation",
+        text: "Les tâches répétitives traitées automatiquement, avec moins d'erreurs.",
+        items: ["Traitement de documents", "Workflows métier", "Reporting automatisé"],
+      },
+      {
+        id: "applications",
+        title: "Applications intelligentes",
+        text: "L'IA au cœur du produit : recommandation, prédiction, décision.",
+        items: ["Aide à la décision", "Détection & prédiction", "Interfaces conversationnelles"],
+      },
+    ],
+    casesKicker: "Nos réalisations IA",
+    casesTitle: "Des cas d'usage livrés.",
+    casesIntro: "Certaines missions sont sous NDA : les noms de clients ne sont pas publiés.",
+    cases: [
+      {
+        title: "Assistant documentaire",
+        text: "Application d'interrogation d'une base documentaire interne : recherche sémantique, synthèse et réponses citées.",
+        tag: "RAG · LLM",
+      },
+      {
+        title: "Automatisation de back-office",
+        text: "Extraction et traitement automatique de documents, intégrés aux outils métier de l'entreprise.",
+        tag: "OCR · Workflows",
+      },
+      {
+        title: "Agent d'aide à la décision",
+        text: "Analyse prédictive et alertes automatiques pour piloter l'activité au quotidien.",
+        tag: "ML · Prédiction",
+      },
+    ],
+    stackTitle: "La tech stack que nous utilisons.",
+    viz: {
+      chatUser: "Où en est le remboursement du dossier N°4521 ?",
+      chatAi: [
+        "Réponse citée : clause 4.2, page 12 du contrat 2024 - plafond 15 000 DH/mois.",
+        "Un avis expert a été consulté, l'historique complet est joint.",
+      ],
+      files: ["facture_2024.pdf", "bon_commande.pdf", "contrat_v3.pdf"],
+      chartLeft: "T + 0",
+      chartRight: "T + 4",
+      chartAlert: "alerte prédite",
+    },
+    stack: [
+      { name: "LangChain", logo: "/ai/langchain.svg" },
+      { name: "Python", logo: "/ai/python.svg" },
+      { name: "Next.js", logo: "/ai/nextjs.svg" },
+      { name: "OpenAI", logo: "/ai/openai.svg" },
+      { name: "AWS", logo: "/ai/aws.svg" },
+      { name: "Kubernetes", logo: "/ai/kubernetes.svg" },
+      { name: "PyTorch", logo: "/ai/pytorch.svg" },
+      { name: "Hugging Face", logo: "/ai/huggingface.svg" },
+      { name: "Claude", logo: "/ai/claude.svg" },
+      { name: "Gemini", logo: "/ai/gemini.svg" },
+    ],
+    ctaTitle: "Un cas d'usage IA à explorer ?",
+    ctaText: "Décrivez votre besoin : faisabilité et retour sur investissement évalués sous 24 h ouvrées.",
+    cta: "Parler de votre projet",
+  },
+  produits: {
+    kicker: "Produits",
+    title: "Matériel & produits IT, fournis et maintenus.",
+    intro:
+      "Fourniture, installation et maintenance de votre matériel, par famille de produits, avec un interlocuteur unique.",
+    heroWords: ["Ordinateurs", "Impression", "Réseau & sécurité", "Serveurs & Datacenter", "Vidéosurveillance", "Logiciels & licences", "Accessoires"],
+    heroHint: "Fourni, installé, maintenu - un seul interlocuteur",
+    anchor: "Toute la gamme",
+    brandsLabel: "Marques partenaires",
+    typesLabel: "Gammes",
+    categories: [
+      {
+        id: "ordinateurs",
+        title: "Ordinateurs",
+        text: "L'équipement poste de travail complet, fourni, installé et garanti.",
+        types: ["PC portable", "PC bureau", "Tout-en-un", "Écrans"],
+        brands: [
+          { name: "HP", logo: "/tech/hp.svg" },
+          { name: "Dell", logo: "/tech/dell.svg" },
+          { name: "Lenovo", logo: "/brands/lenovo.svg" },
+          { name: "Asus", logo: "/brands/asus.svg" },
+        ],
+      },
+      {
+        id: "impression",
+        title: "Impression & consommables",
+        text: "Parc d'impression adapté à vos volumes, toners et maintenance inclus.",
+        types: ["Imprimante", "Copieur", "Scanner", "Traceur", "Consommables"],
+        brands: [
+          { name: "Canon", logo: "/brands/canon.png" },
+          { name: "Brother", logo: "/brands/brother.svg" },
+          { name: "Epson", logo: "/brands/epson.svg" },
+          { name: "HP", logo: "/tech/hp.svg" },
+        ],
+      },
+      {
+        id: "reseau",
+        title: "Réseau & sécurité",
+        text: "Commutation, Wi-Fi d'entreprise, firewalls : une infrastructure fiable et segmentée.",
+        types: ["Switch", "Routeur", "Point d'accès", "Sécurité réseau"],
+        brands: [
+          { name: "Cisco", logo: "/tech/cisco.svg" },
+          { name: "Fortinet", logo: "/tech/fortinet.svg" },
+          { name: "Ubiquiti", logo: "/tech/ubiquiti.svg" },
+          { name: "Huawei", logo: "/brands/huawei.svg" },
+        ],
+      },
+      {
+        id: "serveurs",
+        title: "Serveurs, stockage & data center",
+        text: "Salles serveurs, stockage NAS, racks et sauvegarde, dimensionnés et exploités.",
+        types: ["Serveur", "Hyperconvergé", "Rack & PDU", "KVM", "Stockage", "Sauvegarde"],
+        brands: [
+          { name: "Dell", logo: "/tech/dell.svg" },
+          { name: "APC", logo: "/brands/apc.png" },
+          { name: "Synology", logo: "/brands/synology.svg" },
+          { name: "QNAP", logo: "/brands/qnap.svg" },
+        ],
+      },
+      {
+        id: "videosurveillance",
+        title: "Vidéosurveillance",
+        text: "Caméras IP et enregistrement NVR pour la sécurité de vos sites.",
+        types: ["Caméra de surveillance", "Unité d'enregistrement"],
+        brands: [{ name: "Hikvision", logo: "/brands/hikvision.svg" }],
+      },
+      {
+        id: "logiciels",
+        title: "Logiciels & licences",
+        text: "Licences OEM, suites cloud et sécurité, activées et gérées.",
+        types: ["Microsoft OEM", "Suite cloud", "Antivirus"],
+        brands: [
+          { name: "Microsoft", logo: "/brands/microsoft.svg" },
+          { name: "Microsoft 365", logo: "/tech/microsoft-365.svg" },
+        ],
+      },
+      {
+        id: "accessoires",
+        title: "Accessoires & périphériques",
+        text: "Tout l'équipement quotidien : périphériques, mémoire, connectique.",
+        types: ["Câbles", "Disques durs", "Mémoire", "Claviers & souris", "Webcams", "Audio"],
+        brands: [
+          { name: "Logitech", logo: "/brands/logitech.svg" },
+          { name: "ADATA", logo: "/brands/adata.png" },
+        ],
+      },
+    ],
+    servicesTitle: "Notre accompagnement",
+    services: ["Conseil et dimensionnement", "Fourniture et installation", "Maintenance et remplacement", "Infogérance du parc"],
+    ctaTitle: "Besoin d'un devis matériel ?",
+    ctaText: "Décrivez votre parc ou votre projet : devis ferme gratuit sous 24 h ouvrées.",
+    cta: "Demander un devis",
+  },
   about: {
     kicker: "À propos",
     title: "Un partenaire IT qui pense produit.",
     intro:
       "TECHPAL réunit l'ingénierie logicielle et les métiers historiques de l'IT pour offrir aux entreprises un partenaire unique, du poste de travail au produit digital.",
+    heroWords: ["Rigueur", "Proximité", "Transparence", "Fiabilité"],
+    heroHint: "Du poste de travail au produit digital",
+    anchor: "Nos valeurs",
     values: [
       { title: "Rigueur", text: "Devis tenus, délais respectés, travail documenté." },
       { title: "Proximité", text: "Basés à Casablanca, joignables et présents sur site." },
@@ -226,10 +412,10 @@ const fr = {
     members: [
       { name: "Basma Bennasser", role: "Directrice générale", photo: "/team/basma-bennasser.png", tags: ["Stratégie", "Management", "Partenariats"] },
       { name: "Abdelhadi Laasi", role: "Développeur web & Odoo", photo: "/team/abdelhadi-laasi.png", tags: ["Web", "Odoo", "ERP"] },
-      { name: "Aymane Ahmimou", role: "Ingénieur R&D — mobile & IA", photo: "/team/aymane-ahmimou.jpeg", tags: ["Mobile", "IA", "R&D"] },
+      { name: "Aymane Ahmimou", role: "Ingénieur R&D - mobile & IA", photo: "/team/aymane-ahmimou.jpeg", tags: ["Mobile", "IA", "R&D"] },
       { name: "Youssef Maimouni", role: "Ingénieur data science & AI", photo: "/team/youssef-maimouni.jpg", tags: ["NLP", "Data science", "Agent AI"] },
       { name: "Abderrahman Barni", role: "Technicien support IT", photo: "/team/abderrahman-barni.png", tags: ["Support", "Matériel", "Helpdesk"] },
-      { name: "Oumama Agdour", role: "Consultante data & IA — web & Odoo", photo: "/team/oumama-agdour.png", tags: ["Data", "IA", "Odoo", "Web"] },
+      { name: "Oumama Agdour", role: "Consultante data & IA - web & Odoo", photo: "/team/oumama-agdour.png", tags: ["Data", "IA", "Odoo", "Web"] },
       { name: "Abdelmouiz Kadouaoui", role: "Ingénieur AI & Data", photo: "/team/abdelmouiz-kadouaoui.jpg", tags: ["Machine learning", "Data engineering", "Python"] },
     ],
     teamNote: "Une équipe trilingue : français, anglais, arabe.",
@@ -238,6 +424,9 @@ const fr = {
     kicker: "Contact",
     title: "Parlons de votre projet.",
     intro: "Décrivez votre besoin : nous revenons vers vous sous 24 h ouvrées.",
+    heroWords: ["Réponse sous 24 h", "Brief de 30 min", "Devis détaillé", "Sans engagement"],
+    heroHint: "Casablanca - du lundi au vendredi, 9h-18h",
+    formLabel: "Ouvrir le formulaire",
     infoTitle: "Coordonnées",
     form: {
       name: "Nom complet",
@@ -246,7 +435,10 @@ const fr = {
       message: "Votre message",
       messagePh: "Décrivez votre besoin en quelques lignes…",
       send: "Envoyer la demande",
-      note: "Formulaire de démonstration — non connecté pour le moment.",
+      note: "Réponse sous 24 h ouvrées. Vos informations restent confidentielles.",
+      sending: "Envoi en cours…",
+      success: "Message envoyé - nous revenons vers vous rapidement.",
+      error: "L'envoi a échoué. Réessayez ou écrivez-nous directement.",
     },
   },
   legal: {
@@ -275,7 +467,15 @@ const fr = {
     },
     expertise: { title: "Expertise | TECHPAL", description: "Ingénierie logicielle, IA, cloud, réseaux, support et infogérance." },
     staffing: { title: "Staffing IT | TECHPAL", description: "Talents IT pré-qualifiés intégrés à vos équipes : dev, data, cloud et support. Profils sous 48 h ouvrées." },
-    projets: { title: "Projets | TECHPAL", description: "Réalisations TECHPAL : plateformes métier, applications, infrastructures." },
+    projets: { title: "Projets | TECHPAL", description: "Études de cas TECHPAL : plateformes métier, applications, infrastructures. Références clients sur demande." },
+    ia: {
+      title: "TechPal IA | TECHPAL",
+      description: "Intégration d'IA, automatisation et applications intelligentes pour les entreprises. Des cas d'usage concrets, en production.",
+    },
+    produits: {
+      title: "Produits & matériel | TECHPAL",
+      description: "Fourniture, installation et maintenance de matériel informatique : Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+    },
     apropos: { title: "À propos | TECHPAL", description: "TECHPAL, partenaire d'ingénierie digitale basé à Casablanca." },
     contact: { title: "Contact | TECHPAL", description: "Démarrez votre projet avec TECHPAL à Casablanca. Réponse sous 24 h ouvrées." },
   },

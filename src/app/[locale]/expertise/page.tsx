@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { Narrative } from "@/components/sections/Narrative";
+import { NeuralHero } from "@/components/ia/NeuralHero";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale, locales } from "@/lib/i18n";
@@ -26,8 +26,18 @@ export default async function ExpertisePage({ params }: { params: Promise<{ loca
 
   return (
     <>
-      <PageHero kicker={dict.services.kicker} title={dict.services.title} intro={dict.services.intro} />
-      <section className="pb-24 md:pb-32">
+      <NeuralHero
+        kicker={dict.services.kicker}
+        title={dict.services.title}
+        intro={dict.services.intro}
+        words={dict.services.heroWords}
+        hint={dict.services.heroHint}
+        ctaLabel={dict.cta.button}
+        ctaHref={`/${locale}/contact`}
+        secondaryLabel={`${dict.services.anchor} ↓`}
+        secondaryHref={`/${locale}/expertise#pratiques`}
+      />
+      <section id="pratiques" className="scroll-mt-24 border-t border-line py-20 md:py-28">
         <Container className="grid gap-6 md:grid-cols-2">
           {dict.services.items.map((item, i) => (
             <Reveal key={item.n} delay={i * 0.04}>
