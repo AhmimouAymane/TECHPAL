@@ -1,0 +1,81 @@
+
+name: Deploy TECHPAL
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: techpal-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure SSH
+        env:
+          SSH_KEY: ${{ secrets.TECHPAL_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.TECHPAL_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+
+      - name: Deploy on VPS
+        run: |
+          ssh -i ~/.ssh/id_ed25519 \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            techpal@46.105.135.232 'bash -se' <<'DEPLOY'
+          set -e
+
+          cd /opt/Techpal/TECHPAL
+          source /home/techpal/.nvm/nvm.sh
+          nvm use 24
+
+          git pull --ff-only origin main
+          npm ci
+          npm run build
+
+          sudo -n /usr/bin/systemctl restart techpal-next.service
+
+          for i in {1..15}; do
+            if curl -fsS http://127.0.0.1:3010/fr > /dev/null; then
+              echo "TECHPAL deployed successfully!"
+              exit 0
+            fi
+            sleep 2
+          done
+
+          echo "Deployment health check failed"
+          exit 1
+          DEPLOY
