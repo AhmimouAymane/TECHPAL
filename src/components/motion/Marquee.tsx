@@ -16,7 +16,7 @@ export function Marquee({
     <div className={cn("overflow-hidden", className)}>
       <div className={cn("marquee", reverse && "flex-row-reverse")} style={reverse ? { animationDirection: "reverse" } : undefined}>
         <div className={cn("flex shrink-0 items-center", itemClassName)}>{children}</div>
-        <div className={cn("flex shrink-0 items-center", itemClassName)} aria-hidden>
+        <div className={cn("flex shrink-0 items-center", itemClassName)} aria-hidden="true">
           {children}
         </div>
       </div>

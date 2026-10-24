@@ -29,7 +29,7 @@ const fr = {
       {
         label: "Approche",
         title: "Nous concevons des systèmes qui tiennent en production.",
-        text: "Quatre domaines, une seule exigence : du concret, pas des démonstrations.",
+        text: "Six domaines d'expertise, une seule exigence : du concret, pas des démonstrations.",
       },
       {
         label: "Logiciel",
@@ -60,9 +60,9 @@ const fr = {
     title: "De l'idée à la production.",
     intro:
       "Nous concevons, construisons et opérons le digital des équipes ambitieuses. Du site de lancement à la plateforme métier complète.",
-    heroWords: ["Ingénierie logicielle", "Intelligence artificielle", "Cloud & infrastructure", "Réseau & hardware", "Support & infogérance"],
-    heroHint: "5 pôles, une seule équipe - du cadrage au support",
-    anchor: "Nos cinq pôles",
+    heroWords: ["Ingénierie logicielle", "Intelligence artificielle", "Cloud & infrastructure", "Réseau & matériel", "Support & infogérance", "Transformation digitale"],
+    heroHint: "6 pôles, une seule équipe - du cadrage au support",
+    anchor: "Nos six pôles d'expertise",
     link: "En savoir plus sur nous",
     items: [
       {
@@ -124,7 +124,7 @@ const fr = {
     items: [
       { value: "2022", label: "Fondée à Casablanca" },
       { value: "< 24 h", label: "Réponse sous 24 h ouvrées" },
-      { value: "24/7", label: "Supervision & support" },
+      { value: "24/7", label: "Supervision infogérance" },
       { value: "FR·EN·AR", label: "Équipe trilingue" },
     ],
   },
@@ -144,8 +144,8 @@ const fr = {
   },
   cta: {
     kicker: "Restons en contact",
-    title: "Construisons quelque chose de mémorable.",
-    text: "Une idée, un produit, une vision ? Parlons-en : réponse sous 24 h ouvrées.",
+    title: "Parlez-nous de votre projet.",
+    text: "Une idée, un produit, un besoin d'infogérance ? Échangeons : réponse sous 24 h ouvrées.",
     button: "Démarrer un projet",
   },
   staffing: {
@@ -436,6 +436,7 @@ const fr = {
       messagePh: "Décrivez votre besoin en quelques lignes…",
       send: "Envoyer la demande",
       note: "Réponse sous 24 h ouvrées. Vos informations restent confidentielles.",
+      consent: "J'accepte que mes informations soient traitées par TECHPAL pour répondre à ma demande, conformément à la politique de confidentialité.",
       sending: "Envoi en cours…",
       success: "Message envoyé - nous revenons vers vous rapidement.",
       error: "L'envoi a échoué. Réessayez ou écrivez-nous directement.",
@@ -461,23 +462,46 @@ const fr = {
   },
   meta: {
     home: {
-      title: "TECHPAL | Ingénierie digitale de bout en bout à Casablanca",
+      title: "TECHPAL – Développement logiciel, IA & infogérance IT à Casablanca",
       description:
-        "TECHPAL conçoit logiciels, IA, cloud et infrastructures IT pour les entreprises ambitieuses. Matériel, réseau, support et infogérance inclus.",
+        "Ingénierie digitale à Casablanca : logiciels sur mesure, IA, cloud, réseaux, support et infogérance IT pour les entreprises au Maroc. Réponse sous 24 h.",
     },
-    expertise: { title: "Expertise | TECHPAL", description: "Ingénierie logicielle, IA, cloud, réseaux, support et infogérance." },
-    staffing: { title: "Staffing IT | TECHPAL", description: "Talents IT pré-qualifiés intégrés à vos équipes : dev, data, cloud et support. Profils sous 48 h ouvrées." },
-    projets: { title: "Projets | TECHPAL", description: "Études de cas TECHPAL : plateformes métier, applications, infrastructures. Références clients sur demande." },
+    expertise: {
+      title: "Expertise : logiciel, IA, cloud, réseaux & infogérance | TECHPAL",
+      description: "Ingénierie logicielle, IA, cloud, réseaux, support et infogérance IT à Casablanca. 6 pôles d'expertise dédiés à la production.",
+    },
+    staffing: {
+      title: "Renfort d'équipe & Staffing IT à Casablanca | TECHPAL",
+      description: "Talents IT pré-qualifiés intégrés à vos équipes au Maroc : développeurs, data, cloud et support. Profils sous 48 h ouvrées.",
+    },
+    projets: {
+      title: "Réalisations & Cas d'usage en production | TECHPAL",
+      description: "Études de cas TECHPAL : plateformes métier, marketplaces, ERP, IA et infrastructures déployées à Casablanca et au Maroc.",
+    },
     ia: {
-      title: "TechPal IA | TECHPAL",
-      description: "Intégration d'IA, automatisation et applications intelligentes pour les entreprises. Des cas d'usage concrets, en production.",
+      title: "Intelligence Artificielle & Automatisation en production | TECHPAL",
+      description: "Intégration d'IA générative, RAG, automatisation de processus et assistants intelligents en entreprise à Casablanca.",
     },
     produits: {
-      title: "Produits & matériel | TECHPAL",
-      description: "Fourniture, installation et maintenance de matériel informatique : Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+      title: "Matériel informatique, Réseaux & Licences à Casablanca | TECHPAL",
+      description: "Fourniture, installation et maintenance de matériel et réseaux d'entreprise : Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
     },
-    apropos: { title: "À propos | TECHPAL", description: "TECHPAL, partenaire d'ingénierie digitale basé à Casablanca." },
-    contact: { title: "Contact | TECHPAL", description: "Démarrez votre projet avec TECHPAL à Casablanca. Réponse sous 24 h ouvrées." },
+    apropos: {
+      title: "À propos de TECHPAL | Entreprise de services numériques à Casablanca",
+      description: "TECHPAL accompagne les entreprises au Maroc dans leur ingénierie logicielle, modernisation cloud et infogérance IT depuis 2022.",
+    },
+    contact: {
+      title: "Contact & Devis | TECHPAL Casablanca",
+      description: "Parlez-nous de votre projet digital ou informatique à Casablanca. Devis gratuit et réponse sous 24 h ouvrées.",
+    },
+    mentions: {
+      title: "Mentions légales | TECHPAL Casablanca",
+      description: "Mentions légales, informations éditeur et hébergement de TECHPAL (Casablanca, Maroc).",
+    },
+    confidentialite: {
+      title: "Politique de confidentialité | TECHPAL",
+      description: "Politique de protection des données personnelles et conformité à la loi 09-08 (CNDP) - TECHPAL.",
+    },
   },
 };
 

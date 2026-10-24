@@ -55,13 +55,17 @@ export function ContactForm({ dict }: { dict: Dict }) {
       </div>
       <input name="company" placeholder={f.company} aria-label={f.company} className={field} />
       <textarea required rows={5} name="message" placeholder={f.messagePh} aria-label={f.message} className={field} />
+      <label className="flex items-start gap-2.5 text-xs text-muted cursor-pointer select-none">
+        <input type="checkbox" required className="mt-0.5 rounded border-line text-ink accent-ink focus:ring-0" />
+        <span>{f.consent}</span>
+      </label>
       <div className="flex flex-wrap items-center gap-4">
         <button
           type="submit"
           disabled={status === "sending"}
           className="stroke-btn inline-flex items-center gap-2 rounded-[var(--radius-pill)] bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
         >
-          {f.send} <span aria-hidden>↗</span>
+          {f.send} <span aria-hidden="true">↗</span>
         </button>
         <p className="text-xs text-muted" role={status === "error" ? "alert" : undefined}>
           {status === "sent" ? `✓ ${f.success}` : ""}

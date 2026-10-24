@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PinnedHero } from "@/components/sections/PinnedHero";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
@@ -9,6 +10,23 @@ import { Narrative } from "@/components/sections/Narrative";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale } from "@/lib/i18n";
+import { constructMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const dict = locale === "fr" ? fr : en;
+  return constructMetadata({
+    locale,
+    path: "",
+    title: dict.meta.home.title,
+    description: dict.meta.home.description,
+  });
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -17,7 +35,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <h1 className="sr-only">{dict.meta.home.title}</h1>
       <PinnedHero locale={locale} dict={dict} />
       <LogoMarquee label={dict.marquee.label} />
       <ScrollReel dict={dict} />

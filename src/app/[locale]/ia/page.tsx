@@ -18,11 +18,18 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+import { constructMetadata } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = locale === "fr" ? fr : en;
-  return { title: dict.meta.ia.title, description: dict.meta.ia.description };
+  return constructMetadata({
+    locale,
+    path: "/ia",
+    title: dict.meta.ia.title,
+    description: dict.meta.ia.description,
+  });
 }
 
 export default async function IaPage({ params }: { params: Promise<{ locale: string }> }) {

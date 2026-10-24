@@ -17,8 +17,8 @@ const variants: Record<Variant, string> = {
 function Roll({ children }: { children: ReactNode }) {
   return (
     <span className="roll">
-      <span>{children}</span>
-      <span aria-hidden>{children}</span>
+      <span aria-hidden="true">{children}</span>
+      <span aria-hidden="true">{children}</span>
     </span>
   );
 }
@@ -49,10 +49,10 @@ export function GradientButton({
       className={cn(base, variants[variant], className)}
     >
       <span className="sr-only">{children}</span>
-      <span aria-hidden className="overflow-hidden">
+      <span aria-hidden="true" className="overflow-hidden">
         <Roll>{children}</Roll>
       </span>
-      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5">
         ↗
       </span>
     </Link>

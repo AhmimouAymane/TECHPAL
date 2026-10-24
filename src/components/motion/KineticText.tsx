@@ -44,10 +44,9 @@ export function KineticText({
     : { whileInView: "show", viewport: { once: true, amount } };
 
   return (
-    <As className={className} style={{ perspective: "900px" }}>
-      <span className="sr-only">{text}</span>
+    <As className={className} style={{ perspective: "900px" }} aria-label={text}>
       <motion.span
-        aria-hidden
+        aria-hidden="true"
         initial="hidden"
         variants={{ hidden: {}, show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
         className="inline"

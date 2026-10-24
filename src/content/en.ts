@@ -28,7 +28,7 @@ const en: Dict = {
       {
         label: "Approach",
         title: "We build systems that hold up in production.",
-        text: "Four domains, one standard: real results, not demos.",
+        text: "Six practices, one standard: real results, not demos.",
       },
       {
         label: "Software",
@@ -59,9 +59,9 @@ const en: Dict = {
     title: "From idea to production.",
     intro:
       "We design, build and operate digital solutions for ambitious teams. From launch sites to full business platforms.",
-    heroWords: ["Software engineering", "Artificial intelligence", "Cloud & infrastructure", "Network & hardware", "Support & managed IT"],
-    heroHint: "Five practices, one team - from strategy to support",
-    anchor: "The five practices",
+    heroWords: ["Software engineering", "Artificial intelligence", "Cloud & infrastructure", "Network & hardware", "Support & managed IT", "Digital transformation"],
+    heroHint: "6 practices, one team - from strategy to support",
+    anchor: "The six practices",
     link: "More about us",
     items: [
       {
@@ -123,7 +123,7 @@ const en: Dict = {
     items: [
       { value: "2022", label: "Founded in Casablanca" },
       { value: "< 24 h", label: "Reply within 24 business hours" },
-      { value: "24/7", label: "Monitoring & support" },
+      { value: "24/7", label: "Managed IT monitoring" },
       { value: "FR·EN·AR", label: "Trilingual team" },
     ],
   },
@@ -143,8 +143,8 @@ const en: Dict = {
   },
   cta: {
     kicker: "Stay in touch",
-    title: "Let's build something memorable.",
-    text: "An idea, a product, a vision? Tell us about it - we reply within 24 business hours.",
+    title: "Tell us about your project.",
+    text: "An idea, a product, a managed IT need? Let's talk - we reply within 24 business hours.",
     button: "Start a project",
   },
   staffing: {
@@ -436,6 +436,7 @@ const en: Dict = {
       messagePh: "Describe your need in a few lines…",
       send: "Send request",
       note: "Replies within 24 business hours. Your information stays confidential.",
+      consent: "I agree to TECHPAL processing my details to handle my request, in accordance with the Privacy Policy.",
       sending: "Sending…",
       success: "Message sent - we will get back to you shortly.",
       error: "Sending failed. Please try again or write to us directly.",
@@ -461,23 +462,46 @@ const en: Dict = {
   },
   meta: {
     home: {
-      title: "TECHPAL | End-to-end digital engineering in Casablanca",
+      title: "TECHPAL – Custom Software Development, AI & Managed IT in Casablanca",
       description:
-        "TECHPAL builds software, AI, cloud and IT infrastructure for ambitious companies. Hardware, network, support and managed IT included.",
+        "Digital engineering in Casablanca: custom software, AI, cloud, networks, support, and managed IT services for companies in Morocco. Reply within 24h.",
     },
-    expertise: { title: "Expertise | TECHPAL", description: "Software engineering, AI, cloud, networks, support and managed IT." },
-    staffing: { title: "IT Staffing | TECHPAL", description: "Pre-vetted IT talent embedded in your teams: dev, data, cloud and support. Profiles within 48 business hours." },
-    projets: { title: "Projects | TECHPAL", description: "TECHPAL case studies: business platforms, applications, infrastructure. Client references on request." },
+    expertise: {
+      title: "Expertise: Software, AI, Cloud, Network & Managed IT | TECHPAL",
+      description: "Custom software engineering, AI, cloud, networks, hardware, and managed IT support in Casablanca. Six practices built for production.",
+    },
+    staffing: {
+      title: "IT Staffing & Team Augmentation in Casablanca | TECHPAL",
+      description: "Pre-vetted IT talent embedded in your teams: developers, data, cloud, and support in Morocco. Profiles ready within 48 business hours.",
+    },
+    projets: {
+      title: "Case Studies & Production Solutions | TECHPAL",
+      description: "TECHPAL case studies: custom platforms, marketplaces, ERPs, AI systems, and infrastructure delivered in Casablanca and Morocco.",
+    },
     ia: {
-      title: "TechPal AI | TECHPAL",
-      description: "AI integration, automation and intelligent applications for businesses. Concrete use cases, in production.",
+      title: "Artificial Intelligence & Automation in Production | TECHPAL",
+      description: "Generative AI, RAG, business process automation, and intelligent agents deployed for enterprises in Casablanca.",
     },
     produits: {
-      title: "Hardware & products | TECHPAL",
-      description: "Supply, installation and maintenance of IT hardware: Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+      title: "IT Hardware, Networking & Licensing in Casablanca | TECHPAL",
+      description: "Supply, installation, and maintenance of enterprise hardware & network infrastructure: Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
     },
-    apropos: { title: "About | TECHPAL", description: "TECHPAL, a digital engineering partner based in Casablanca." },
-    contact: { title: "Contact | TECHPAL", description: "Start your project with TECHPAL in Casablanca. Reply within 24 business hours." },
+    apropos: {
+      title: "About TECHPAL | Digital Engineering Firm in Casablanca",
+      description: "TECHPAL supports organizations across Morocco with tailored software development, cloud modernization, and managed IT services since 2022.",
+    },
+    contact: {
+      title: "Contact & Quote Request | TECHPAL Casablanca",
+      description: "Tell us about your software or IT infrastructure project in Casablanca. Free estimate and reply within 24 business hours.",
+    },
+    mentions: {
+      title: "Legal Notice | TECHPAL Casablanca",
+      description: "Legal notice, company registration, and hosting details for TECHPAL in Casablanca, Morocco.",
+    },
+    confidentialite: {
+      title: "Privacy Policy | TECHPAL",
+      description: "Personal data protection policy and Moroccan Law 09-08 (CNDP) compliance - TECHPAL.",
+    },
   },
 };
 

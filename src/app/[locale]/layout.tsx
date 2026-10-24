@@ -47,25 +47,13 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = locale === "fr" ? fr : en;
-  const url = `${site.url}/${locale}`;
   return {
     metadataBase: new URL(site.url),
-    title: dict.meta.home.title,
+    title: {
+      default: dict.meta.home.title,
+      template: "%s",
+    },
     description: dict.meta.home.description,
-    alternates: {
-      canonical: url,
-      languages: { fr: `${site.url}/fr`, en: `${site.url}/en` },
-    },
-    openGraph: {
-      title: dict.meta.home.title,
-      description: dict.meta.home.description,
-      url,
-      siteName: site.fullName,
-      locale: locale === "fr" ? "fr_FR" : "en_US",
-      type: "website",
-      images: [{ url: "/og.jpg", width: 1200, height: 630, alt: site.fullName }],
-    },
-    twitter: { card: "summary_large_image", title: dict.meta.home.title, description: dict.meta.home.description },
   };
 }
 
@@ -83,17 +71,20 @@ export default async function LocaleLayout({
 
   const orgJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     name: site.fullName,
     url: site.url,
     email: site.email,
     telephone: site.phone,
+    foundingDate: "2022",
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address,
+      streetAddress: "Bureau B3, Rue Ettah",
       addressLocality: "Casablanca",
+      postalCode: "20000",
       addressCountry: "MA",
     },
+    areaServed: "MA",
     sameAs: [site.linkedin, site.instagram],
   };
 

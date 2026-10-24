@@ -23,7 +23,7 @@ export const tech: { name: string; logo?: string }[] = [
   { name: "Fortinet", logo: "/tech/fortinet.svg" },
   { name: "Ubiquiti", logo: "/tech/ubiquiti.svg" },
   { name: "Linux", logo: "/tech/linux.svg" },
-  { name: "AWS" },
+  { name: "AWS", logo: "/tech/aws.svg" },
   { name: "Azure", logo: "/tech/azure.svg" },
 ];
 

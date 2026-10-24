@@ -51,7 +51,7 @@ function SceneBlock({
       aria-hidden={!active}
     >
       <span className="label text-accent">{scene.label}</span>
-      <KineticText as="h2" text={scene.title} active={active} className="display mt-6 max-w-[16ch] text-balance text-[clamp(2.75rem,7.5vw,7.25rem)] leading-[0.92]" />
+      <KineticText as={index === 0 ? "h1" : "h2"} text={scene.title} active={active} className="display mt-6 max-w-[16ch] text-balance text-[clamp(2.75rem,7.5vw,7.25rem)] leading-[0.92]" />
       <p className="mt-6 max-w-[46ch] text-lg text-muted md:text-xl">{scene.text}</p>
     </motion.div>
   );

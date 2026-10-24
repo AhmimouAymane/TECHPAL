@@ -63,12 +63,12 @@ export function Preloader() {
         >
           <div className="flex w-full max-w-[900px] flex-col gap-6 px-8">
             <div className="flex items-end justify-between">
-              <span className="label text-paper/60">Experience</span>
-              <span className="font-mono text-sm text-paper/60">is loading, please wait</span>
+              <span className="label text-paper/60">TECHPAL</span>
+              <span className="font-mono text-sm text-paper/60">Chargement de l&apos;expérience…</span>
             </div>
             <div className="flex items-end justify-between">
               <span className="display display-md">{String(count).padStart(3, "0")}%</span>
-              <span className="label text-paper/60">out of 100%</span>
+              <span className="label text-paper/60">Initialisation</span>
             </div>
             <div className="h-px w-full bg-paper/20">
               <motion.div

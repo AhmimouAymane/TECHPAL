@@ -15,6 +15,8 @@ export function generateStaticParams() {
   return locales.flatMap((locale) => projects.map((p) => ({ locale, slug: p.slug })));
 }
 
+import { constructMetadata } from "@/lib/seo";
+
 export async function generateMetadata({
   params,
 }: {
@@ -23,8 +25,15 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const p = getProject(slug);
   if (!p || !isLocale(locale)) return {};
-  const title = locale === "fr" ? p.titleFr : p.titleEn;
-  return { title: `${title} | TECHPAL` };
+  const title = `${locale === "fr" ? p.titleFr : p.titleEn} | TECHPAL`;
+  const description = locale === "fr" ? p.summaryFr : p.summaryEn;
+  return constructMetadata({
+    locale,
+    path: `/projets/${slug}`,
+    title,
+    description,
+    image: p.image || "/og.jpg",
+  });
 }
 
 export default async function ProjectPage({
