@@ -111,7 +111,7 @@ const en: Dict = {
     labels: { createdAt: "Period", name: "Name", type: "Type", scope: "Scope", stack: "Stack", story: "Our approach", points: "What we deliver" },
     heroTitle: "Products in production, not mockups.",
     heroWords: ["Marketplaces", "E-commerce", "Online booking", "Immersive training", "Collaborative ERP", "E-learning", "HRIS"],
-    heroHint: "7 solution families - client names not published",
+    heroHint: "7 solution families - deployed in production",
     technosKicker: "Technologies",
     technosTitle: "The technologies behind these builds.",
     clientsKicker: "Clients & partners",
@@ -253,7 +253,7 @@ const en: Dict = {
     ],
     casesKicker: "Our AI work",
     casesTitle: "Delivered use cases.",
-    casesIntro: "Several engagements are under NDA: client names are not published.",
+    casesIntro: "Production-proven use cases, delivered under confidentiality agreements.",
     cases: [
       {
         title: "Document assistant",

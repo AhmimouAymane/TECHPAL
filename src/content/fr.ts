@@ -112,7 +112,7 @@ const fr = {
     labels: { createdAt: "Période", name: "Nom", type: "Type", scope: "Périmètre", stack: "Stack", story: "Notre approche", points: "Ce que nous livrons" },
     heroTitle: "Des produits en production, pas des maquettes.",
     heroWords: ["Marketplaces", "E-commerce", "Réservation en ligne", "Formation immersive", "ERP collaboratif", "E-learning", "SIRH"],
-    heroHint: "7 familles de solutions - noms de clients non publiés",
+    heroHint: "7 familles de solutions - déployées en production",
     technosKicker: "Technologies",
     technosTitle: "Les technologies derrière ces réalisations.",
     clientsKicker: "Clients & partenaires",
@@ -254,7 +254,7 @@ const fr = {
     ],
     casesKicker: "Nos réalisations IA",
     casesTitle: "Des cas d'usage livrés.",
-    casesIntro: "Certaines missions sont sous NDA : les noms de clients ne sont pas publiés.",
+    casesIntro: "Cas d'usage concrets et éprouvés en production, réalisés sous accord de confidentialité.",
     cases: [
       {
         title: "Assistant documentaire",
