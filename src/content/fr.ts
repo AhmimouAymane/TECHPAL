@@ -5,7 +5,7 @@
 const fr = {
   nav: {
     expertise: "Expertise",
-    ia: "TechPal IA",
+    ia: "TECHPAL IA",
     produits: "Produits",
     staffing: "Staffing",
     projets: "Projets",
@@ -48,7 +48,7 @@ const fr = {
       },
     ],
   },
-  marquee: { label: "Technologies & partenaires" },
+  marquee: { label: "Technologies maîtrisées" },
   reel: {
     kicker: "Showreel",
     title: "La signature TECHPAL, image par image.",
@@ -117,14 +117,14 @@ const fr = {
     technosTitle: "Les technologies derrière ces réalisations.",
     clientsKicker: "Clients & partenaires",
     clientsTitle: "Ils nous font confiance.",
-    clientsIntro: "Chaque logo renvoie vers le site de l'organisation. Nos études de cas restent volontairement séparées de nos clients.",
+    clientsIntro: "Chaque logo renvoie vers le site de l'organisation. Nos réalisations restent volontairement séparées de nos clients.",
   },
   stats: {
     kicker: "En chiffres",
     items: [
       { value: "2022", label: "Fondée à Casablanca" },
       { value: "< 24 h", label: "Réponse sous 24 h ouvrées" },
-      { value: "24/7", label: "Supervision infogérance" },
+      { value: "24/7", label: "Supervision des contrats d'infogérance" },
       { value: "FR·EN·AR", label: "Équipe trilingue" },
     ],
   },
@@ -198,7 +198,7 @@ const fr = {
     partnerKicker: "Partenariats",
     partnerTitle: "Des équipes qui grandissent avec nous.",
     partnerText:
-      "Notre staffing alimente en continu les équipes de partenaires comme Klaim, Novo Nordisk, CBA, ICE Maghreb ou Naviro : profils pré-qualifiés, suivi de qualité et engagement de résultat.",
+      "Notre staffing alimente en continu les équipes de nos clients : profils pré-qualifiés, suivi de qualité et engagement de résultat.",
     faqKicker: "FAQ",
     faqTitle: "Questions fréquentes.",
     faq: [
@@ -227,7 +227,7 @@ const fr = {
     },
   },
   ia: {
-    kicker: "TechPal IA",
+    kicker: "TECHPAL IA",
     title: "L'IA en production, pas en vitrine.",
     intro: "Des usages concrets, mesurables, déployés chez nos clients.",
     heroWords: ["Assistants sur vos données", "Automatisation documentaire", "Agents de décision", "Recherche sémantique"],
@@ -467,7 +467,7 @@ const fr = {
         "Ingénierie digitale à Casablanca : logiciels sur mesure, IA, cloud, réseaux, support et infogérance IT pour les entreprises au Maroc. Réponse sous 24 h.",
     },
     expertise: {
-      title: "Expertise : logiciel, IA, cloud, réseaux & infogérance | TECHPAL",
+      title: "Expertise : logiciel, IA, cloud & infogérance à Casablanca | TECHPAL",
       description: "Ingénierie logicielle, IA, cloud, réseaux, support et infogérance IT à Casablanca. 6 pôles d'expertise dédiés à la production.",
     },
     staffing: {
@@ -475,8 +475,8 @@ const fr = {
       description: "Talents IT pré-qualifiés intégrés à vos équipes au Maroc : développeurs, data, cloud et support. Profils sous 48 h ouvrées.",
     },
     projets: {
-      title: "Réalisations & Cas d'usage en production | TECHPAL",
-      description: "Études de cas TECHPAL : plateformes métier, marketplaces, ERP, IA et infrastructures déployées à Casablanca et au Maroc.",
+      title: "Réalisations : 7 familles de solutions en production | TECHPAL",
+      description: "Familles de solutions TECHPAL : marketplaces mobiles, e-commerce, réservation, serious games VR, ERP, e-learning et SIRH, livrés à Casablanca et au Maroc.",
     },
     ia: {
       title: "Intelligence Artificielle & Automatisation en production | TECHPAL",

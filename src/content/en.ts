@@ -4,7 +4,7 @@ import type { Dict } from "./fr";
 const en: Dict = {
   nav: {
     expertise: "Expertise",
-    ia: "TechPal AI",
+    ia: "TECHPAL AI",
     produits: "Hardware",
     staffing: "Staffing",
     projets: "Projects",
@@ -47,7 +47,7 @@ const en: Dict = {
       },
     ],
   },
-  marquee: { label: "Technologies & partners" },
+  marquee: { label: "Technologies we master" },
   reel: {
     kicker: "Showreel",
     title: "The TECHPAL signature, frame by frame.",
@@ -116,14 +116,14 @@ const en: Dict = {
     technosTitle: "The technologies behind these builds.",
     clientsKicker: "Clients & partners",
     clientsTitle: "They trust us.",
-    clientsIntro: "Each logo links to the organization's website. Our case studies deliberately stay separate from our clients.",
+    clientsIntro: "Each logo links to the organization's website. Our work deliberately stays separate from our clients.",
   },
   stats: {
     kicker: "By the numbers",
     items: [
       { value: "2022", label: "Founded in Casablanca" },
       { value: "< 24 h", label: "Reply within 24 business hours" },
-      { value: "24/7", label: "Managed IT monitoring" },
+      { value: "24/7", label: "Managed IT contract monitoring" },
       { value: "FR·EN·AR", label: "Trilingual team" },
     ],
   },
@@ -197,7 +197,7 @@ const en: Dict = {
     partnerKicker: "Partnerships",
     partnerTitle: "Teams that grow with us.",
     partnerText:
-      "Our staffing continuously powers the teams of partners like Klaim, Novo Nordisk, CBA, ICE Maghreb and Naviro: pre-vetted profiles, quality reviews and committed outcomes.",
+      "Our staffing continuously strengthens our clients' teams: pre-vetted profiles, quality reviews and committed outcomes.",
     faqKicker: "FAQ",
     faqTitle: "Frequently asked questions.",
     faq: [
@@ -226,7 +226,7 @@ const en: Dict = {
     },
   },
   ia: {
-    kicker: "TechPal AI",
+    kicker: "TECHPAL AI",
     title: "AI in production, not on display.",
     intro: "Concrete, measurable use cases, deployed for our clients.",
     heroWords: ["Assistants over your data", "Document automation", "Decision agents", "Semantic search"],
@@ -467,16 +467,16 @@ const en: Dict = {
         "Digital engineering in Casablanca: custom software, AI, cloud, networks, support, and managed IT services for companies in Morocco. Reply within 24h.",
     },
     expertise: {
-      title: "Expertise: Software, AI, Cloud, Network & Managed IT | TECHPAL",
-      description: "Custom software engineering, AI, cloud, networks, hardware, and managed IT support in Casablanca. Six practices built for production.",
+      title: "Expertise: Software, AI, Cloud & Managed IT in Casablanca | TECHPAL",
+      description: "Software engineering, AI, cloud, networks, support, and managed IT services in Casablanca. Six practices built for production.",
     },
     staffing: {
       title: "IT Staffing & Team Augmentation in Casablanca | TECHPAL",
       description: "Pre-vetted IT talent embedded in your teams: developers, data, cloud, and support in Morocco. Profiles ready within 48 business hours.",
     },
     projets: {
-      title: "Case Studies & Production Solutions | TECHPAL",
-      description: "TECHPAL case studies: custom platforms, marketplaces, ERPs, AI systems, and infrastructure delivered in Casablanca and Morocco.",
+      title: "Work: 7 Solution Families in Production | TECHPAL",
+      description: "TECHPAL solution families: mobile marketplaces, e-commerce, booking, VR serious games, ERP, e-learning, and HRIS, delivered in Casablanca and Morocco.",
     },
     ia: {
       title: "Artificial Intelligence & Automation in Production | TECHPAL",

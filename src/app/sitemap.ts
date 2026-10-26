@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             fr: `${site.url}/fr${clean}`,
             en: `${site.url}/en${clean}`,
+            "x-default": `${site.url}/fr${clean}`,
           },
         },
       };
@@ -45,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           fr: `${site.url}/fr/projets/${p.slug}`,
           en: `${site.url}/en/projets/${p.slug}`,
+          "x-default": `${site.url}/fr/projets/${p.slug}`,
         },
       },
     }))
