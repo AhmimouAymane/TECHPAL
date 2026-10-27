@@ -20,11 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     paths.map((p) => {
       const clean = p ? `/${p}` : "";
+      const legalPage = p === "mentions-legales" || p === "confidentialite";
       return {
         url: `${site.url}/${locale}${clean}`,
         lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: p === "" ? 1.0 : 0.8,
+        changeFrequency: legalPage ? ("yearly" as const) : ("weekly" as const),
+        priority: p === "" ? 1.0 : legalPage ? 0.3 : 0.8,
         alternates: {
           languages: {
             fr: `${site.url}/fr${clean}`,
