@@ -9,6 +9,7 @@ import { GradientButton } from "@/components/motion/GradientButton";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { getProject, projects } from "@/content/projects";
+import { site } from "@/content/site";
 import { isLocale, locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -60,8 +61,19 @@ export default async function ProjectPage({
     { k: labels.stack, v: p.stack.join(", ") },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${site.url}/${locale}` },
+      { "@type": "ListItem", position: 2, name: locale === "fr" ? "Réalisations" : "Work", item: `${site.url}/${locale}/projets` },
+      { "@type": "ListItem", position: 3, name: title, item: `${site.url}/${locale}/projets/${slug}` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <section className="relative overflow-hidden pb-10 pt-36 md:pt-52">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-10 h-[380px] w-[380px] rounded-full bg-brand/10 blur-[140px]" />
         <Container className="relative">

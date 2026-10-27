@@ -6,6 +6,7 @@ import { Narrative } from "@/components/sections/Narrative";
 import { NeuralHero } from "@/components/ia/NeuralHero";
 import fr from "@/content/fr";
 import en from "@/content/en";
+import { site } from "@/content/site";
 import { isLocale, locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -31,8 +32,31 @@ export default async function ExpertisePage({ params }: { params: Promise<{ loca
   if (!isLocale(locale)) notFound();
   const dict = locale === "fr" ? fr : en;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${site.url}/${locale}` },
+          { "@type": "ListItem", position: 2, name: locale === "fr" ? "Expertise" : "Expertise", item: `${site.url}/${locale}/expertise` },
+        ],
+      },
+      ...dict.services.items.map((item) => ({
+        "@type": "Service",
+        name: item.title,
+        description: item.desc,
+        serviceType: item.title,
+        url: `${site.url}/${locale}/expertise#pratiques`,
+        provider: { "@id": `${site.url}/#organization` },
+        areaServed: { "@type": "Country", name: "Morocco" },
+      })),
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NeuralHero
         kicker={dict.services.kicker}
         title={dict.services.title}

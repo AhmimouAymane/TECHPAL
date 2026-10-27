@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { GradientButton } from "@/components/motion/GradientButton";
 import { NeuralHero } from "@/components/ia/NeuralHero";
-import { partners } from "@/content/site";
+import { partners, site } from "@/content/site";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale, locales } from "@/lib/i18n";
@@ -34,8 +34,30 @@ export default async function StaffingPage({ params }: { params: Promise<{ local
   const dict = locale === "fr" ? fr : en;
   const s = dict.staffing;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${site.url}/${locale}` },
+          { "@type": "ListItem", position: 2, name: locale === "fr" ? "Staffing IT" : "IT staffing", item: `${site.url}/${locale}/staffing` },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: s.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NeuralHero
         kicker={s.kicker}
         title={s.title}

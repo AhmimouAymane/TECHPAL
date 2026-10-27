@@ -1,0 +1,52 @@
+# TECHPAL
+
+> Entreprise de services IT et d'ingénierie digitale basée à Casablanca, au Maroc. TECHPAL accompagne les organisations sur l'infogérance et le support informatique, le développement d'applications métier, l'intégration de solutions d'intelligence artificielle, les infrastructures réseau et la fourniture de matériel informatique.
+
+## Identité
+
+- Nom : TECHPAL
+- Site : https://www.techpalservices.com
+- E-mail : contact@techpalservices.com
+- Téléphone : +212 7 10 77 77 20
+- Adresse : Bureau B3, Rue Ettah, Casablanca 20000, Maroc
+- Fondée en : 2022
+- Langues : français, anglais, arabe
+- LinkedIn : https://www.linkedin.com/company/techpal-services
+- Instagram : https://www.instagram.com/techpalservices/
+
+## Pages principales
+
+- Accueil (FR) : https://www.techpalservices.com/fr
+- Accueil (EN) : https://www.techpalservices.com/en
+- Expertise : https://www.techpalservices.com/fr/expertise
+- TECHPAL IA : https://www.techpalservices.com/fr/ia
+- Réalisations (7 familles de solutions) : https://www.techpalservices.com/fr/projets
+- Produits & matériel : https://www.techpalservices.com/fr/produits
+- Staffing IT : https://www.techpalservices.com/fr/staffing
+- À propos : https://www.techpalservices.com/fr/a-propos
+- Contact : https://www.techpalservices.com/fr/contact
+
+## Expertises
+
+1. Ingénierie logicielle : applications web et mobiles, plateformes métier, APIs et intégrations.
+2. Intelligence artificielle : assistants sur données internes, automatisation documentaire, aide à la décision.
+3. Cloud & infrastructure : hébergement, déploiement, supervision.
+4. Réseaux & matériel : réseaux d'entreprise, fourniture et maintenance d'équipements.
+5. Support & infogérance : helpdesk, maintenance, supervision (24/7 sur contrats d'infogérance).
+6. Transformation digitale : cadrage, feuille de route, mise en production.
+
+## Réalisations (familles de solutions, sans référence client)
+
+- Marketplaces & applications mobiles (Flutter, NestJS, PostgreSQL, AWS)
+- E-commerce & gestion intégrée (Odoo)
+- Réservation & rendez-vous en ligne (Flutter, FastAPI)
+- Formation immersive & serious games (Unity, VR, PC)
+- ERP collaboratif & gestion du travail (Odoo)
+- E-learning & certification (Odoo)
+- SIRH & digitalisation RH (Odoo)
+
+## Engagements
+
+- Réponse sous 24 h ouvrées.
+- Supervision 24/7 dans le cadre des contrats d'infogérance.
+- Horaires du bureau : du lundi au vendredi, 9h-18h.

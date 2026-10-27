@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { NeuralHero } from "@/components/ia/NeuralHero";
 import fr from "@/content/fr";
 import en from "@/content/en";
+import { site } from "@/content/site";
 import { isLocale, locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -32,8 +33,29 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const dict = locale === "fr" ? fr : en;
   const a = dict.about;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: locale === "fr" ? "Accueil" : "Home", item: `${site.url}/${locale}` },
+          { "@type": "ListItem", position: 2, name: locale === "fr" ? "À propos" : "About", item: `${site.url}/${locale}/a-propos` },
+        ],
+      },
+      ...a.members.map((m) => ({
+        "@type": "Person",
+        name: m.name,
+        jobTitle: m.role,
+        image: `${site.url}${m.photo}`,
+        worksFor: { "@id": `${site.url}/#organization` },
+      })),
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NeuralHero
         kicker={a.kicker}
         title={a.title}

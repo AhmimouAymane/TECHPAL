@@ -40,7 +40,7 @@ export function constructMetadata({
       description,
       url: canonicalUrl,
       siteName: site.fullName,
-      locale: locale === "fr" ? "fr_FR" : "en_US",
+      locale: locale === "fr" ? "fr_MA" : "en_US",
       type,
       images: [
         {

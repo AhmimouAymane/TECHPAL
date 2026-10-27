@@ -7,11 +7,16 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   async redirects() {
     return [
-      { source: "/", destination: "/fr", permanent: false },
-      { source: "/expertise", destination: "/fr/expertise", permanent: false },
-      { source: "/projets", destination: "/fr/projets", permanent: false },
-      { source: "/a-propos", destination: "/fr/a-propos", permanent: false },
-      { source: "/contact", destination: "/fr/contact", permanent: false },
+      { source: "/", destination: "/fr", permanent: true },
+      { source: "/expertise", destination: "/fr/expertise", permanent: true },
+      { source: "/ia", destination: "/fr/ia", permanent: true },
+      { source: "/produits", destination: "/fr/produits", permanent: true },
+      { source: "/staffing", destination: "/fr/staffing", permanent: true },
+      { source: "/projets", destination: "/fr/projets", permanent: true },
+      { source: "/a-propos", destination: "/fr/a-propos", permanent: true },
+      { source: "/contact", destination: "/fr/contact", permanent: true },
+      { source: "/mentions-legales", destination: "/fr/mentions-legales", permanent: true },
+      { source: "/confidentialite", destination: "/fr/confidentialite", permanent: true },
     ];
   },
 };

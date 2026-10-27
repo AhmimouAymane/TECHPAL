@@ -71,21 +71,35 @@ export default async function LocaleLayout({
 
   const orgJsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: site.fullName,
-    url: site.url,
-    email: site.email,
-    telephone: site.phone,
-    foundingDate: "2022",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Bureau B3, Rue Ettah",
-      addressLocality: "Casablanca",
-      postalCode: "20000",
-      addressCountry: "MA",
-    },
-    areaServed: "MA",
-    sameAs: [site.linkedin, site.instagram],
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": `${site.url}/#organization`,
+        name: site.fullName,
+        url: site.url,
+        email: site.email,
+        telephone: site.phone,
+        foundingDate: "2022",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Bureau B3, Rue Ettah",
+          addressLocality: "Casablanca",
+          postalCode: "20000",
+          addressCountry: "MA",
+        },
+        areaServed: { "@type": "Country", name: "Morocco" },
+        knowsLanguage: ["fr", "en", "ar"],
+        sameAs: [site.linkedin, site.instagram],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: site.fullName,
+        inLanguage: locale,
+        publisher: { "@id": `${site.url}/#organization` },
+      },
+    ],
   };
 
   return (
