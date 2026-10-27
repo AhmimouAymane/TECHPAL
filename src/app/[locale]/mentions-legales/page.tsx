@@ -102,20 +102,22 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
               {isFr ? (
                 <>
                   Le site <strong className="text-ink">{site.url}</strong> est édité par{" "}
-                  <strong className="text-ink">{legalCompany.name}</strong>, société de services numériques et
-                  d&apos;ingénierie informatique de droit marocain.
+                  <strong className="text-ink">{legalCompany.name}</strong>, {legalCompany.legalForm.toLowerCase()} de
+                  droit marocain au capital de {legalCompany.capital}.
                 </>
               ) : (
                 <>
                   The website <strong className="text-ink">{site.url}</strong> is published by{" "}
-                  <strong className="text-ink">{legalCompany.name}</strong>, a digital engineering and IT services
-                  company incorporated under Moroccan law.
+                  <strong className="text-ink">{legalCompany.name}</strong>, a Moroccan limited liability company (SARL)
+                  with a share capital of {legalCompany.capital}.
                 </>
               )}
             </p>
             <dl className="mt-4">
               <Row label={isFr ? "Dénomination sociale" : "Legal name"}>{legalCompany.name}</Row>
-              <Row label={isFr ? "Forme juridique" : "Legal form"}>{legalCompany.legalForm}</Row>
+              <Row label={isFr ? "Forme juridique" : "Legal form"}>
+                {isFr ? legalCompany.legalForm : "Limited liability company (SARL)"}
+              </Row>
               <Row label={isFr ? "Capital social" : "Share capital"}>{legalCompany.capital}</Row>
               <Row label={isFr ? "Registre de commerce" : "Trade register"}>{legalCompany.rc}</Row>
               <Row label={isFr ? "Identifiant commun de l'entreprise (ICE)" : "Common enterprise ID (ICE)"}>
@@ -123,7 +125,11 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
               </Row>
               <Row label={isFr ? "Identifiant fiscal" : "Tax identifier"}>{legalCompany.if}</Row>
               <Row label={isFr ? "Patente" : "Business licence"}>{legalCompany.patente}</Row>
-              <Row label={isFr ? "Siège social" : "Registered office"}>{legalCompany.address}</Row>
+              <Row label={isFr ? "Objet social" : "Business purpose"}>{legalCompany.activity[locale]}</Row>
+              <Row label={isFr ? "Siège social" : "Registered office"}>{legalCompany.registeredAddress}</Row>
+              <Row label={isFr ? "Bureau" : "Office"}>
+                {legalCompany.officeAddress !== (legalCompany.registeredAddress as string) ? legalCompany.officeAddress : ""}
+              </Row>
               <Row label={isFr ? "Téléphone" : "Phone"}>
                 <a href={site.phoneHref} className="text-ink hover:underline">
                   {site.phone}

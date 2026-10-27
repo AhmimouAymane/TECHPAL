@@ -2,26 +2,32 @@
  * Données légales de l'éditeur et de l'hébergeur.
  *
  * Les champs vides ne sont pas affichés sur le site : ils attendent les
- * informations officielles (extrait du Registre de commerce / attestation ICE).
- * Ne jamais renseigner une valeur approximative ici.
+ * informations officielles. Ne jamais renseigner une valeur approximative ici.
  */
 export const legalCompany = {
   /** Dénomination sociale exacte (telle qu'au RC). */
   name: "TECHPAL",
-  /** Forme juridique : SARL, SARL AU, SA... */
-  legalForm: "",
-  /** Capital social en dirhams, ex. "100 000 MAD". */
-  capital: "",
-  /** Registre de commerce, ex. "RC Casablanca 123456". */
-  rc: "",
+  /** Forme juridique. */
+  legalForm: "Société à responsabilité limitée (SARL)",
+  /** Capital social. */
+  capital: "100 000 MAD",
+  /** Registre de commerce. */
+  rc: "556619 — Tribunal de commerce de Casablanca",
   /** Identifiant Commun de l'Entreprise (15 chiffres). */
-  ice: "",
+  ice: "003131517000061",
   /** Identifiant fiscal. */
   if: "",
   /** Numéro de patente / taxe professionnelle. */
   patente: "",
-  /** Adresse du siège social. */
-  address: "Bureau B3, Rue Ettah, Casablanca 20000, Maroc",
+  /** Objet social (activité déclarée au RC). */
+  activity: {
+    fr: "Services informatiques : conception et intégration de solutions IT, vente et installation de matériel informatique, développement et maintenance de systèmes d'information.",
+    en: "IT services: design and integration of IT solutions, sale and installation of computer hardware, development and maintenance of information systems.",
+  },
+  /** Siège social enregistré au registre de commerce. */
+  registeredAddress: "17, quartier Yakoub El Mansour, n° 238, 2e étage, Casablanca, Maroc",
+  /** Adresse d'exploitation / bureau (si différente du siège). */
+  officeAddress: "Bureau B3, Rue Ettah, Casablanca 20000, Maroc",
   /** Directeur de la publication (personne physique nommée). */
   publicationDirector: "",
   publicationDirectorRole: {

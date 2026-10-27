@@ -85,7 +85,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               {isFr ? (
                 <>
                   Le responsable du traitement des données collectées sur ce site est{" "}
-                  <strong className="text-ink">{legalCompany.name}</strong>, {legalCompany.address}. Contact dédié :{" "}
+                  <strong className="text-ink">{legalCompany.name}</strong>, dont le siège social est situé{" "}
+                  {legalCompany.registeredAddress}. Contact dédié :{" "}
                   <a href={`mailto:${site.email}`} className={link}>
                     {site.email}
                   </a>
@@ -93,8 +94,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 </>
               ) : (
                 <>
-                  The controller of data collected on this site is <strong className="text-ink">{legalCompany.name}</strong>,{" "}
-                  {legalCompany.address}. Dedicated contact:{" "}
+                  The controller of data collected on this site is <strong className="text-ink">{legalCompany.name}</strong>,
+                  whose registered office is located at {legalCompany.registeredAddress}. Dedicated contact:{" "}
                   <a href={`mailto:${site.email}`} className={link}>
                     {site.email}
                   </a>
