@@ -108,6 +108,14 @@ export default async function LocaleLayout({
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <body className="grain min-h-svh bg-paper text-ink antialiased">
+        {/* Posé avant la première peinture : au 2e chargement de la session, le
+            rideau d'intro est masqué en CSS (pas de flash, pas de rejeu). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){try{var k="techpal:intro:v1",h=document.documentElement;if(sessionStorage.getItem(k)){h.setAttribute("data-intro","played")}else{sessionStorage.setItem(k,"1")}}catch(e){}})()',
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <a
           href="#contenu"

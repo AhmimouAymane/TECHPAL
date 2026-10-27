@@ -691,3 +691,17 @@ button:hover .roll > span {
     opacity: 0.3;
   }
 }
+
+/* Rideau d'intro : une seule fois par session. L'attribut est posé par le
+   script inline du layout avant la première peinture — au chargement suivant,
+   le rideau n'est jamais peint (aucun flash, aucun rejeu). */
+html[data-intro="played"] .preloader {
+  display: none !important;
+}
+
+/* Sans JavaScript, le rideau ne pourrait jamais se lever. */
+@media (scripting: none) {
+  .preloader {
+    display: none !important;
+  }
+}

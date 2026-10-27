@@ -4,9 +4,16 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /**
- * Intro loader: 000% -> 100% puis un rideau qui se lève. Joué à chaque
- * chargement (refresh compris) ; le refresh replace aussi la page en haut.
- * Entièrement coupé pour prefers-reduced-motion.
+ * Intro loader : 000 % → 100 % puis un rideau qui se lève.
+ *
+ * Contraintes de performance :
+ * - **une seule fois par session** — l'attribut `data-intro="played"` posé par
+ *   le script inline du layout masque le rideau avant la première peinture au
+ *   chargement suivant (aucun flash, aucun mismatch d'hydratation) ;
+ * - jamais sur une navigation interne : la navigation client (next/link) ne
+ *   remonte pas ce composant, et l'ancre `#` d'un lien profond est respectée ;
+ * - coupé pour `prefers-reduced-motion` et en mode économie de données ;
+ * - durée totale volontairement courte (~1 s) pour ne pas retarder le LCP.
  */
 export function Preloader() {
   const reduce = useReducedMotion();
@@ -15,35 +22,45 @@ export function Preloader() {
   const [active, setActive] = useState(true);
 
   useEffect(() => {
-    // Refresh = départ propre en haut de page (pas de restauration navigateur)
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
-    if (nav?.type === "reload") window.scrollTo(0, 0);
+    const html = document.documentElement;
+    const replay = html.getAttribute("data-intro") === "played";
+    const deepLink = window.location.hash.length > 1;
+    const saveData =
+      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
 
-    if (reduce) {
-      const id = requestAnimationFrame(() => {
-        setActive(false);
-        setDone(true);
-      });
-      return () => cancelAnimationFrame(id);
+    // Session déjà vue, ancre profonde ou données économisées : pas d'intro.
+    if (reduce || replay || deepLink || saveData) {
+      setActive(false);
+      setDone(true);
+      return;
     }
 
     let current = 0;
-    const id = window.setInterval(() => {
-      current = Math.min(100, current + Math.ceil(Math.random() * 9) + 3);
-      setCount(current);
-      if (current >= 100) {
-        window.clearInterval(id);
-        window.setTimeout(() => setDone(true), 380);
-      }
-    }, 90);
-    return () => window.clearInterval(id);
+    let intervalId = 0;
+    let startId = 0;
+
+    // Démarre après la première peinture : le rideau s'affiche avant de compter.
+    startId = requestAnimationFrame(() => {
+      intervalId = window.setInterval(() => {
+        current = Math.min(100, current + 14 + Math.ceil(Math.random() * 8));
+        setCount(current);
+        if (current >= 100) {
+          window.clearInterval(intervalId);
+          window.setTimeout(() => setDone(true), 180);
+        }
+      }, 60);
+    });
+
+    return () => {
+      cancelAnimationFrame(startId);
+      window.clearInterval(intervalId);
+    };
   }, [reduce]);
 
-  // Démonte le rideau une fois l'animation de sortie jouée (0.7s)
+  // Démonte le rideau une fois l'animation de sortie jouée (0.55 s)
   useEffect(() => {
     if (!done) return;
-    const id = window.setTimeout(() => setActive(false), 750);
+    const id = window.setTimeout(() => setActive(false), 600);
     return () => window.clearTimeout(id);
   }, [done]);
 
@@ -52,12 +69,12 @@ export function Preloader() {
       {active && (
         <motion.div
           key="preloader"
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink text-paper"
+          className="preloader fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink text-paper"
           initial={false}
           animate={done ? "exit" : "enter"}
           variants={{
             enter: { y: 0 },
-            exit: { y: "-100%", transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } },
+            exit: { y: "-100%", transition: { duration: 0.55, ease: [0.76, 0, 0.24, 1] } },
           }}
           aria-hidden="true"
         >
