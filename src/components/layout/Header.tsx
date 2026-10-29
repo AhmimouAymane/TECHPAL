@@ -33,9 +33,19 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
 
   useEffect(() => {
     const lenis = (window as unknown as { __lenis?: Lenis }).__lenis;
-    if (open) lenis?.stop();
-    else lenis?.start();
-    return () => lenis?.start();
+    const html = document.documentElement;
+    if (open) {
+      lenis?.stop();
+      // La page derrière le menu ne doit pas défiler (molette ET barre native).
+      html.style.overflow = "hidden";
+    } else {
+      lenis?.start();
+      html.style.overflow = "";
+    }
+    return () => {
+      html.style.overflow = "";
+      lenis?.start();
+    };
   }, [open]);
 
   const links = routes.map((r) => ({
@@ -169,7 +179,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 z-[75] flex flex-col bg-ink text-paper xl:hidden"
           >
-            <div className="flex-1 overflow-y-auto px-6 pb-10 pt-28">
+            <div data-lenis-prevent className="flex-1 overflow-y-auto overscroll-contain px-6 pb-10 pt-28">
               <nav aria-label={nav.menu} className="flex flex-col">
                 {links.map((l, i) => (
                   <motion.div
