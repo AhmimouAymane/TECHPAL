@@ -76,6 +76,7 @@ const en: Dict = {
         title: "Artificial intelligence",
         desc: "AI integration and automation for concrete use cases.",
         points: ["AI integration", "Automation", "Intelligent apps"],
+        href: "/integration-ia-entreprise",
       },
       {
         n: "003",
@@ -323,6 +324,103 @@ const en: Dict = {
       title: "A product to build?",
       text: "Describe your project: scoping and firm quote within one business day.",
       button: "Start a project",
+    },
+  },
+  iaentreprise: {
+    kicker: "TECHPAL AI",
+    title: "Enterprise AI integration.",
+    intro:
+      "Assistants built on your internal data and measurable automation of your processes: carefully scoped use cases, architecture inside your perimeter, human validation at every step.",
+    heroWords: ["Assistants on your data", "Document automation", "Decision support", "Semantic search"],
+    heroHint: "Scoped use cases, measured gains",
+    anchor: "The use cases",
+    usecasesKicker: "The use cases",
+    usecasesTitle: "Three use-case families, already delivered.",
+    usecases: [
+      {
+        title: "Document assistants",
+        text: "Ask your internal documents in natural language: semantic search, summaries and answers citing their source.",
+      },
+      {
+        title: "Process automation",
+        text: "Document data extraction, routing, matching: repetitive tasks move to controlled workflows.",
+      },
+      {
+        title: "Decision support",
+        text: "Indicators, alerts and analysis prepared by AI agents, validated by your teams before any action.",
+      },
+    ],
+    processKicker: "How a useful AI is scoped",
+    processTitle: "Four steps, from use case to measured gain.",
+    process: [
+      { title: "Use case & measurement", text: "One high-value case, identified data, a success metric defined before any development." },
+      { title: "Measured prototype", text: "A restricted prototype on your real data, evaluated with you on precise situations." },
+      { title: "Controlled integration", text: "Connection to your tools within your security perimeter, without exposing sensitive documents." },
+      { title: "Monitoring & gains", text: "Human validation of sensitive actions, gains tracked week after week." },
+    ],
+    stats: [
+      { value: "3", label: "Use-case families delivered" },
+      { value: "< 24 h", label: "Scoping reply within 24 business hours" },
+      { value: "FR·EN·AR", label: "A trilingual team" },
+      { value: "2022", label: "Founded in Casablanca" },
+    ],
+    includedKicker: "Confidentiality & framework",
+    includedTitle: "Your data stays inside your perimeter.",
+    included: [
+      {
+        title: "Architecture inside your environment",
+        text: "Connections go through your accounts and your permissions; access is documented, limited and revocable.",
+      },
+      {
+        title: "Written scope",
+        text: "Every use case is scoped in writing: data used, system limits and success metric.",
+      },
+      {
+        title: "Human validation",
+        text: "Deliverables are designed so your teams verify and decide: nothing essential is left uncontrolled.",
+      },
+      {
+        title: "Limits stated plainly",
+        text: "No unmeasured success rates are promised: the prototype exists to measure first, industrialize after.",
+      },
+    ],
+    crossKicker: "Complete your setup",
+    crossTitle: "One page per need.",
+    crossIntro: "AI integration works hand in hand with:",
+    cross: [
+      { title: "Custom development", desc: "The product hosting your AI use cases, when existing tools are not enough.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Managed IT & maintenance", desc: "Monitoring of the infrastructure your AI runs on.", href: "/infogerance-informatique-casablanca" },
+      { title: "IT staffing", desc: "Data and AI profiles to reinforce your internal projects.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Frequently asked questions.",
+    faq: [
+      {
+        q: "How can AI be integrated with internal data without exposing sensitive information?",
+        a: "Step by step: a restricted prototype first, on selected data, with documented and revocable access, answers citing their sources, and human validation on sensitive actions. Everything is scoped in writing before development.",
+      },
+      {
+        q: "What is a document AI assistant (RAG)?",
+        a: "A system that first searches inside your internal documents, then writes its answer from the passages found, citing the source. Your document base remains the reference, not the model's general knowledge.",
+      },
+      {
+        q: "Which tools can be connected?",
+        a: "Your document bases, ERP, messaging and business tools, through their APIs and under your permissions. The exact connection perimeter is set during scoping: nothing is open by default.",
+      },
+      {
+        q: "What return on investment should we expect?",
+        a: "ROI is measured, not promised: the prototype measures time saved and volume processed on real cases. The resulting numbers decide whether to industrialize.",
+      },
+      {
+        q: "Will AI replace our teams?",
+        a: "No: it prepares, searches and automates repetitive tasks. Your teams keep validation and decision-making, save time, and focus on cases that require judgement.",
+      },
+    ],
+    cta: {
+      kicker: "TECHPAL AI",
+      title: "A use case in mind?",
+      text: "Describe your data and your goal: feasibility and firm quote within one business day.",
+      button: "Scope my use case",
     },
   },
   infogerance: {
@@ -680,6 +778,11 @@ const en: Dict = {
       title: "Custom Software Development in Morocco | TECHPAL",
       description:
         "Custom web, mobile, and business applications: scoping, development, and maintenance in Casablanca. Free scoping, firm quote.",
+    },
+    iaentreprise: {
+      title: "Enterprise AI Integration in Morocco | TECHPAL",
+      description:
+        "Bring AI to your processes and business data: document assistants, automation, and decision support in Casablanca.",
     },
     projets: {
       title: "Work: 7 Solution Families in Production | TECHPAL",

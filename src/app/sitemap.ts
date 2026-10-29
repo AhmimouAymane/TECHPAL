@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "expertise",
     "developpement-logiciel-sur-mesure",
+    "integration-ia-entreprise",
     "infogerance-informatique-casablanca",
     "ia",
     "staffing",

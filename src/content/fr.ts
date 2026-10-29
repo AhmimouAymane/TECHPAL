@@ -77,6 +77,7 @@ const fr = {
         title: "Intelligence artificielle",
         desc: "Intégration d'IA et automatisation au service de cas d'usage concrets.",
         points: ["Intégration d'IA", "Automatisation", "Applications intelligentes"],
+        href: "/integration-ia-entreprise",
       },
       {
         n: "003",
@@ -423,6 +424,103 @@ const fr = {
       button: "Démarrer un projet",
     },
   },
+  iaentreprise: {
+    kicker: "TECHPAL IA",
+    title: "Intégration d'IA en entreprise.",
+    intro:
+      "Des assistants sur vos données internes et une automatisation mesurable de vos processus : cas d'usage cadrés, architecture dans votre périmètre, validation humaine à chaque étape.",
+    heroWords: ["Assistants sur vos données", "Automatisation documentaire", "Aide à la décision", "Recherche sémantique"],
+    heroHint: "Cas d'usage cadrés, gains mesurés",
+    anchor: "Les cas d'usage",
+    usecasesKicker: "Les cas d'usage",
+    usecasesTitle: "Trois familles de cas d'usage, déjà livrées.",
+    usecases: [
+      {
+        title: "Assistants documentaires",
+        text: "Interrogez vos documents internes en langage naturel : recherche sémantique, synthèses et réponses citées vers la source.",
+      },
+      {
+        title: "Automatisation de processus",
+        text: "Extraction de données de documents, routage, rapprochements : les tâches répétitives passent sur des workflows contrôlés.",
+      },
+      {
+        title: "Aide à la décision",
+        text: "Indicateurs, alertes et analyses préparés par des agents IA, validés par vos équipes avant toute action.",
+      },
+    ],
+    processKicker: "Comment on cadre une IA utile",
+    processTitle: "Quatre étapes, du cas d'usage au gain mesuré.",
+    process: [
+      { title: "Cas d'usage & mesure", text: "Un cas à forte valeur, des données identifiées, une mesure de réussite définie avant tout développement." },
+      { title: "Prototype mesuré", text: "Un prototype restreint sur vos données réelles, évalué avec vous sur des situations précises." },
+      { title: "Intégration encadrée", text: "Connexion à vos outils dans votre périmètre de sécurité, sans exposer les documents sensibles." },
+      { title: "Supervision & gains", text: "Validation humaine des actions sensibles, suivi des gains semaine après semaine." },
+    ],
+    stats: [
+      { value: "3", label: "Familles de cas d'usage livrées" },
+      { value: "< 24 h", label: "Référence de cadrage sous 24 h ouvrées" },
+      { value: "FR·EN·AR", label: "Une équipe trilingue" },
+      { value: "2022", label: "Fondée à Casablanca" },
+    ],
+    includedKicker: "Confidentialité & cadre",
+    includedTitle: "Vos données restent dans votre périmètre.",
+    included: [
+      {
+        title: "Architecture dans votre environnement",
+        text: "Les connexions passent par vos comptes et vos permissions ; les accès sont documentés, limités et révocables.",
+      },
+      {
+        title: "Périmètre écrit",
+        text: "Chaque cas d'usage est cadré par écrit : données utilisées, limites du système et mesure de succès.",
+      },
+      {
+        title: "Validation humaine",
+        text: "Les livrables sont conçus pour que vos équipes vérifient et décident : rien d'essentiel n'est laissé sans contrôle.",
+      },
+      {
+        title: "Limites dites franchement",
+        text: "Aucun taux de réussite non mesuré n'est promis : le prototype sert d'abord à mesurer, ensuite à industrialiser.",
+      },
+    ],
+    crossKicker: "Complétez votre dispositif",
+    crossTitle: "Une page par besoin.",
+    crossIntro: "L'intégration IA s'articule avec vos autres chantiers :",
+    cross: [
+      { title: "Développement sur mesure", desc: "Le produit qui héberge vos cas d'usage IA, quand l'existant ne suffit pas.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Infogérance & maintenance", desc: "La surveillance des infrastructures sur lesquelles l'IA tourne.", href: "/infogerance-informatique-casablanca" },
+      { title: "Staffing IT", desc: "Des profils data et IA pour renforcer vos projets internes.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Questions fréquentes.",
+    faq: [
+      {
+        q: "Comment intégrer une IA aux données internes sans exposer les informations sensibles ?",
+        a: "Par étapes : un prototype restreint d'abord sur des données choisies, des accès documentés et révocables, des réponses citées vers leurs sources et une validation humaine sur les actions sensibles. Le tout est cadré par écrit avant tout développement.",
+      },
+      {
+        q: "Qu'est-ce qu'un assistant IA documentaire (RAG) ?",
+        a: "Un système qui cherche d'abord dans vos documents internes, puis rédige sa réponse à partir des passages trouvés, avec des citations vers la source. Votre base documentaire reste la référence, pas les connaissances générales du modèle.",
+      },
+      {
+        q: "Quels outils peuvent être connectés ?",
+        a: "Vos bases documentaires, ERP, messageries et outils métier, via leurs APIs et selon vos permissions. Le périmètre exact des connexions est fixé au cadrage : rien n'est ouvert par défaut.",
+      },
+      {
+        q: "Quel retour sur investissement attendre ?",
+        a: "Le ROI se mesure, il ne se promet pas : le prototype sert à mesurer le temps gagné et les volumes traités sur des cas réels. Les chiffres obtenus décident de l'industrialisation.",
+      },
+      {
+        q: "L'IA va-t-elle remplacer nos équipes ?",
+        a: "Non : elle prépare, cherche et automatise les tâches répétitives. Vos équipes gardent la validation et la décision, gagnent du temps et se concentrent sur les cas qui demandent du jugement.",
+      },
+    ],
+    cta: {
+      kicker: "TECHPAL IA",
+      title: "Un cas d'usage en tête ?",
+      text: "Décrivez vos données et votre objectif : faisabilité et devis ferme sous 24 h ouvrées.",
+      button: "Cadrer mon cas d'usage",
+    },
+  },
   ia: {
     kicker: "TECHPAL IA",
     title: "L'IA en production, pas en vitrine.",
@@ -680,6 +778,11 @@ const fr = {
       title: "Développement logiciel sur mesure au Maroc | TECHPAL",
       description:
         "Applications web, mobiles et métier sur mesure : cadrage, développement et maintenance à Casablanca. Cadrage gratuit, devis ferme.",
+    },
+    iaentreprise: {
+      title: "Intégration IA en entreprise au Maroc | TECHPAL",
+      description:
+        "Intégrez l'IA à vos processus et vos données métier : assistants documentaires, automatisation et aide à la décision à Casablanca.",
     },
     projets: {
       title: "Réalisations : 7 familles de solutions en production | TECHPAL",
