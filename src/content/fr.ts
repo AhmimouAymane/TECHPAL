@@ -90,6 +90,7 @@ const fr = {
         title: "Réseaux & matériel",
         desc: "Fourniture, installation et maintenance de votre matériel et réseau.",
         points: ["Fourniture de matériel", "Câblage & réseau", "Maintenance"],
+        href: "/infrastructure-reseau-materiel",
       },
       {
         n: "005",
@@ -620,6 +621,104 @@ const fr = {
       button: "Cadrer mon projet Odoo",
     },
   },
+  infrastructure: {
+    kicker: "Infrastructure & matériel",
+    title: "Infrastructure réseau et matériel informatique.",
+    intro:
+      "Réseau d'entreprise, câblage, postes de travail et serveurs, fournis et installés puis maintenus : un dispositif dimensionné pour durer, documenté et supervisé.",
+    heroWords: ["Câblage & commutation", "Wi-Fi d'entreprise", "Pare-feux & segmentation", "Postes de travail & serveurs"],
+    heroHint: "Fourni, déployé, maintenu",
+    anchor: "Les livrables",
+    deliverablesKicker: "Les livrables",
+    deliverablesTitle: "Un réseau fiable, un parc équipé, un dispositif maintenu.",
+    deliverables: [
+      {
+        title: "Réseau d'entreprise",
+        text: "Commutation, Wi-Fi d'entreprise, pare-feux et segmentation : un réseau fiable et segmenté, dimensionné pour vos usages.",
+      },
+      {
+        title: "Matériel & parc IT",
+        text: "Postes de travail, écrans, imprimantes, serveurs et stockage : du matériel de marques partenaires, préparé puis déployé, avec le catalogue complet sur la page Produits.",
+      },
+      {
+        title: "Maintien en condition opérationnelle",
+        text: "Maintenance corrective et préventive, remplacement des équipements et supervision du dispositif sous contrat d'infogérance.",
+      },
+    ],
+    processKicker: "La méthode",
+    processTitle: "Cinq étapes, de l'état des lieux au parc maintenu.",
+    process: [
+      { title: "État des lieux", text: "Le parc existant, la topologie du réseau et vos contraintes relevés : ce qui tient, ce qui limite, ce qui coûte." },
+      { title: "Conception d'infrastructure", text: "Schéma et sélection du matériel, dimensionnés pour vos volumes et pour la croissance attendue." },
+      { title: "Fourniture & déploiement", text: "Installation des équipements, configuration et mise en service progressive, sans couper vos usages plus longtemps que nécessaire." },
+      { title: "Reprise & documentation", text: "Inventaire du parc vérifié, schéma du réseau et consignes d'administration remis." },
+      { title: "Maintenance & supervision", text: "Corrections, renouvellement programmé, et supervision 24/7 si vous choisissez un contrat d'infogérance." },
+    ],
+    stats: [
+      { value: "2022", label: "Fondée à Casablanca" },
+      { value: "< 24 h", label: "Devis ferme sous 24 h ouvrées" },
+      { value: "24/7", label: "Supervision des contrats d'infogérance" },
+      { value: "FR·EN·AR", label: "Une équipe trilingue" },
+    ],
+    includedKicker: "Dans la mission",
+    includedTitle: "Un parc documenté, un réseau segmenté, un seul interlocuteur.",
+    included: [
+      {
+        title: "Inventaire du parc",
+        text: "Postes, licences, équipements réseau et durées de garantie suivis dans un inventaire à jour.",
+      },
+      {
+        title: "Réseau segmenté",
+        text: "Règles de segmentation écrites dès la conception, pour que chaque usage reste isolé : visiteurs, production, direction.",
+      },
+      {
+        title: "Interlocuteur unique",
+        text: "De la fourniture à la maintenance, une seule équipe responsable du dispositif : le service ne fait pas de ping-pong.",
+      },
+      {
+        title: "Documentation remise",
+        text: "Schéma du réseau et procédures d'administration livrés avec le déploiement : votre parc reste compréhensible, pas une boîte noire.",
+      },
+    ],
+    crossKicker: "Complétez votre dispositif",
+    crossTitle: "Une page par besoin.",
+    crossIntro: "L'infrastructure s'articule avec vos autres chantiers :",
+    cross: [
+      { title: "Infogérance & supervision", desc: "Vos infrastructures suivies 24/7 sous contrat d'infogérance.", href: "/infogerance-informatique-casablanca" },
+      { title: "Catalogue matériel", desc: "Ordinateurs, impression, réseau et serveurs : la gamme complète.", href: "/produits" },
+      { title: "Staffing IT", desc: "Un technicien réseau en renfort dans vos équipes pendant les chantiers.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Questions fréquentes.",
+    faq: [
+      {
+        q: "Que recouvre l'infrastructure réseau et matériel informatique d'une entreprise ?",
+        a: "Le réseau d'un côté : câblage, commutateurs, Wi-Fi, pare-feux. Le parc de l'autre : postes de travail, écrans, imprimantes, serveurs. Nous prenons ces éléments de bout en bout, de la fourniture à la maintenance, avec un interlocuteur unique.",
+      },
+      {
+        q: "Fournissez-vous le matériel informatique ?",
+        a: "Oui : postes de travail, impression, réseau et serveurs, à partir d'un catalogue de marques partenaires détaillé sur la page Produits. Chaque équipement est préparé puis déployé dans votre environnement.",
+      },
+      {
+        q: "Faites-vous le câblage et le déploiement réseau ?",
+        a: "Oui : le déploiement part d'un état des lieux (plan de câblage, localisation de la baie, points d'accès Wi-Fi). Le périmètre exact des travaux est écrit au devis, sans coût caché.",
+      },
+      {
+        q: "La supervision 24/7 couvre-t-elle mon nouveau réseau ?",
+        a: "Elle s'applique aux équipements intégrés au dispositif lorsqu'un contrat d'infogérance est souscrit. Sinon, la maintenance suit le cadre retenu au contrat, avec les mêmes engagements écrits.",
+      },
+      {
+        q: "Faut-il remplacer tout le parc d'un coup ?",
+        a: "Non. L'état des lieux distingue ce qui peut être conservé de ce qui limite : le renouvellement se fait par étapes, selon une feuille de route établie avec vous.",
+      },
+    ],
+    cta: {
+      kicker: "Infrastructure & matériel",
+      title: "Un parc à équiper ou un réseau à déployer ?",
+      text: "Décrivez votre situation actuelle : état des lieux et devis ferme sous 24 h ouvrées.",
+      button: "Cadrer mon infrastructure",
+    },
+  },
   ia: {
     kicker: "TECHPAL IA",
     title: "L'IA en production, pas en vitrine.",
@@ -887,6 +986,11 @@ const fr = {
       title: "Intégration Odoo au Maroc | TECHPAL",
       description:
         "Intégration Odoo à Casablanca et au Maroc : paramétrage des modules, développements spécifiques, migration de données et formation des équipes. Devis ferme.",
+    },
+    infrastructure: {
+      title: "Infrastructure réseau & matériel informatique au Maroc | TECHPAL",
+      description:
+        "Réseau d'entreprise, câblage, postes de travail et serveurs : fourniture, installation et maintenance à Casablanca. Audit gratuit, devis ferme.",
     },
     projets: {
       title: "Réalisations : 7 familles de solutions en production | TECHPAL",

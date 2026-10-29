@@ -89,6 +89,7 @@ const en: Dict = {
         title: "Network & hardware",
         desc: "Supply, installation and maintenance of your hardware and network.",
         points: ["Hardware supply", "Cabling & network", "Maintenance"],
+        href: "/infrastructure-reseau-materiel",
       },
       {
         n: "005",
@@ -619,6 +620,104 @@ const en: Dict = {
       button: "Scope my Odoo project",
     },
   },
+  infrastructure: {
+    kicker: "Infrastructure & hardware",
+    title: "Network infrastructure and IT hardware.",
+    intro:
+      "Enterprise network, cabling, workstations and servers, supplied and installed then maintained: a setup sized to last, documented and monitored.",
+    heroWords: ["Cabling & switching", "Enterprise Wi-Fi", "Firewalls & segmentation", "Workstations & servers"],
+    heroHint: "Supplied, deployed, maintained",
+    anchor: "The deliverables",
+    deliverablesKicker: "The deliverables",
+    deliverablesTitle: "A reliable network, an equipped fleet, a maintained setup.",
+    deliverables: [
+      {
+        title: "Enterprise network",
+        text: "Switching, enterprise Wi-Fi, firewalls and segmentation: a reliable, segmented network, sized for your usage.",
+      },
+      {
+        title: "Hardware & IT fleet",
+        text: "Workstations, screens, printers, servers and storage: hardware from partner brands, prepared then deployed, with the full catalogue on the Hardware page.",
+      },
+      {
+        title: "Keeping it operational",
+        text: "Corrective and preventive maintenance, equipment replacement and monitoring of the setup under a managed IT contract.",
+      },
+    ],
+    processKicker: "The method",
+    processTitle: "Five steps, from site survey to a maintained fleet.",
+    process: [
+      { title: "Site survey", text: "Your existing fleet, network topology and constraints recorded: what holds, what limits, what costs." },
+      { title: "Infrastructure design", text: "Diagram and hardware selection, sized for your volumes and expected growth." },
+      { title: "Supply & deployment", text: "Equipment installation, configuration and progressive commissioning, without cutting your usage longer than necessary." },
+      { title: "Handover & documentation", text: "Verified fleet inventory, network diagram and administration guides delivered." },
+      { title: "Maintenance & monitoring", text: "Fixes, planned renewal, and 24/7 monitoring if you choose a managed IT contract." },
+    ],
+    stats: [
+      { value: "2022", label: "Founded in Casablanca" },
+      { value: "< 24 h", label: "Firm quote within 24 business hours" },
+      { value: "24/7", label: "Monitoring of managed IT contracts" },
+      { value: "FR·EN·AR", label: "A trilingual team" },
+    ],
+    includedKicker: "Inside the mission",
+    includedTitle: "A documented fleet, a segmented network, one single contact.",
+    included: [
+      {
+        title: "Fleet inventory",
+        text: "Workstations, licences, network equipment and warranty periods tracked in an up-to-date inventory.",
+      },
+      {
+        title: "Segmented network",
+        text: "Segmentation rules written at design time, so every use stays isolated: guests, production, management.",
+      },
+      {
+        title: "One single contact",
+        text: "From supply to maintenance, one single team answers for the setup: no ping-pong between providers.",
+      },
+      {
+        title: "Documentation delivered",
+        text: "Network diagram and administration procedures handed over with the deployment: your fleet stays understandable, not a black box.",
+      },
+    ],
+    crossKicker: "Complete your setup",
+    crossTitle: "One page per need.",
+    crossIntro: "Infrastructure works hand in hand with:",
+    cross: [
+      { title: "Managed IT & monitoring", desc: "Your infrastructures monitored 24/7 under a managed IT contract.", href: "/infogerance-informatique-casablanca" },
+      { title: "Hardware catalogue", desc: "Computers, printing, network and servers: the full range.", href: "/produits" },
+      { title: "IT staffing", desc: "A network technician to reinforce your teams during the projects.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Frequently asked questions.",
+    faq: [
+      {
+        q: "What does a company's network infrastructure and IT hardware cover?",
+        a: "The network on one side: cabling, switches, Wi-Fi, firewalls. The fleet on the other: workstations, screens, printers, servers. We handle these end to end, from supply to maintenance, with one single contact.",
+      },
+      {
+        q: "Do you supply IT hardware?",
+        a: "Yes: workstations, printing, network and servers, from a catalogue of partner brands detailed on the Hardware page. Each piece of equipment is prepared then deployed in your environment.",
+      },
+      {
+        q: "Do you handle cabling and network deployment?",
+        a: "Yes: deployment starts from a site survey (cabling plan, rack location, Wi-Fi access points). The exact scope of work is written in the quote, with no hidden cost.",
+      },
+      {
+        q: "Does 24/7 monitoring cover my new network?",
+        a: "It applies to the equipment integrated into the setup when a managed IT contract is signed. Otherwise, maintenance follows the framework agreed in the contract, with the same written commitments.",
+      },
+      {
+        q: "Do we have to replace the whole fleet at once?",
+        a: "No. The site survey separates what can be kept from what limits: renewal happens step by step, following a roadmap drawn up with you.",
+      },
+    ],
+    cta: {
+      kicker: "Infrastructure & hardware",
+      title: "A fleet to equip or a network to deploy?",
+      text: "Describe your current situation: site survey and firm quote within one business day.",
+      button: "Scope my infrastructure",
+    },
+  },
   ia: {
     kicker: "TECHPAL AI",
     title: "AI in production, not on display.",
@@ -887,6 +986,11 @@ const en: Dict = {
       title: "Odoo Integration in Morocco | TECHPAL",
       description:
         "Odoo integration in Casablanca and Morocco: module configuration, custom development, data migration, and team training. Firm quote.",
+    },
+    infrastructure: {
+      title: "Network Infrastructure & IT Hardware in Morocco | TECHPAL",
+      description:
+        "Enterprise network, cabling, workstations, and servers: supply, installation, and maintenance in Casablanca. Free survey, firm quote.",
     },
     projets: {
       title: "Work: 7 Solution Families in Production | TECHPAL",

@@ -21,6 +21,7 @@
 - Custom software development: https://www.techpalservices.com/en/developpement-logiciel-sur-mesure
 - Odoo integration: https://www.techpalservices.com/en/integration-odoo-maroc
 - Enterprise AI integration: https://www.techpalservices.com/en/integration-ia-entreprise
+- Network infrastructure & IT hardware: https://www.techpalservices.com/en/infrastructure-reseau-materiel
 - Managed IT services: https://www.techpalservices.com/en/infogerance-informatique-casablanca
 - TECHPAL AI: https://www.techpalservices.com/en/ia
 - Work (7 solution families): https://www.techpalservices.com/en/projets

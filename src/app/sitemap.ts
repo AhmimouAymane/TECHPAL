@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "developpement-logiciel-sur-mesure",
     "integration-odoo-maroc",
     "integration-ia-entreprise",
+    "infrastructure-reseau-materiel",
     "infogerance-informatique-casablanca",
     "ia",
     "staffing",
