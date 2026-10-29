@@ -62,7 +62,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
         )}
       >
         <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-6 md:h-[72px] md:px-10">
-          <Link href={`/${locale}`} aria-label="TECHPAL" className="relative z-10 flex items-center">
+          <Link href={`/${locale}`} aria-label="TECHPAL" className="relative z-10 flex shrink-0 items-center">
             <Image
               src="/logo-techpal.webp"
               alt="TECHPAL"
@@ -73,7 +73,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             />
           </Link>
 
-          <nav aria-label="Navigation" className="hidden items-center gap-8 lg:flex">
+          <nav aria-label="Navigation" className="hidden items-center gap-6 whitespace-nowrap xl:flex xl:gap-7">
             {links.map((l) => (
               <Link
                 key={l.href}
@@ -95,7 +95,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden shrink-0 items-center gap-3 xl:flex xl:gap-4">
             <div
               className={cn(
                 "flex items-center overflow-hidden rounded-full border",
@@ -135,7 +135,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             aria-expanded={open}
             aria-label={open ? nav.close : nav.menu}
             className={cn(
-              "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border lg:hidden",
+              "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border xl:hidden",
               onDark ? "border-paper/30 bg-transparent" : "border-line bg-paper/60"
             )}
           >
@@ -167,7 +167,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[75] flex flex-col bg-ink text-paper lg:hidden"
+            className="fixed inset-0 z-[75] flex flex-col bg-ink text-paper xl:hidden"
           >
             <div className="flex-1 overflow-y-auto px-6 pb-10 pt-28">
               <nav aria-label={nav.menu} className="flex flex-col">

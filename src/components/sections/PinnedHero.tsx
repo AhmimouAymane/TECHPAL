@@ -155,7 +155,7 @@ export function PinnedHero({ locale, dict }: { locale: Locale; dict: Dict }) {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_45%,rgba(3,17,138,0.16),transparent_70%)]"
         />
 
-        <Container className="relative flex flex-1 flex-col justify-center">
+        <Container className="relative flex flex-1 flex-col justify-center pt-24 md:pt-28">
           <div className="relative h-[62vh] md:h-[58vh]">
             <HeroHeart progress={scrollYProgress} />
             {scenes.map((s, i) => (
