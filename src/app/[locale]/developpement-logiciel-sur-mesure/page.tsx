@@ -176,7 +176,7 @@ export default async function DeveloppementPage({ params }: { params: Promise<{ 
               <p className="mt-5 max-w-[52ch] text-muted">{s.crossIntro}</p>
             </div>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {s.cross.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.06}>
                 <Link

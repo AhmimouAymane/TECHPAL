@@ -291,6 +291,7 @@ const en: Dict = {
     crossTitle: "One page per need.",
     crossIntro: "Custom development works hand in hand with:",
     cross: [
+      { title: "Odoo integration", desc: "Sales, inventory and accounting on a modular ERP wrapped around your product.", href: "/integration-odoo-maroc" },
       { title: "AI integration", desc: "Add assistants and automation to your product.", href: "/ia" },
       { title: "Managed IT & maintenance", desc: "Entrust us with monitoring and maintenance of the delivered product.", href: "/infogerance-informatique-casablanca" },
       { title: "IT staffing", desc: "Reinforce your in-house teams instead of outsourcing.", href: "/staffing" },
@@ -518,6 +519,104 @@ const en: Dict = {
       title: "A fleet to stabilize?",
       text: "Describe your environment: free audit and firm quote within one business day.",
       button: "Request an IT audit",
+    },
+  },
+  odoo: {
+    kicker: "Odoo integration",
+    title: "Odoo integration for your business.",
+    intro:
+      "A modular ERP to run sales, purchasing, inventory, accounting and HR on a single system: configuration around your processes, custom development when standard modules are not enough.",
+    heroWords: ["Module configuration", "Custom module development", "Data migration", "Team training"],
+    heroHint: "An ERP that follows your processes",
+    anchor: "The deliverables",
+    deliverablesKicker: "The deliverables",
+    deliverablesTitle: "From the standard backbone to custom development.",
+    deliverables: [
+      {
+        title: "Deployment & configuration",
+        text: "Module selection (CRM, sales, purchasing, inventory, accounting, HR) and configuration around your real processes, not a generic template.",
+      },
+      {
+        title: "Custom development",
+        text: "When the standard does not cover your need: modules built on the Odoo backbone, integrated with the existing interface.",
+      },
+      {
+        title: "Migration, training & integrations",
+        text: "Migration of your data, connection to existing tools through their APIs, and training for teams on their day-to-day use.",
+      },
+    ],
+    processKicker: "The method",
+    processTitle: "Five steps, from scoping to support.",
+    process: [
+      { title: "Analysis & scoping", text: "Your processes written as they actually run, edition and modules chosen for your case." },
+      { title: "Configuration", text: "Selected modules configured and adjusted through workshops with your teams." },
+      { title: "Custom development", text: "Needs not covered by the standard are developed and tested in your environment." },
+      { title: "Migration & training", text: "Existing data migrated and verified in the tool, users trained by role." },
+      { title: "Go-live & support", text: "Supported go-live, then fixes, evolutions and monitoring under the chosen contract." },
+    ],
+    stats: [
+      { value: "4/7", label: "Solution families delivered on the Odoo backbone" },
+      { value: "2022", label: "Founded in Casablanca" },
+      { value: "< 24 h", label: "Firm quote within 24 business hours" },
+      { value: "FR·EN·AR", label: "A trilingual team" },
+    ],
+    includedKicker: "Inside the mission",
+    includedTitle: "Written scope, migrated data, trained teams.",
+    included: [
+      {
+        title: "Documented module selection",
+        text: "The scope is written before configuration starts: modules retained, standard limits, planned developments.",
+      },
+      {
+        title: "Tested migration",
+        text: "Your existing data is migrated and verified inside the tool before go-live, not after.",
+      },
+      {
+        title: "User training",
+        text: "Each team learns its own journey in the tool: sales, inventory, accounting, management.",
+      },
+      {
+        title: "Code & documentation",
+        text: "Custom developments are delivered with their source code and documentation.",
+      },
+    ],
+    crossKicker: "Complete your setup",
+    crossTitle: "One page per need.",
+    crossIntro: "Odoo integration works hand in hand with:",
+    cross: [
+      { title: "Custom development", desc: "When a need goes beyond the ERP: a dedicated application around Odoo.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Managed IT & maintenance", desc: "Monitoring and maintenance of the environment after go-live.", href: "/infogerance-informatique-casablanca" },
+      { title: "IT staffing", desc: "Odoo profiles to reinforce your in-house teams.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Frequently asked questions.",
+    faq: [
+      {
+        q: "Why choose Odoo as the ERP for a company in Morocco?",
+        a: "Odoo is a modular ERP: you activate the modules you need (CRM, sales, inventory, accounting, HR) and the others stay out of your way. The open-source backbone also allows custom development, so you avoid switching systems at the first non-standard need.",
+      },
+      {
+        q: "Which Odoo edition should I choose, Community or Enterprise?",
+        a: "Community is the open-source version; Enterprise adds modules and services under an editor subscription. The choice is made during scoping: we first list the functions your organization actually needs, then the edition follows.",
+      },
+      {
+        q: "How much does an Odoo integration cost?",
+        a: "Cost depends on the scope: activated modules, custom developments, volume of data to migrate, and training. After scoping, we issue a firm quote with no hidden cost.",
+      },
+      {
+        q: "Can Odoo be connected to our other tools?",
+        a: "Yes: Odoo exposes APIs to connect it to your e-commerce, messaging or business tools. The exact connection perimeter is written during scoping; nothing is open by default.",
+      },
+      {
+        q: "What happens after go-live?",
+        a: "Support starts at go-live: fixes and evolutions under the chosen contract, and 24/7 monitoring if you take a managed IT contract. Custom developments stay documented so you never depend on anyone by accident.",
+      },
+    ],
+    cta: {
+      kicker: "Odoo integration",
+      title: "An ERP to deploy?",
+      text: "Describe your processes and current tools: scoping and firm quote within one business day.",
+      button: "Scope my Odoo project",
     },
   },
   ia: {
@@ -783,6 +882,11 @@ const en: Dict = {
       title: "Enterprise AI Integration in Morocco | TECHPAL",
       description:
         "Bring AI to your processes and business data: document assistants, automation, and decision support in Casablanca.",
+    },
+    odoo: {
+      title: "Odoo Integration in Morocco | TECHPAL",
+      description:
+        "Odoo integration in Casablanca and Morocco: module configuration, custom development, data migration, and team training. Firm quote.",
     },
     projets: {
       title: "Work: 7 Solution Families in Production | TECHPAL",

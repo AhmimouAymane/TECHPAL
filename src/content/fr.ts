@@ -389,6 +389,7 @@ const fr = {
     crossTitle: "Une page par besoin.",
     crossIntro: "Le développement sur mesure s'articule avec vos autres chantiers :",
     cross: [
+      { title: "Intégration Odoo", desc: "Vos ventes, stocks et comptabilité sur un ERP modulaire autour de votre produit.", href: "/integration-odoo-maroc" },
       { title: "Intégration IA", desc: "Ajoutez des assistants et de l'automatisation à votre produit.", href: "/ia" },
       { title: "Infogérance & maintenance", desc: "Confiez la surveillance et la maintenance du produit livré.", href: "/infogerance-informatique-casablanca" },
       { title: "Staffing IT", desc: "Renforcez vos équipes internes plutôt que de sous-traiter.", href: "/staffing" },
@@ -519,6 +520,104 @@ const fr = {
       title: "Un cas d'usage en tête ?",
       text: "Décrivez vos données et votre objectif : faisabilité et devis ferme sous 24 h ouvrées.",
       button: "Cadrer mon cas d'usage",
+    },
+  },
+  odoo: {
+    kicker: "Intégration Odoo",
+    title: "Intégration Odoo pour votre entreprise.",
+    intro:
+      "ERP modulaire pour piloter ventes, achats, stock, comptabilité et RH sur un seul système : paramétrage sur vos processus, développements spécifiques quand les modules standard ne suffisent pas.",
+    heroWords: ["Paramétrage des modules", "Développement de modules", "Migration de données", "Formation des équipes"],
+    heroHint: "Un ERP qui suit vos processus",
+    anchor: "Les livrables",
+    deliverablesKicker: "Les livrables",
+    deliverablesTitle: "Du socle standard aux développements sur mesure.",
+    deliverables: [
+      {
+        title: "Déploiement & configuration",
+        text: "Choix des modules (CRM, ventes, achats, inventaire, comptabilité, RH) et paramétrage sur vos processus réels, pas sur un modèle générique.",
+      },
+      {
+        title: "Développements spécifiques",
+        text: "Quand le standard ne couvre pas votre besoin : modules développés sur le socle Odoo, intégrés à l'interface existante.",
+      },
+      {
+        title: "Migration, formation & intégrations",
+        text: "Reprise de vos données, connexion aux outils existants via leurs APIs et formation des équipes à leur quotidien dans l'outil.",
+      },
+    ],
+    processKicker: "La méthode",
+    processTitle: "Cinq étapes, du cadrage au support.",
+    process: [
+      { title: "Analyse & cadrage", text: "Vos processus écrits tels qu'ils fonctionnent, choix des modules et de l'édition adaptés à votre cas." },
+      { title: "Paramétrage", text: "Configuration des modules sélectionnés, ajustée lors d'ateliers avec vos équipes." },
+      { title: "Développements spécifiques", text: "Les besoins non couverts par le standard sont développés et testés sur votre environnement." },
+      { title: "Migration & formation", text: "Reprise des données existantes, vérification dans l'outil, formation des utilisateurs par rôle." },
+      { title: "Mise en production & support", text: "Go-live accompagné, puis corrections, évolutions et supervision selon le contrat retenu." },
+    ],
+    stats: [
+      { value: "4/7", label: "Familles de solutions livrées sur le socle Odoo" },
+      { value: "2022", label: "Fondée à Casablanca" },
+      { value: "< 24 h", label: "Devis ferme sous 24 h ouvrées" },
+      { value: "FR·EN·AR", label: "Une équipe trilingue" },
+    ],
+    includedKicker: "Dans la mission",
+    includedTitle: "Périmètre écrit, données reprises, équipes formées.",
+    included: [
+      {
+        title: "Choix des modules documenté",
+        text: "Le périmètre est écrit avant le paramétrage : modules retenus, limites du standard, développements prévus.",
+      },
+      {
+        title: "Migration testée",
+        text: "Vos données existantes sont reprises et vérifiées dans l'outil avant la mise en production, pas après.",
+      },
+      {
+        title: "Formation des utilisateurs",
+        text: "Chaque équipe apprend son parcours dans l'outil : ventes, stock, comptabilité, direction.",
+      },
+      {
+        title: "Code & documentation",
+        text: "Les développements spécifiques sont livrés avec leur code source et leur documentation.",
+      },
+    ],
+    crossKicker: "Complétez votre dispositif",
+    crossTitle: "Une page par besoin.",
+    crossIntro: "L'intégration Odoo s'articule avec vos autres chantiers :",
+    cross: [
+      { title: "Développement sur mesure", desc: "Quand un besoin dépasse le cadre de l'ERP : application dédiée autour d'Odoo.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Infogérance & maintenance", desc: "Supervision et maintenance de l'environnement après la mise en production.", href: "/infogerance-informatique-casablanca" },
+      { title: "Staffing IT", desc: "Des profils Odoo pour renforcer vos équipes internes.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Questions fréquentes.",
+    faq: [
+      {
+        q: "Pourquoi choisir Odoo comme ERP pour une entreprise au Maroc ?",
+        a: "Odoo est un ERP modulaire : vous activez les modules dont vous avez besoin (CRM, ventes, inventaire, comptabilité, RH) et les autres restent hors de votre portée. Le socle open source permet aussi des développements spécifiques, ce qui évite de changer de système au premier besoin non standard.",
+      },
+      {
+        q: "Quelle édition d'Odoo choisir, Community ou Enterprise ?",
+        a: "Community est la version open source ; Enterprise ajoute des modules et services contre un abonnement éditeur. Le choix se fait au cadrage : nous listons d'abord les fonctions dont votre organisation a réellement besoin, puis l'édition s'en déduit.",
+      },
+      {
+        q: "Combien coûte une intégration Odoo ?",
+        a: "Le coût dépend du périmètre : modules activés, développements spécifiques, volume de données à migrer et formation. Après le cadrage, nous établissons un devis ferme, sans coût caché.",
+      },
+      {
+        q: "Peut-on connecter Odoo à nos autres outils ?",
+        a: "Oui : Odoo expose des APIs qui permettent de le relier à votre e-commerce, votre messagerie ou vos outils métier. Le périmètre exact des connexions est écrit au cadrage, rien n'est ouvert par défaut.",
+      },
+      {
+        q: "Que se passe-t-il après la mise en production ?",
+        a: "Le support démarre au go-live : corrections et évolutions selon le contrat retenu, et supervision 24/7 si vous choisissez un contrat d'infogérance. Les développements spécifiques restent documentés pour ne dépendre de personne par accident.",
+      },
+    ],
+    cta: {
+      kicker: "Intégration Odoo",
+      title: "Un ERP à déployer ?",
+      text: "Décrivez vos processus et vos outils actuels : cadrage et devis ferme sous 24 h ouvrées.",
+      button: "Cadrer mon projet Odoo",
     },
   },
   ia: {
@@ -783,6 +882,11 @@ const fr = {
       title: "Intégration IA en entreprise au Maroc | TECHPAL",
       description:
         "Intégrez l'IA à vos processus et vos données métier : assistants documentaires, automatisation et aide à la décision à Casablanca.",
+    },
+    odoo: {
+      title: "Intégration Odoo au Maroc | TECHPAL",
+      description:
+        "Intégration Odoo à Casablanca et au Maroc : paramétrage des modules, développements spécifiques, migration de données et formation des équipes. Devis ferme.",
     },
     projets: {
       title: "Réalisations : 7 familles de solutions en production | TECHPAL",

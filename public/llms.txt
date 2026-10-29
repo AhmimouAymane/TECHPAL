@@ -19,6 +19,7 @@
 - Home: https://www.techpalservices.com/en
 - Expertise: https://www.techpalservices.com/en/expertise
 - Custom software development: https://www.techpalservices.com/en/developpement-logiciel-sur-mesure
+- Odoo integration: https://www.techpalservices.com/en/integration-odoo-maroc
 - Enterprise AI integration: https://www.techpalservices.com/en/integration-ia-entreprise
 - Managed IT services: https://www.techpalservices.com/en/infogerance-informatique-casablanca
 - TECHPAL AI: https://www.techpalservices.com/en/ia
