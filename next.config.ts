@@ -6,17 +6,22 @@ const nextConfig: NextConfig = {
   // Masque le badge Next.js en bas d'écran en mode dev
   devIndicators: false,
   async redirects() {
+    // Temporaire (direction, oct. 2026) : version française en révision,
+    // tout /fr renvoie vers son équivalent /en. Pour réactiver le FR :
+    // remettre /fr ici et hideFr = false dans src/lib/i18n.ts.
     return [
-      { source: "/", destination: "/fr", permanent: true },
-      { source: "/expertise", destination: "/fr/expertise", permanent: true },
-      { source: "/ia", destination: "/fr/ia", permanent: true },
-      { source: "/produits", destination: "/fr/produits", permanent: true },
-      { source: "/staffing", destination: "/fr/staffing", permanent: true },
-      { source: "/projets", destination: "/fr/projets", permanent: true },
-      { source: "/a-propos", destination: "/fr/a-propos", permanent: true },
-      { source: "/contact", destination: "/fr/contact", permanent: true },
-      { source: "/mentions-legales", destination: "/fr/mentions-legales", permanent: true },
-      { source: "/confidentialite", destination: "/fr/confidentialite", permanent: true },
+      { source: "/", destination: "/en", permanent: true },
+      { source: "/fr", destination: "/en", permanent: true },
+      { source: "/fr/:path*", destination: "/en/:path*", permanent: true },
+      { source: "/expertise", destination: "/en/expertise", permanent: true },
+      { source: "/ia", destination: "/en/ia", permanent: true },
+      { source: "/produits", destination: "/en/produits", permanent: true },
+      { source: "/staffing", destination: "/en/staffing", permanent: true },
+      { source: "/projets", destination: "/en/projets", permanent: true },
+      { source: "/a-propos", destination: "/en/a-propos", permanent: true },
+      { source: "/contact", destination: "/en/contact", permanent: true },
+      { source: "/mentions-legales", destination: "/en/mentions-legales", permanent: true },
+      { source: "/confidentialite", destination: "/en/confidentialite", permanent: true },
     ];
   },
 };

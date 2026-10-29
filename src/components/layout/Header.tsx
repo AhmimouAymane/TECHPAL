@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Lenis from "lenis";
 import type { Dict } from "@/content/fr";
 import { routes } from "@/content/site";
-import { type Locale, locales, withLocale } from "@/lib/i18n";
+import { type Locale, locales, publicLocales, withLocale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { GradientButton } from "../motion/GradientButton";
 
@@ -114,7 +114,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
               role="group"
               aria-label={nav.language}
             >
-              {locales.map((l) => (
+              {publicLocales.map((l) => (
                 <Link
                   key={l}
                   href={withLocale(pathname, l)}
@@ -202,7 +202,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
               <div className="mt-10 flex items-center gap-4">
                 <span className="label text-paper/50">{nav.language}</span>
                 <div className="flex items-center overflow-hidden rounded-full border border-paper/25">
-                  {locales.map((l) => (
+                  {publicLocales.map((l) => (
                     <Link
                       key={l}
                       href={withLocale(pathname, l)}

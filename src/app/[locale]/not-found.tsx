@@ -11,11 +11,11 @@ export default function LocaleNotFound() {
           La page demandée n&apos;existe pas ou a été déplacée. / The requested page does not exist or has moved.
         </p>
         <div className="mt-10 flex gap-4">
-          <Link href="/fr" className="stroke-btn rounded-[var(--radius-pill)] bg-ink px-6 py-3 text-sm text-paper">
-            Accueil
-          </Link>
-          <Link href="/en" className="link-line self-center text-sm text-muted">
+          <Link href="/en" className="stroke-btn rounded-[var(--radius-pill)] bg-ink px-6 py-3 text-sm text-paper">
             Home
+          </Link>
+          <Link href="/fr" className="link-line self-center text-sm text-muted">
+            Accueil
           </Link>
         </div>
       </Container>

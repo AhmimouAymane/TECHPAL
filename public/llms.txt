@@ -1,53 +1,52 @@
 # TECHPAL
 
-> Entreprise de services IT et d'ingénierie digitale basée à Casablanca, au Maroc. TECHPAL accompagne les organisations sur l'infogérance et le support informatique, le développement d'applications métier, l'intégration de solutions d'intelligence artificielle, les infrastructures réseau et la fourniture de matériel informatique.
+> IT services and digital engineering company based in Casablanca, Morocco. TECHPAL supports organizations with managed IT services and IT support, business application development, artificial intelligence integration, network infrastructure and computer hardware supply.
 
-## Identité
+## Identity
 
-- Nom : TECHPAL
-- Site : https://www.techpalservices.com
-- E-mail : contact@techpalservices.com
-- Téléphone : +212 7 10 77 77 20
-- Adresse : Bureau B3, Rue Ettah, Casablanca 20000, Maroc
-- Fondée en : 2022
-- Langues : français, anglais, arabe
-- LinkedIn : https://www.linkedin.com/company/techpal-services
-- Instagram : https://www.instagram.com/techpalservices/
+- Name: TECHPAL
+- Website: https://www.techpalservices.com
+- Email: contact@techpalservices.com
+- Phone: +212 7 10 77 77 20
+- Address: Office B3, Rue Ettah, Casablanca 20000, Morocco
+- Founded: 2022
+- Languages: French, English, Arabic
+- LinkedIn: https://www.linkedin.com/company/techpal-services
+- Instagram: https://www.instagram.com/techpalservices/
 
-## Pages principales
+## Main pages
 
-- Accueil (FR) : https://www.techpalservices.com/fr
-- Accueil (EN) : https://www.techpalservices.com/en
-- Expertise : https://www.techpalservices.com/fr/expertise
-- Infogérance IT : https://www.techpalservices.com/fr/infogerance-informatique-casablanca
-- TECHPAL IA : https://www.techpalservices.com/fr/ia
-- Réalisations (7 familles de solutions) : https://www.techpalservices.com/fr/projets
-- Produits & matériel : https://www.techpalservices.com/fr/produits
-- Staffing IT : https://www.techpalservices.com/fr/staffing
-- À propos : https://www.techpalservices.com/fr/a-propos
-- Contact : https://www.techpalservices.com/fr/contact
+- Home: https://www.techpalservices.com/en
+- Expertise: https://www.techpalservices.com/en/expertise
+- Managed IT services: https://www.techpalservices.com/en/infogerance-informatique-casablanca
+- TECHPAL AI: https://www.techpalservices.com/en/ia
+- Work (7 solution families): https://www.techpalservices.com/en/projets
+- Products & hardware: https://www.techpalservices.com/en/produits
+- IT staffing: https://www.techpalservices.com/en/staffing
+- About: https://www.techpalservices.com/en/a-propos
+- Contact: https://www.techpalservices.com/en/contact
 
-## Expertises
+## Expertise
 
-1. Ingénierie logicielle : applications web et mobiles, plateformes métier, APIs et intégrations.
-2. Intelligence artificielle : assistants sur données internes, automatisation documentaire, aide à la décision.
-3. Cloud & infrastructure : hébergement, déploiement, supervision.
-4. Réseaux & matériel : réseaux d'entreprise, fourniture et maintenance d'équipements.
-5. Support & infogérance : helpdesk, maintenance, supervision (24/7 sur contrats d'infogérance).
-6. Transformation digitale : cadrage, feuille de route, mise en production.
+1. Software engineering: web and mobile applications, business platforms, APIs and integrations.
+2. Artificial intelligence: assistants on internal data, document automation, decision support.
+3. Cloud & infrastructure: hosting, deployment, monitoring.
+4. Networks & hardware: enterprise networks, equipment supply and maintenance.
+5. Support & managed IT: helpdesk, maintenance, monitoring (24/7 on managed service contracts).
+6. Digital transformation: scoping, roadmap, go-live.
 
-## Réalisations (familles de solutions, sans référence client)
+## Work (solution families, no client references)
 
-- Marketplaces & applications mobiles (Flutter, NestJS, PostgreSQL, AWS)
-- E-commerce & gestion intégrée (Odoo)
-- Réservation & rendez-vous en ligne (Flutter, FastAPI)
-- Formation immersive & serious games (Unity, VR, PC)
-- ERP collaboratif & gestion du travail (Odoo)
+- Marketplaces & mobile apps (Flutter, NestJS, PostgreSQL, AWS)
+- E-commerce & integrated management (Odoo)
+- Booking & online appointments (Flutter, FastAPI)
+- Immersive learning & serious games (Unity, VR, PC)
+- Collaborative ERP & work management (Odoo)
 - E-learning & certification (Odoo)
-- SIRH & digitalisation RH (Odoo)
+- HRIS & HR digitalization (Odoo)
 
-## Engagements
+## Commitments
 
-- Réponse sous 24 h ouvrées.
-- Supervision 24/7 dans le cadre des contrats d'infogérance.
-- Horaires du bureau : du lundi au vendredi, 9h-18h.
+- Reply within 24 business hours.
+- 24/7 infrastructure supervision on managed service contracts.
+- Office hours: Monday to Friday, 9am-6pm.

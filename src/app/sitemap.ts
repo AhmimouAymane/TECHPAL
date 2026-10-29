@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
-import { locales } from "@/lib/i18n";
+import { publicLocales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
@@ -18,40 +18,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "confidentialite",
   ];
 
-  const pages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+  const pages: MetadataRoute.Sitemap = publicLocales.flatMap((locale) =>
     paths.map((p) => {
       const clean = p ? `/${p}` : "";
       const legalPage = p === "mentions-legales" || p === "confidentialite";
+      const url = `${site.url}/${locale}${clean}`;
       return {
-        url: `${site.url}/${locale}${clean}`,
+        url,
         lastModified: new Date(),
         changeFrequency: legalPage ? ("yearly" as const) : ("weekly" as const),
         priority: p === "" ? 1.0 : legalPage ? 0.3 : 0.8,
         alternates: {
           languages: {
-            fr: `${site.url}/fr${clean}`,
-            en: `${site.url}/en${clean}`,
-            "x-default": `${site.url}/fr${clean}`,
+            en: url,
+            "x-default": url,
           },
         },
       };
     })
   );
 
-  const cases: MetadataRoute.Sitemap = locales.flatMap((locale) =>
-    projects.map((p) => ({
-      url: `${site.url}/${locale}/projets/${p.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${site.url}/fr/projets/${p.slug}`,
-          en: `${site.url}/en/projets/${p.slug}`,
-          "x-default": `${site.url}/fr/projets/${p.slug}`,
+  const cases: MetadataRoute.Sitemap = publicLocales.flatMap((locale) =>
+    projects.map((p) => {
+      const url = `${site.url}/${locale}/projets/${p.slug}`;
+      return {
+        url,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: {
+          languages: {
+            en: url,
+            "x-default": url,
+          },
         },
-      },
-    }))
+      };
+    })
   );
 
   return [...pages, ...cases];

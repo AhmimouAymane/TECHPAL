@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
-import type { Locale } from "@/lib/i18n";
+import { hideFr, type Locale } from "@/lib/i18n";
 
 export interface PageSeoOptions {
   locale: Locale;
@@ -29,11 +29,10 @@ export function constructMetadata({
     description,
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        fr: frUrl,
-        en: enUrl,
-        "x-default": frUrl,
-      },
+      // FR momentanément redirigé vers EN : seules les URLs EN sont publiées.
+      languages: hideFr
+        ? { en: enUrl, "x-default": enUrl }
+        : { fr: frUrl, en: enUrl, "x-default": frUrl },
     },
     openGraph: {
       title,
