@@ -70,6 +70,7 @@ const fr = {
         title: "Ingénierie logicielle",
         desc: "Applications web & mobiles, plateformes métier, APIs.",
         points: ["Applications web & mobiles", "Plateformes métier", "APIs & intégrations"],
+        href: "/developpement-logiciel-sur-mesure",
       },
       {
         n: "002",
@@ -324,6 +325,104 @@ const fr = {
       button: "Demander un diagnostic",
     },
   },
+  developpement: {
+    kicker: "Développement logiciel",
+    title: "Développement logiciel sur mesure.",
+    intro:
+      "Applications web, mobiles et plateformes métier conçues pour vos opérations : du cadrage à la production, puis l'évolution au rythme de votre activité.",
+    heroWords: ["Applications web", "Apps mobiles", "Plateformes métier", "APIs & intégrations"],
+    heroHint: "Du cadrage à la production",
+    anchor: "Les livrables",
+    deliverablesKicker: "Les livrables",
+    deliverablesTitle: "Du produit client au poste de travail.",
+    deliverables: [
+      {
+        title: "Applications web & mobiles",
+        text: "Sites de lancement, portails clients et applications mobiles natives ou cross-platform, prêts pour la production.",
+      },
+      {
+        title: "Plateformes métier",
+        text: "Les outils qui remplacent vos tableaux : gestion, workflows internes, reporting, digitalisation de processus.",
+      },
+      {
+        title: "APIs & intégrations",
+        text: "Connexion entre vos systèmes existants : ERP, paiement, messagerie, outils tiers. À la demande ou selon une intégration planifiée.",
+      },
+    ],
+    processKicker: "La méthode",
+    processTitle: "Cinq étapes, les mêmes pour chaque mission.",
+    process: [
+      { title: "Cadrage", text: "Vos besoins, conséquences éventuelles et contraintes couchés par écrit : périmètre, usages, priorités." },
+      { title: "Conception", text: "Parcours utilisateurs, architecture et maquettes validées avant la première ligne de code." },
+      { title: "Développement", text: "Livraisons régulières : vous voyez le produit dès les toutes premières versions." },
+      { title: "Intégration", text: "Mise en production, migration des données, formation des utilisateurs." },
+      { title: "Évolution", text: "Corrections, nouvelles fonctions et suivi du produit après le lancement." },
+    ],
+    stats: [
+      { value: "2022", label: "Fondée à Casablanca" },
+      { value: "7", label: "Familles de solutions en production" },
+      { value: "< 24 h", label: "Devis ferme sous 24 h ouvrées" },
+      { value: "FR·EN·AR", label: "Une équipe trilingue" },
+    ],
+    includedKicker: "Dans la mission",
+    includedTitle: "Périmètre écrit, code livré, savoir transmis.",
+    included: [
+      {
+        title: "Cadrage documenté",
+        text: "Le périmètre et les priorités écrits avant de développer : pas de projet flou, pas de surprise en cours de route.",
+      },
+      {
+        title: "Tests & recette",
+        text: "Vérifications avant chaque livraison et recette partagée avec vous à chaque étape clé.",
+      },
+      {
+        title: "Code & documentation",
+        text: "Code source et documentation remis avec le produit, pour que vous ne dépendiez pas de nous par accident.",
+      },
+      {
+        title: "Transfert & maintenance",
+        text: "Formation de vos équipes puis, si vous le souhaitez, maintenance corrective et évolutive décidée ensemble.",
+      },
+    ],
+    crossKicker: "Complétez votre dispositif",
+    crossTitle: "Une page par besoin.",
+    crossIntro: "Le développement sur mesure s'articule avec vos autres chantiers :",
+    cross: [
+      { title: "Intégration IA", desc: "Ajoutez des assistants et de l'automatisation à votre produit.", href: "/ia" },
+      { title: "Infogérance & maintenance", desc: "Confiez la surveillance et la maintenance du produit livré.", href: "/infogerance-informatique-casablanca" },
+      { title: "Staffing IT", desc: "Renforcez vos équipes internes plutôt que de sous-traiter.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Questions fréquentes.",
+    faq: [
+      {
+        q: "Qu'est-ce qu'un développement logiciel sur mesure ?",
+        a: "Une application conçue pour vos processus réels au lieu d'un produit standard que l'on force à s'adapter : le périmètre, les parcours et les intégrations sont définis avec vous. Le logiciel suit votre organisation, pas l'inverse.",
+      },
+      {
+        q: "Combien coûte une application sur mesure au Maroc ?",
+        a: "Le coût dépend du périmètre : écrans, parcours, intégrations et maintenance prévue. Après un bref cadrage, nous établissons un devis ferme, sans coût caché. Les devis sont valables et le périmètre reste écrit.",
+      },
+      {
+        q: "Combien de temps pour une première version en production ?",
+        a: "Le calendrier dépend du périmètre validé au cadrage. Nous découpons la mission en versions : vous voyez un produit utilisable le plus tôt possible, puis des mises à jour régulières.",
+      },
+      {
+        q: "Qui est propriétaire du code source ?",
+        a: "Ce que vous payez vous appartient : le livrable inclut le code source, la documentation et le transfert de connaissances. Les modalités exactes sont écrites dans le contrat de prestation.",
+      },
+      {
+        q: "Que se passe-t-il après la mise en production ?",
+        a: "Le produit reste vivant : corrections, évolutions et suivi, via un forfait d'évolution ou un contrat d'infogérance. Notre méthode prévoit cette étape dès le cadrage, pas après coup.",
+      },
+    ],
+    cta: {
+      kicker: "Développement",
+      title: "Un produit à construire ?",
+      text: "Décrivez votre projet : cadrage et devis ferme sous 24 h ouvrées.",
+      button: "Démarrer un projet",
+    },
+  },
   ia: {
     kicker: "TECHPAL IA",
     title: "L'IA en production, pas en vitrine.",
@@ -576,6 +675,11 @@ const fr = {
       title: "Infogérance informatique à Casablanca | TECHPAL",
       description:
         "Infogérance et support IT pour entreprises à Casablanca et au Maroc : helpdesk, maintenance, supervision. Diagnostic gratuit, devis ferme.",
+    },
+    developpement: {
+      title: "Développement logiciel sur mesure au Maroc | TECHPAL",
+      description:
+        "Applications web, mobiles et métier sur mesure : cadrage, développement et maintenance à Casablanca. Cadrage gratuit, devis ferme.",
     },
     projets: {
       title: "Réalisations : 7 familles de solutions en production | TECHPAL",

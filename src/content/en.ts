@@ -69,6 +69,7 @@ const en: Dict = {
         title: "Software engineering",
         desc: "Web & mobile applications, business platforms, APIs.",
         points: ["Web & mobile apps", "Business platforms", "APIs & integrations"],
+        href: "/developpement-logiciel-sur-mesure",
       },
       {
         n: "002",
@@ -224,6 +225,104 @@ const en: Dict = {
       title: "An urgent need?",
       text: "Describe the profile you're looking for: first CVs within 48 business hours.",
       button: "Request profiles",
+    },
+  },
+  developpement: {
+    kicker: "Software development",
+    title: "Custom software development.",
+    intro:
+      "Web and mobile applications and business platforms designed around your operations: from scoping to production, then evolution at the pace of your business.",
+    heroWords: ["Web applications", "Mobile apps", "Business platforms", "APIs & integrations"],
+    heroHint: "From scoping to production",
+    anchor: "The deliverables",
+    deliverablesKicker: "The deliverables",
+    deliverablesTitle: "From client-facing product to the front desk.",
+    deliverables: [
+      {
+        title: "Web & mobile applications",
+        text: "Launch sites, customer portals and native or cross-platform mobile apps, built to run in production.",
+      },
+      {
+        title: "Business platforms",
+        text: "The tools that replace your spreadsheets: operations, internal workflows, reporting, process digitalization.",
+      },
+      {
+        title: "APIs & integrations",
+        text: "Connection between your existing systems: ERP, payment, messaging, third-party tools. On demand or as a planned integration.",
+      },
+    ],
+    processKicker: "The method",
+    processTitle: "Five steps, the same for every mission.",
+    process: [
+      { title: "Scoping", text: "Your needs, edge cases and constraints written down: scope, use cases, priorities." },
+      { title: "Design", text: "User journeys, architecture and wireframes validated before the first line of code." },
+      { title: "Development", text: "Regular releases: you see the product from the earliest versions." },
+      { title: "Integration", text: "Go-live, data migration, user training." },
+      { title: "Evolution", text: "Fixes, new features and product monitoring after launch." },
+    ],
+    stats: [
+      { value: "2022", label: "Founded in Casablanca" },
+      { value: "7", label: "Solution families in production" },
+      { value: "< 24 h", label: "Firm quote within 24 business hours" },
+      { value: "FR·EN·AR", label: "A trilingual team" },
+    ],
+    includedKicker: "Inside the mission",
+    includedTitle: "Written scope, delivered code, shared knowledge.",
+    included: [
+      {
+        title: "Documented scoping",
+        text: "Scope and priorities written before development starts: no vague projects, no mid-flight surprises.",
+      },
+      {
+        title: "Testing & acceptance",
+        text: "Checks before every release and acceptance review with you at each key milestone.",
+      },
+      {
+        title: "Code & documentation",
+        text: "Source code and documentation handed over with the product, so you never depend on us by accident.",
+      },
+      {
+        title: "Handover & maintenance",
+        text: "Team training then, if you wish, corrective and evolutionary maintenance decided together.",
+      },
+    ],
+    crossKicker: "Complete your setup",
+    crossTitle: "One page per need.",
+    crossIntro: "Custom development works hand in hand with:",
+    cross: [
+      { title: "AI integration", desc: "Add assistants and automation to your product.", href: "/ia" },
+      { title: "Managed IT & maintenance", desc: "Entrust us with monitoring and maintenance of the delivered product.", href: "/infogerance-informatique-casablanca" },
+      { title: "IT staffing", desc: "Reinforce your in-house teams instead of outsourcing.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Frequently asked questions.",
+    faq: [
+      {
+        q: "What is custom software development?",
+        a: "An application designed around your real processes instead of a standard product forced to fit: scope, journeys and integrations are defined with you. The software follows your organization, not the other way around.",
+      },
+      {
+        q: "How much does a custom application cost in Morocco?",
+        a: "Cost depends on the scope: screens, journeys, integrations and planned maintenance. After a short scoping session, we issue a firm quote with no hidden cost. Quotes are honoured and the scope stays in writing.",
+      },
+      {
+        q: "How long until a first version in production?",
+        a: "The timeline depends on the scope validated during scoping. We split the mission into releases: you see a usable product as early as possible, then regular updates.",
+      },
+      {
+        q: "Who owns the source code?",
+        a: "What you pay for is yours: the deliverable includes source code, documentation and knowledge transfer. The exact terms are written in the service contract.",
+      },
+      {
+        q: "What happens after production?",
+        a: "The product stays alive: fixes, evolutions and monitoring, through an evolution package or a managed IT contract. Our method plans this step during scoping, not as an afterthought.",
+      },
+    ],
+    cta: {
+      kicker: "Software development",
+      title: "A product to build?",
+      text: "Describe your project: scoping and firm quote within one business day.",
+      button: "Start a project",
     },
   },
   infogerance: {
@@ -576,6 +675,11 @@ const en: Dict = {
       title: "Managed IT Services in Casablanca | TECHPAL",
       description:
         "Managed IT & support for companies in Casablanca and Morocco: helpdesk, maintenance, monitoring. Free audit, firm quote.",
+    },
+    developpement: {
+      title: "Custom Software Development in Morocco | TECHPAL",
+      description:
+        "Custom web, mobile, and business applications: scoping, development, and maintenance in Casablanca. Free scoping, firm quote.",
     },
     projets: {
       title: "Work: 7 Solution Families in Production | TECHPAL",
