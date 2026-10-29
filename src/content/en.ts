@@ -496,7 +496,7 @@ const en: Dict = {
     },
     mentions: {
       title: "Legal Notice | TECHPAL Casablanca",
-      description: "Legal notice, company registration, and hosting details for TECHPAL in Casablanca, Morocco.",
+      description: "Legal notice, publisher and hosting details for TECHPAL in Casablanca, Morocco.",
     },
     confidentialite: {
       title: "Privacy Policy | TECHPAL",

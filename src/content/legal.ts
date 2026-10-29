@@ -1,33 +1,23 @@
 /**
  * Données légales de l'éditeur et de l'hébergeur.
  *
- * Les champs vides ne sont pas affichés sur le site : ils attendent les
- * informations officielles. Ne jamais renseigner une valeur approximative ici.
+ * Consigne de la direction (oct. 2026) : ne pas publier les identifiants
+ * administratifs et financiers de l'entreprise (forme juridique, capital,
+ * RC, ICE, IF, patente). Seuls le nom, l'adresse, le domaine d'activité et
+ * les contacts sont affichés. Ne pas réintroduire ces champs sans accord.
+ *
+ * Les champs vides ne sont pas affichés sur le site.
  */
 export const legalCompany = {
-  /** Dénomination sociale exacte (telle qu'au RC). */
+  /** Dénomination sociale. */
   name: "TECHPAL",
-  /** Forme juridique. */
-  legalForm: "Société à responsabilité limitée (SARL)",
-  /** Capital social. */
-  capital: "100 000 MAD",
-  /** Registre de commerce. */
-  rc: "556619 — Tribunal de commerce de Casablanca",
-  /** Identifiant Commun de l'Entreprise (15 chiffres). */
-  ice: "003131517000061",
-  /** Identifiant fiscal. */
-  if: "",
-  /** Numéro de patente / taxe professionnelle. */
-  patente: "",
-  /** Objet social (activité déclarée au RC). */
+  /** Domaine d'activité (objet social, sans les identifiants du RC). */
   activity: {
     fr: "Services informatiques : conception et intégration de solutions IT, vente et installation de matériel informatique, développement et maintenance de systèmes d'information.",
     en: "IT services: design and integration of IT solutions, sale and installation of computer hardware, development and maintenance of information systems.",
   },
-  /** Siège social enregistré au registre de commerce. */
-  registeredAddress: "17, quartier Yakoub El Mansour, n° 238, 2e étage, Casablanca, Maroc",
-  /** Adresse d'exploitation / bureau (si différente du siège). */
-  officeAddress: "Bureau B3, Rue Ettah, Casablanca 20000, Maroc",
+  /** Adresse affichée sur le site (footer, contact, mentions légales). */
+  address: "Bureau B3, Rue Ettah, Casablanca 20000, Maroc",
   /** Directeur de la publication (personne physique nommée). */
   publicationDirector: "",
   publicationDirectorRole: {
@@ -58,6 +48,6 @@ export const cndp = {
 
 /** Date de dernière révision des pages légales. */
 export const legalUpdated = {
-  fr: "27 octobre 2026",
-  en: "27 October 2026",
+  fr: "29 octobre 2026",
+  en: "29 October 2026",
 } as const;
