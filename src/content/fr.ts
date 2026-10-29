@@ -500,7 +500,7 @@ const fr = {
     },
     confidentialite: {
       title: "Politique de confidentialité | TECHPAL",
-      description: "Politique de protection des données personnelles et conformité à la loi 09-08 (CNDP) - TECHPAL.",
+      description: "Politique de protection des données personnelles de TECHPAL (loi marocaine 09-08) - TECHPAL.",
     },
   },
 };

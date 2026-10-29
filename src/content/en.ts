@@ -500,7 +500,7 @@ const en: Dict = {
     },
     confidentialite: {
       title: "Privacy Policy | TECHPAL",
-      description: "Personal data protection policy and Moroccan Law 09-08 (CNDP) compliance - TECHPAL.",
+      description: "Personal data protection policy of TECHPAL under Moroccan Law 09-08 - TECHPAL.",
     },
   },
 };

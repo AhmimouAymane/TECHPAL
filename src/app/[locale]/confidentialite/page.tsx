@@ -104,8 +104,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             </p>
             <p>
               {isFr
-                ? "Cette politique est établie conformément à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, sous le contrôle de la CNDP."
-                : "This policy is established in accordance with Moroccan Law No. 09-08 on the protection of individuals with regard to the processing of personal data, under the supervision of the CNDP."}
+                ? "Cette politique est établie en référence à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel."
+                : "This policy is established with reference to Moroccan Law No. 09-08 on the protection of individuals with regard to the processing of personal data."}
             </p>
             {legalCompany.cndpReceipt ? (
               <p>
