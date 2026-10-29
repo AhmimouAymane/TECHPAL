@@ -28,20 +28,9 @@ export const legalCompany = {
   cndpReceipt: "",
 } as const;
 
-export const legalHost = {
-  name: "OVHcloud (OVH SAS)",
-  address: "2 rue Kellermann, 59100 Roubaix, France",
-  site: "https://www.ovhcloud.com",
-  /** Localisation des serveurs qui hébergent le site. */
-  servers: {
-    fr: "Gravelines, France (Union européenne)",
-    en: "Gravelines, France (European Union)",
-  },
-} as const;
-
 /** Autorité de contrôle des données personnelles au Maroc. */
 export const cndp = {
-  name: "CNDP — Commission Nationale de contrôle de la protection des Données à caractère Personnel",
+  name: "CNDP (Commission nationale de contrôle de la protection des Données à caractère Personnel)",
   address: "Angle avenue Annakhil et rue Al-Araar, Espace Les Patios, 2e étage, Hay Riad, Rabat, Maroc",
   site: "https://www.cndp.ma",
 } as const;

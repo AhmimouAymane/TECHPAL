@@ -9,7 +9,6 @@ import { site } from "@/content/site";
 import {
   cndp,
   legalCompany,
-  legalHost,
   legalUpdated,
 } from "@/content/legal";
 import { isLocale, locales } from "@/lib/i18n";
@@ -83,7 +82,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
   };
 
   const director = legalCompany.publicationDirector
-    ? `${legalCompany.publicationDirector} — ${legalCompany.publicationDirectorRole[locale]}`
+    ? `${legalCompany.publicationDirector} (${legalCompany.publicationDirectorRole[locale]})`
     : legalCompany.publicationDirectorRole[locale];
 
   return (
@@ -131,36 +130,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </dl>
           </Section>
 
-          <Section n="2" title={isFr ? "Hébergement" : "Hosting"}>
-            <p>
-              {isFr ? (
-                <>
-                  Le site et ses données sont hébergés sur une infrastructure cloud exploitée par{" "}
-                  <strong className="text-ink">{legalHost.name}</strong>. Les serveurs sont localisés à{" "}
-                  {legalHost.servers.fr}. Les échanges avec le navigateur sont chiffrés de bout en bout via le
-                  protocole TLS (HTTPS).
-                </>
-              ) : (
-                <>
-                  This website and its data are hosted on cloud infrastructure operated by{" "}
-                  <strong className="text-ink">{legalHost.name}</strong>. Servers are located in{" "}
-                  {legalHost.servers.en}. All traffic between your browser and the site is encrypted end to end over
-                  TLS (HTTPS).
-                </>
-              )}
-            </p>
-            <dl className="mt-4">
-              <Row label={isFr ? "Hébergeur" : "Host"}>{legalHost.name}</Row>
-              <Row label={isFr ? "Adresse" : "Address"}>{legalHost.address}</Row>
-              <Row label="Site web">
-                <a href={legalHost.site} target="_blank" rel="noopener noreferrer" className="text-ink hover:underline">
-                  {legalHost.site.replace("https://", "")}
-                </a>
-              </Row>
-            </dl>
-          </Section>
-
-          <Section n="3" title={isFr ? "Propriété intellectuelle" : "Intellectual property"}>
+          <Section n="2" title={isFr ? "Propriété intellectuelle" : "Intellectual property"}>
             <p>
               {isFr
                 ? "L'ensemble des contenus présents sur ce site (textes, graphismes, logos, éléments visuels, architectures de solutions et animations) constitue une œuvre de l'esprit protégée par la législation marocaine et internationale sur le droit d'auteur et la propriété intellectuelle. Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable est interdite."
@@ -173,7 +143,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </p>
           </Section>
 
-          <Section n="4" title={isFr ? "Liens et responsabilité" : "Links and liability"}>
+          <Section n="3" title={isFr ? "Liens et responsabilité" : "Links and liability"}>
             <p>
               {isFr
                 ? "Ce site peut contenir des liens vers des sites tiers. TECHPAL n'exerce aucun contrôle sur leur contenu et décline toute responsabilité quant à leurs informations, produits ou services. Les informations publiées sur ce site sont fournies à titre indicatif et peuvent évoluer sans préavis ; elles ne constituent pas un engagement contractuel."
@@ -181,7 +151,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </p>
           </Section>
 
-          <Section n="5" title={isFr ? "Données personnelles et cookies" : "Personal data and cookies"}>
+          <Section n="4" title={isFr ? "Données personnelles et cookies" : "Personal data and cookies"}>
             <p>
               {isFr ? (
                 <>
@@ -212,26 +182,26 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
               {isFr ? (
                 <>
                   Pour toute question ou réclamation relative à vos données, vous pouvez également saisir la{" "}
-                  <strong className="text-ink">{cndp.name}</strong> — {cndp.address} —{" "}
+                  <strong className="text-ink">{cndp.name}</strong>, {cndp.address} (
                   <a href={cndp.site} target="_blank" rel="noopener noreferrer" className="text-ink hover:underline">
                     cndp.ma
                   </a>
-                  .
+                  ).
                 </>
               ) : (
                 <>
                   For any question or complaint regarding your data, you may also contact the{" "}
-                  <strong className="text-ink">{cndp.name}</strong> — {cndp.address} —{" "}
+                  <strong className="text-ink">{cndp.name}</strong>, {cndp.address} (
                   <a href={cndp.site} target="_blank" rel="noopener noreferrer" className="text-ink hover:underline">
                     cndp.ma
                   </a>
-                  .
+                  ).
                 </>
               )}
             </p>
           </Section>
 
-          <Section n="6" title={isFr ? "Droit applicable et juridiction" : "Governing law and jurisdiction"}>
+          <Section n="5" title={isFr ? "Droit applicable et juridiction" : "Governing law and jurisdiction"}>
             <p>
               {isFr
                 ? "Les présentes mentions légales sont soumises au droit marocain. Tout litige relatif à l'utilisation de ce site relève de la compétence des tribunaux de Casablanca, sous réserve des règles impératives applicables aux consommateurs."
@@ -239,13 +209,13 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </p>
           </Section>
 
-          <Section n="7" title="Contact">
+          <Section n="6" title="Contact">
             <p>
               {isFr ? "Pour toute question relative au site ou à ces mentions : " : "For any question about this site or these notices: "}
               <a href={`mailto:${site.email}`} className="text-ink hover:underline">
                 {site.email}
               </a>{" "}
-              —{" "}
+              {isFr ? "ou au " : "or at "}
               <a href={site.phoneHref} className="text-ink hover:underline">
                 {site.phone}
               </a>

@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { site } from "@/content/site";
-import { cndp, legalCompany, legalHost, legalUpdated } from "@/content/legal";
+import { cndp, legalCompany, legalUpdated } from "@/content/legal";
 import { isLocale, locales } from "@/lib/i18n";
 import { constructMetadata } from "@/lib/seo";
 
@@ -165,16 +165,15 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <p>
               {isFr ? (
                 <>
-                  Deux prestataires techniques interviennent strictement pour le compte de TECHPAL :{" "}
-                  <strong className="text-ink">{legalHost.name}</strong> (hébergement du site) et notre prestataire
-                  d&apos;envoi d&apos;e-mails sortants, utilisé uniquement pour acheminer les messages du formulaire vers
-                  notre boîte de réception.
+                  Deux prestataires techniques interviennent strictement pour le compte de TECHPAL : notre hébergeur,
+                  qui stocke le site et ses données, et notre prestataire d&apos;envoi d&apos;e-mails sortants, utilisé
+                  uniquement pour acheminer les messages du formulaire vers notre boîte de réception.
                 </>
               ) : (
                 <>
-                  Two technical providers act strictly on TECHPAL&apos;s behalf:{" "}
-                  <strong className="text-ink">{legalHost.name}</strong> (website hosting) and our outbound email
-                  provider, used only to deliver form messages to our inbox.
+                  Two technical providers act strictly on TECHPAL&apos;s behalf: our hosting provider, which stores the
+                  website and its data, and our outbound email provider, used only to deliver form messages to our
+                  inbox.
                 </>
               )}
             </p>
@@ -184,15 +183,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <p>
               {isFr ? (
                 <>
-                  L&apos;hébergement est assuré dans l&apos;Union européenne ({legalHost.servers.fr}). Les messages du
-                  formulaire transitent par des serveurs de messagerie susceptibles d&apos;être situés hors du Maroc. Ces
-                  transferts sont limités aux seules données nécessaires au traitement de votre demande.
+                  L&apos;hébergement est assuré dans l&apos;Union européenne. Les messages du formulaire transitent par
+                  des serveurs de messagerie susceptibles d&apos;être situés hors du Maroc. Ces transferts sont limités
+                  aux seules données nécessaires au traitement de votre demande.
                 </>
               ) : (
                 <>
-                  Hosting is provided within the European Union ({legalHost.servers.en}). Form messages pass through mail
-                  servers that may be located outside Morocco. Such transfers are limited to the data required to handle
-                  your request.
+                  Hosting is provided within the European Union. Form messages pass through mail servers that may be
+                  located outside Morocco. Such transfers are limited to the data required to handle your request.
                 </>
               )}
             </p>
@@ -230,20 +228,20 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               {isFr ? (
                 <>
                   Si la réponse apportée ne vous satisfait pas, vous pouvez saisir la{" "}
-                  <strong className="text-ink">{cndp.name}</strong> — {cndp.address} —{" "}
+                  <strong className="text-ink">{cndp.name}</strong>, {cndp.address} (
                   <a href={cndp.site} target="_blank" rel="noopener noreferrer" className={link}>
                     cndp.ma
                   </a>
-                  .
+                  ).
                 </>
               ) : (
                 <>
                   If our response does not satisfy you, you may refer the matter to the{" "}
-                  <strong className="text-ink">{cndp.name}</strong> — {cndp.address} —{" "}
+                  <strong className="text-ink">{cndp.name}</strong>, {cndp.address} (
                   <a href={cndp.site} target="_blank" rel="noopener noreferrer" className={link}>
                     cndp.ma
                   </a>
-                  .
+                  ).
                 </>
               )}
             </p>
