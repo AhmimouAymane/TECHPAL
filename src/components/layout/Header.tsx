@@ -72,7 +72,14 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
         )}
       >
         <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-6 md:h-[72px] md:px-10">
-          <Link href={`/${locale}`} aria-label="TECHPAL" className="relative z-10 flex shrink-0 items-center">
+          <Link
+            href={`/${locale}`}
+            aria-label="TECHPAL"
+            className={cn(
+              "relative z-10 flex shrink-0 items-center transition-opacity duration-300",
+              open && "pointer-events-none opacity-0"
+            )}
+          >
             <Image
               src="/logo-techpal.webp"
               alt="TECHPAL"
