@@ -93,6 +93,7 @@ const en: Dict = {
         title: "Support & managed IT",
         desc: "A single point of contact for all your day-to-day IT.",
         points: ["Responsive support", "Fully managed IT", "Proactive monitoring"],
+        href: "/infogerance-informatique-casablanca",
       },
       {
         n: "006",
@@ -223,6 +224,103 @@ const en: Dict = {
       title: "An urgent need?",
       text: "Describe the profile you're looking for: first CVs within 48 business hours.",
       button: "Request profiles",
+    },
+  },
+  infogerance: {
+    kicker: "Managed IT",
+    title: "Managed IT services in Casablanca.",
+    intro:
+      "One point of contact for the support, maintenance and supervision of your IT. Your teams focus on their business, we handle the rest.",
+    heroWords: ["Helpdesk", "Maintenance", "Supervision", "Continuity"],
+    heroHint: "Reply within one business day",
+    anchor: "The scope",
+    scopeKicker: "The scope",
+    scopeTitle: "Three dimensions, one contract.",
+    scope: [
+      {
+        title: "User support",
+        text: "A single entry point (phone, email, ticket) for your employees' incidents and requests, tracked through to resolution.",
+      },
+      {
+        title: "Maintenance & interventions",
+        text: "Updates, patches, backups and on-site interventions for your workstations, servers and network equipment.",
+      },
+      {
+        title: "Supervision & alerts",
+        text: "Continuous monitoring of your infrastructure with alerts before outages and response triggered by severity.",
+      },
+    ],
+    processKicker: "How a contract starts",
+    processTitle: "Four steps, from audit to reporting.",
+    process: [
+      { title: "IT audit", text: "Inventory of your workstations, servers, network and licenses. With no strings attached." },
+      { title: "Written scope", text: "Terms, service levels and responsibilities set out in writing in the contract." },
+      { title: "Go-live", text: "Support channel opened, documented access and onboarding for your teams." },
+      { title: "Tracking & reporting", text: "Monthly review: incidents handled, interventions, recommendations and improvements." },
+    ],
+    stats: [
+      { value: "< 24 h", label: "Reply committed within 24 business hours" },
+      { value: "24/7", label: "Supervision of managed service contracts" },
+      { value: "1", label: "Single point of contact for all your IT" },
+      { value: "FR·EN·AR", label: "A trilingual team" },
+    ],
+    includedKicker: "Inside the contract",
+    includedTitle: "Written, measurable, no hidden commitment.",
+    included: [
+      {
+        title: "Response commitment",
+        text: "Support answered within 24 business hours, with escalation defined by severity.",
+      },
+      {
+        title: "On-site interventions",
+        text: "Scheduled visits as well as emergency call-outs depending on the criticality of the incident.",
+      },
+      {
+        title: "Documentation & access",
+        text: "Your estate stays documented on your side. Full handover of access and documentation when the contract ends.",
+      },
+      {
+        title: "Continuous improvement",
+        text: "Hardware and software recommendations drawn from the monthly report, at your own pace.",
+      },
+    ],
+    crossKicker: "Complete your setup",
+    crossTitle: "One page per need.",
+    crossIntro: "Managed IT works hand in hand with:",
+    cross: [
+      { title: "Products & networks", desc: "Supply, installation and licenses to equip your fleet.", href: "/produits" },
+      { title: "AI integration", desc: "Automate repetitive tasks in your support and documents.", href: "/ia" },
+      { title: "IT staffing", desc: "Temporarily reinforce your in-house IT teams.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Frequently asked questions.",
+    faq: [
+      {
+        q: "What is managed IT services?",
+        a: "Handing over the day-to-day running of your IT to a provider: user support, workstation and server maintenance, infrastructure monitoring and regular reporting. You keep control of the strategy, we execute and document.",
+      },
+      {
+        q: "How much does a managed IT contract cost in Morocco?",
+        a: "Pricing depends on the scope: number of workstations, servers, sites and service levels. After a free audit, we issue a firm quote with no hidden cost. Nothing is committed before the scope is agreed in writing.",
+      },
+      {
+        q: "Which environments do you support?",
+        a: "Workstations, servers, corporate networks, cloud environments (Microsoft 365, AWS, Azure) and hardware supplied by TECHPAL. Specific tools are reviewed case by case.",
+      },
+      {
+        q: "Is supervision available 24/7?",
+        a: "Yes, infrastructure supervision runs continuously on managed service contracts. Interventions are triggered by alert severity, and support replies are committed within 24 business hours.",
+      },
+      {
+        q: "What happens at the end of the contract?",
+        a: "Full handover: documentation, access, intervention history and knowledge transfer. No lock-in.",
+      },
+    ],
+    cta: {
+      kicker: "Managed IT",
+      title: "A fleet to stabilize?",
+      text: "Describe your environment: free audit and firm quote within one business day.",
+      button: "Request an IT audit",
     },
   },
   ia: {
@@ -473,6 +571,11 @@ const en: Dict = {
     staffing: {
       title: "IT Staffing & Team Augmentation in Casablanca | TECHPAL",
       description: "Pre-vetted IT talent embedded in your teams: developers, data, cloud, and support in Morocco. Profiles ready within 48 business hours.",
+    },
+    infogerance: {
+      title: "Managed IT Services in Casablanca | TECHPAL",
+      description:
+        "Managed IT & support for companies in Casablanca and Morocco: helpdesk, maintenance, monitoring. Free audit, firm quote.",
     },
     projets: {
       title: "Work: 7 Solution Families in Production | TECHPAL",

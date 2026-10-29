@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
     "expertise",
+    "infogerance-informatique-casablanca",
     "ia",
     "staffing",
     "produits",

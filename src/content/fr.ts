@@ -94,6 +94,7 @@ const fr = {
         title: "Support & infogérance",
         desc: "Un interlocuteur unique pour tout votre IT au quotidien.",
         points: ["Support réactif", "Infogérance complète", "Supervision proactive"],
+        href: "/infogerance-informatique-casablanca",
       },
       {
         n: "006",
@@ -224,6 +225,103 @@ const fr = {
       title: "Un besoin urgent ?",
       text: "Décrivez le profil recherché : premiers CV sous 48 h ouvrées.",
       button: "Demander des profils",
+    },
+  },
+  infogerance: {
+    kicker: "Infogérance IT",
+    title: "Infogérance informatique à Casablanca.",
+    intro:
+      "Un interlocuteur unique pour le support, la maintenance et la supervision de votre informatique. Vos équipes se concentrent sur leur métier, nous gérons le reste.",
+    heroWords: ["Helpdesk", "Maintenance", "Supervision", "Continuité"],
+    heroHint: "Réponse sous 24 h ouvrées",
+    anchor: "Le périmètre",
+    scopeKicker: "Le périmètre",
+    scopeTitle: "Trois dimensions, un seul contrat.",
+    scope: [
+      {
+        title: "Support utilisateurs",
+        text: "Un point d'entrée unique (téléphone, e-mail, ticket) pour les incidents et demandes de vos collaborateurs, avec suivi jusqu'à résolution.",
+      },
+      {
+        title: "Maintenance & interventions",
+        text: "Mises à jour, correctifs, sauvegardes et interventions sur site pour vos postes, serveurs et équipements réseau.",
+      },
+      {
+        title: "Supervision & alertes",
+        text: "Suivi de l'état de vos infrastructures, alertes en amont des pannes et intervention déclenchée selon la gravité.",
+      },
+    ],
+    processKicker: "Comment démarre un contrat",
+    processTitle: "Quatre étapes, du diagnostic au reporting.",
+    process: [
+      { title: "Diagnostic du parc", text: "Inventaire de vos postes, serveurs, réseau et licences. Sans engagement." },
+      { title: "Périmètre écrit", text: "Modalités, niveaux de service et responsabilités définis par écrit dans le contrat." },
+      { title: "Mise en service", text: "Ouverture du canal de support, accès documentés et onboarding de vos équipes." },
+      { title: "Suivi & reporting", text: "Point mensuel : incidents traités, interventions, recommandations et évolutions." },
+    ],
+    stats: [
+      { value: "< 24 h", label: "Réponse engagée sous 24 h ouvrées" },
+      { value: "24/7", label: "Supervision des contrats d'infogérance" },
+      { value: "1", label: "Interlocuteur unique pour tout votre IT" },
+      { value: "FR·EN·AR", label: "Une équipe trilingue" },
+    ],
+    includedKicker: "Dans le contrat",
+    includedTitle: "Écrit, mesurable, sans engagement caché.",
+    included: [
+      {
+        title: "Engagement de réponse",
+        text: "Réponse sous 24 h ouvrées sur le canal de support, avec escalade définie selon la gravité.",
+      },
+      {
+        title: "Interventions sur site",
+        text: "Déplacements planifiés ainsi que les interventions d'urgence selon la criticité de l'incident.",
+      },
+      {
+        title: "Documentation & accès",
+        text: "Votre parc reste documenté de votre côté. Restitution complète des accès et de la documentation à la fin du contrat.",
+      },
+      {
+        title: "Amélioration continue",
+        text: "Recommandations matériel et logiciel issues du reporting mensuel, à votre rythme.",
+      },
+    ],
+    crossKicker: "Complétez votre dispositif",
+    crossTitle: "Une page par besoin.",
+    crossIntro: "L'infogérance s'articule avec vos autres chantiers :",
+    cross: [
+      { title: "Produits & réseaux", desc: "Fourniture, installation et licences pour équiper votre parc.", href: "/produits" },
+      { title: "Intégration IA", desc: "Automatisez les tâches répétitives de votre support et vos documents.", href: "/ia" },
+      { title: "Staffing IT", desc: "Renforcez temporairement vos équipes IT internes.", href: "/staffing" },
+    ],
+    faqKicker: "FAQ",
+    faqTitle: "Questions fréquentes.",
+    faq: [
+      {
+        q: "Qu'est-ce que l'infogérance informatique ?",
+        a: "Confier à un prestataire la gestion quotidienne de son informatique : support des utilisateurs, maintenance des postes et serveurs, supervision des infrastructures et reporting régulier. Vous gardez la main sur la stratégie, nous exécutons et documentons.",
+      },
+      {
+        q: "Combien coûte un contrat d'infogérance au Maroc ?",
+        a: "Le tarif dépend du périmètre : nombre de postes, serveurs, sites et niveaux de service. Après un diagnostic gratuit, nous établissons un devis ferme, sans coût caché. Rien n'est engagé avant que le périmètre soit écrit.",
+      },
+      {
+        q: "Quels environnements prenez-vous en charge ?",
+        a: "Postes de travail, serveurs, réseaux d'entreprise, environnements cloud (Microsoft 365, AWS, Azure) et le matériel fourni par TECHPAL. Les outils spécifiques sont étudiés au cas par cas.",
+      },
+      {
+        q: "La supervision est-elle assurée 24/7 ?",
+        a: "Oui, la supervision des infrastructures fonctionne en continu pour les contrats d'infogérance. Les interventions sont déclenchées selon la gravité de l'alerte, et la réponse au support est engagée sous 24 h ouvrées.",
+      },
+      {
+        q: "Que se passe-t-il à la fin du contrat ?",
+        a: "Restitution complète : documentation, accès, historique des interventions et transfert de connaissances. Aucun verrou.",
+      },
+    ],
+    cta: {
+      kicker: "Infogérance",
+      title: "Un parc à stabiliser ?",
+      text: "Décrivez votre environnement : diagnostic gratuit et devis ferme sous 24 h ouvrées.",
+      button: "Demander un diagnostic",
     },
   },
   ia: {
@@ -473,6 +571,11 @@ const fr = {
     staffing: {
       title: "Renfort d'équipe & Staffing IT à Casablanca | TECHPAL",
       description: "Talents IT pré-qualifiés intégrés à vos équipes au Maroc : développeurs, data, cloud et support. Profils sous 48 h ouvrées.",
+    },
+    infogerance: {
+      title: "Infogérance informatique à Casablanca | TECHPAL",
+      description:
+        "Infogérance et support IT pour entreprises à Casablanca et au Maroc : helpdesk, maintenance, supervision. Diagnostic gratuit, devis ferme.",
     },
     projets: {
       title: "Réalisations : 7 familles de solutions en production | TECHPAL",
