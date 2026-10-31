@@ -38,32 +38,31 @@ export const partners: { name: string; logo: string; href?: string; tall?: boole
 
 /** Clients (page clients) : logos + liens uniquement, sans association avec les projets. */
 export const clients: { name: string; logo?: string; href: string }[] = [
-  //{ name: "Klaim", logo: "/partners/klaim.png", href: "https://klaim.ai" },
+  // Classement : groupes internationaux d'abord, puis entreprises marocaines,
+  // puis structures locales ; à ajuster librement, l'ordre d'affichage suit ce tableau.
   { name: "Novo Nordisk", logo: "/partners/novo.png", href: "https://www.novonordisk.com/" },
   { name: "Safran", logo: "/partners/safran.png", href: "https://www.safran-group.com/" },
-  { name: "HBA Conseil", logo: "/partners/hbaconseil.png", href: "https://hbaconseil.com/" },
+  { name: "Hexcel", logo: "/partners/hexcel.png", href: "https://www.hexcel.com/" },
+  { name: "Miniso", logo: "/partners/miniso.png", href: "https://www.miniso.com/" },
+  { name: "SMC", logo: "/partners/smc.png", href: "https://www.smcworld.com/" },
+  { name: "Canpack", logo: "/partners/canpack.png", href: "https://www.canpack.com/" },
   { name: "CBA", logo: "/partners/cba.png", href: "https://cba.ma/" },
-  { name: "ICE Maghreb", logo: "/partners/ice.png", href: "https://icemaghreb.com/" },
-  { name: "Naviroc", logo: "/partners/naviro.png", href: "https://naviroc.net/" },
+  { name: "Forafric", logo: "/partners/forafric.png", href: "https://forafric.com/" },
   { name: "IBS Group", logo: "/partners/ibs.png", href: "https://www.groupeibs.com/fr/" },
   { name: "AMIBLU", logo: "/partners/amiblu.png", href: "https://www.amiblu.com/fr/" },
-  { name: "Clovi", href: "https://www.clovi.ma/" },
-  { name: "FDM Clean", logo: "/partners/fdmclean.png", href: "https://www.fdmclean.ma/" },
-  { name: "Forafric", logo: "/partners/forafric.png", href: "https://forafric.com/" },
-  { name: "SMC", logo: "/partners/smc.png", href: "https://www.smcworld.com/" },
-  { name: "Ademis", logo: "/partners/ademis.png", href: "https://ademis.ma/" },
+  { name: "ICE Maghreb", logo: "/partners/ice.png", href: "https://icemaghreb.com/" },
   { name: "Euromed", logo: "/partners/euromed.png", href: "https://ueuromed.org/fr" },
+  { name: "HBA Conseil", logo: "/partners/hbaconseil.png", href: "https://hbaconseil.com/" },
+  { name: "Ademis", logo: "/partners/ademis.png", href: "https://ademis.ma/" },
+  { name: "Naviroc", logo: "/partners/naviro.png", href: "https://naviroc.net/" },
+  { name: "FDM Clean", logo: "/partners/fdmclean.png", href: "https://www.fdmclean.ma/" },
   { name: "Mediazest", logo: "/partners/mediazest.png", href: "https://www.mediazest.com/" },
-  { name: "Canpack", logo: "/partners/canpack.png", href: "https://www.canpack.com/" },
-  { name: "Un Amour de Tapis", logo: "/partners/tapis.png", href: "https://www.unamourdetapis.ma/" },
   { name: "M-Automotiv", logo: "/partners/mautomotiv.png", href: "https://m-automotiv.ma/" },
   { name: "Sketch Design", logo: "/partners/sketch.png", href: "https://sketch-design.ma/" },
-  { name: "Hexcel", logo: "/partners/hexcel.png", href: "https://www.hexcel.com/" },
   { name: "Corail l'Océan", logo: "/partners/corail.png", href: "https://www.coraillocean.com/fr/" },
-  { name: "Miniso", logo: "/partners/miniso.png", href: "https://www.miniso.com/" },
-  { name: "Afri-Factory", logo: "/partners/corail.png", href: "https://www.afri-factory.com/" },
-
-
+  { name: "Un Amour de Tapis", logo: "/partners/tapis.png", href: "https://www.unamourdetapis.ma/" },
+  { name: "Clovi", href: "https://www.clovi.ma/" },
+  { name: "Afri-Factory", logo: "/partners/afrifactory.svg", href: "https://www.afri-factory.com/" },
 ];
 
 /** Technologies utilisées dans les études de cas (page clients). */

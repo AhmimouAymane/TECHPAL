@@ -109,9 +109,12 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                 <p className="mt-3 max-w-[56ch] text-sm leading-relaxed text-muted">{w.clientsIntro}</p>
               </div>
             </div>
-            <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            <ul className="mt-12 flex flex-wrap justify-center gap-4">
               {clients.map((c) => (
-                <li key={c.name}>
+                <li
+                  key={c.name}
+                  className="w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.7rem)] lg:w-[calc(20%-0.8rem)]"
+                >
                   <a
                     href={c.href}
                     target="_blank"
@@ -122,11 +125,15 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                       /* eslint-disable-next-line @next/next/no-img-element */
                       <img src={c.logo} alt="" className="max-h-10 w-auto max-w-[150px] object-contain" loading="lazy" />
                     ) : (
-                      <span className="display text-xl">{c.name}</span>
+                      <span className="display text-xl">
+                        {c.name} <span aria-hidden className="align-middle text-base">↗</span>
+                      </span>
                     )}
-                    <span className="label text-muted transition-colors duration-300 group-hover:text-ink">
-                      {c.name} <span aria-hidden>↗</span>
-                    </span>
+                    {c.logo && (
+                      <span className="label text-muted transition-colors duration-300 group-hover:text-ink">
+                        {c.name} <span aria-hidden>↗</span>
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
