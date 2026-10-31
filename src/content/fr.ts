@@ -6,7 +6,7 @@ const fr = {
   nav: {
     expertise: "Expertise",
     ia: "TECHPAL IA",
-    produits: "Produits",
+    produits: "Solutions",
     staffing: "Staffing",
     projets: "Projets",
     apropos: "À propos",
@@ -102,19 +102,19 @@ const fr = {
       {
         n: "006",
         title: "Transformation digitale",
-        desc: "Du processus métier au produit en production.",
+        desc: "Du processus métier à la solution en production.",
         points: ["Audit & cadrage", "Feuille de route", "Mise en production"],
       },
     ],
   },
   work: {
-    kicker: "Familles de solutions",
+    kicker: "Nos solutions",
     title: "Sept familles de solutions, une seule exigence : la production.",
-    intro: "Nos réalisations sont regroupées par nature de produit, de la marketplace mobile au SIRH. Présentation volontairement anonymisée : les missions couvertes par des accords de confidentialité ne sont pas publiées.",
+    intro: "Nos réalisations sont regroupées par nature de solution, de la marketplace mobile au SIRH. Présentation volontairement anonymisée : les missions couvertes par des accords de confidentialité ne sont pas publiées.",
     viewAll: "Voir nos réalisations",
     confidential: "Mission confidentielle",
     labels: { createdAt: "Période", name: "Nom", type: "Type", scope: "Périmètre", stack: "Stack", story: "Notre approche", points: "Ce que nous livrons" },
-    heroTitle: "Des produits en production, pas des maquettes.",
+    heroTitle: "Des solutions en production, pas des maquettes.",
     heroWords: ["Marketplaces", "E-commerce", "Réservation en ligne", "Formation immersive", "ERP collaboratif", "E-learning", "SIRH"],
     heroHint: "7 familles de solutions - déployées en production",
     technosKicker: "Technologies",
@@ -149,7 +149,7 @@ const fr = {
   cta: {
     kicker: "Restons en contact",
     title: "Parlez-nous de votre projet.",
-    text: "Une idée, un produit, un besoin d'infogérance ? Échangeons : réponse sous 24 h ouvrées.",
+    text: "Une idée, une solution, un besoin d'infogérance ? Échangeons : réponse sous 24 h ouvrées.",
     button: "Démarrer un projet",
   },
   staffing: {
@@ -292,7 +292,7 @@ const fr = {
     crossTitle: "Une page par besoin.",
     crossIntro: "L'infogérance s'articule avec vos autres chantiers :",
     cross: [
-      { title: "Produits & réseaux", desc: "Fourniture, installation et licences pour équiper votre parc.", href: "/produits" },
+      { title: "Solutions & réseaux", desc: "Fourniture, installation et licences pour équiper votre parc.", href: "/solutions" },
       { title: "Intégration IA", desc: "Automatisez les tâches répétitives de votre support et vos documents.", href: "/ia" },
       { title: "Staffing IT", desc: "Renforcez temporairement vos équipes IT internes.", href: "/staffing" },
     ],
@@ -336,7 +336,7 @@ const fr = {
     heroHint: "Du cadrage à la production",
     anchor: "Les livrables",
     deliverablesKicker: "Les livrables",
-    deliverablesTitle: "Du produit client au poste de travail.",
+    deliverablesTitle: "De la solution client au poste de travail.",
     deliverables: [
       {
         title: "Applications web & mobiles",
@@ -356,9 +356,9 @@ const fr = {
     process: [
       { title: "Cadrage", text: "Vos besoins, conséquences éventuelles et contraintes couchés par écrit : périmètre, usages, priorités." },
       { title: "Conception", text: "Parcours utilisateurs, architecture et maquettes validées avant la première ligne de code." },
-      { title: "Développement", text: "Livraisons régulières : vous voyez le produit dès les toutes premières versions." },
+      { title: "Développement", text: "Livraisons régulières : vous voyez la solution dès les toutes premières versions." },
       { title: "Intégration", text: "Mise en production, migration des données, formation des utilisateurs." },
-      { title: "Évolution", text: "Corrections, nouvelles fonctions et suivi du produit après le lancement." },
+      { title: "Évolution", text: "Corrections, nouvelles fonctions et suivi de la solution après le lancement." },
     ],
     stats: [
       { value: "2022", label: "Fondée à Casablanca" },
@@ -379,7 +379,7 @@ const fr = {
       },
       {
         title: "Code & documentation",
-        text: "Code source et documentation remis avec le produit, pour que vous ne dépendiez pas de nous par accident.",
+        text: "Code source et documentation remis avec la solution, pour que vous ne dépendiez pas de nous par accident.",
       },
       {
         title: "Transfert & maintenance",
@@ -390,9 +390,9 @@ const fr = {
     crossTitle: "Une page par besoin.",
     crossIntro: "Le développement sur mesure s'articule avec vos autres chantiers :",
     cross: [
-      { title: "Intégration Odoo", desc: "Vos ventes, stocks et comptabilité sur un ERP modulaire autour de votre produit.", href: "/integration-odoo-maroc" },
-      { title: "Intégration IA", desc: "Ajoutez des assistants et de l'automatisation à votre produit.", href: "/ia" },
-      { title: "Infogérance & maintenance", desc: "Confiez la surveillance et la maintenance du produit livré.", href: "/infogerance-informatique-casablanca" },
+      { title: "Intégration Odoo", desc: "Vos ventes, stocks et comptabilité sur un ERP modulaire autour de votre solution.", href: "/integration-odoo-maroc" },
+      { title: "Intégration IA", desc: "Ajoutez des assistants et de l'automatisation à votre solution.", href: "/ia" },
+      { title: "Infogérance & maintenance", desc: "Confiez la surveillance et la maintenance de la solution livrée.", href: "/infogerance-informatique-casablanca" },
       { title: "Staffing IT", desc: "Renforcez vos équipes internes plutôt que de sous-traiter.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -400,7 +400,7 @@ const fr = {
     faq: [
       {
         q: "Qu'est-ce qu'un développement logiciel sur mesure ?",
-        a: "Une application conçue pour vos processus réels au lieu d'un produit standard que l'on force à s'adapter : le périmètre, les parcours et les intégrations sont définis avec vous. Le logiciel suit votre organisation, pas l'inverse.",
+        a: "Une application conçue pour vos processus réels au lieu d'une solution standard que l'on force à s'adapter : le périmètre, les parcours et les intégrations sont définis avec vous. Le logiciel suit votre organisation, pas l'inverse.",
       },
       {
         q: "Combien coûte une application sur mesure au Maroc ?",
@@ -408,7 +408,7 @@ const fr = {
       },
       {
         q: "Combien de temps pour une première version en production ?",
-        a: "Le calendrier dépend du périmètre validé au cadrage. Nous découpons la mission en versions : vous voyez un produit utilisable le plus tôt possible, puis des mises à jour régulières.",
+        a: "Le calendrier dépend du périmètre validé au cadrage. Nous découpons la mission en versions : vous voyez une solution utilisable le plus tôt possible, puis des mises à jour régulières.",
       },
       {
         q: "Qui est propriétaire du code source ?",
@@ -416,12 +416,12 @@ const fr = {
       },
       {
         q: "Que se passe-t-il après la mise en production ?",
-        a: "Le produit reste vivant : corrections, évolutions et suivi, via un forfait d'évolution ou un contrat d'infogérance. Notre méthode prévoit cette étape dès le cadrage, pas après coup.",
+        a: "La solution reste vivante : corrections, évolutions et suivi, via un forfait d'évolution ou un contrat d'infogérance. Notre méthode prévoit cette étape dès le cadrage, pas après coup.",
       },
     ],
     cta: {
       kicker: "Développement",
-      title: "Un produit à construire ?",
+      title: "Une solution à construire ?",
       text: "Décrivez votre projet : cadrage et devis ferme sous 24 h ouvrées.",
       button: "Démarrer un projet",
     },
@@ -488,7 +488,7 @@ const fr = {
     crossTitle: "Une page par besoin.",
     crossIntro: "L'intégration IA s'articule avec vos autres chantiers :",
     cross: [
-      { title: "Développement sur mesure", desc: "Le produit qui héberge vos cas d'usage IA, quand l'existant ne suffit pas.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Développement sur mesure", desc: "La solution qui héberge vos cas d'usage IA, quand l'existant ne suffit pas.", href: "/developpement-logiciel-sur-mesure" },
       { title: "Infogérance & maintenance", desc: "La surveillance des infrastructures sur lesquelles l'IA tourne.", href: "/infogerance-informatique-casablanca" },
       { title: "Staffing IT", desc: "Des profils data et IA pour renforcer vos projets internes.", href: "/staffing" },
     ],
@@ -638,7 +638,7 @@ const fr = {
       },
       {
         title: "Matériel & parc IT",
-        text: "Postes de travail, écrans, imprimantes, serveurs et stockage : du matériel de marques partenaires, préparé puis déployé, avec le catalogue complet sur la page Produits.",
+        text: "Postes de travail, écrans, imprimantes, serveurs et stockage : du matériel de marques partenaires, préparé puis déployé, avec le catalogue complet sur la page Solutions.",
       },
       {
         title: "Maintien en condition opérationnelle",
@@ -685,7 +685,7 @@ const fr = {
     crossIntro: "L'infrastructure s'articule avec vos autres chantiers :",
     cross: [
       { title: "Infogérance & supervision", desc: "Vos infrastructures suivies 24/7 sous contrat d'infogérance.", href: "/infogerance-informatique-casablanca" },
-      { title: "Catalogue matériel", desc: "Ordinateurs, impression, réseau et serveurs : la gamme complète.", href: "/produits" },
+      { title: "Catalogue matériel", desc: "Ordinateurs, impression, réseau et serveurs : la gamme complète.", href: "/solutions" },
       { title: "Staffing IT", desc: "Un technicien réseau en renfort dans vos équipes pendant les chantiers.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -697,7 +697,7 @@ const fr = {
       },
       {
         q: "Fournissez-vous le matériel informatique ?",
-        a: "Oui : postes de travail, impression, réseau et serveurs, à partir d'un catalogue de marques partenaires détaillé sur la page Produits. Chaque équipement est préparé puis déployé dans votre environnement.",
+        a: "Oui : postes de travail, impression, réseau et serveurs, à partir d'un catalogue de marques partenaires détaillé sur la page Solutions. Chaque équipement est préparé puis déployé dans votre environnement.",
       },
       {
         q: "Faites-vous le câblage et le déploiement réseau ?",
@@ -741,7 +741,7 @@ const fr = {
       {
         id: "applications",
         title: "Applications intelligentes",
-        text: "L'IA au cœur du produit : recommandation, prédiction, décision.",
+        text: "L'IA au cœur de la solution : recommandation, prédiction, décision.",
         items: ["Aide à la décision", "Détection & prédiction", "Interfaces conversationnelles"],
       },
     ],
@@ -794,10 +794,10 @@ const fr = {
     cta: "Parler de votre projet",
   },
   produits: {
-    kicker: "Produits",
-    title: "Matériel & produits IT, fournis et maintenus.",
+    kicker: "Solutions",
+    title: "Matériel & solutions IT, fournis et maintenus.",
     intro:
-      "Fourniture, installation et maintenance de votre matériel, par famille de produits, avec un interlocuteur unique.",
+      "Fourniture, installation et maintenance de votre matériel, par gamme, avec un interlocuteur unique.",
     heroWords: ["Ordinateurs", "Impression", "Réseau & sécurité", "Serveurs & Datacenter", "Vidéosurveillance", "Logiciels & licences", "Accessoires"],
     heroHint: "Fourni, installé, maintenu - un seul interlocuteur",
     anchor: "Toute la gamme",
@@ -888,11 +888,11 @@ const fr = {
   },
   about: {
     kicker: "À propos",
-    title: "Un partenaire IT qui pense produit.",
+    title: "Un partenaire IT qui pense solution.",
     intro:
-      "TECHPAL réunit l'ingénierie logicielle et les métiers historiques de l'IT pour offrir aux entreprises un partenaire unique, du poste de travail au produit digital.",
+      "TECHPAL réunit l'ingénierie logicielle et les métiers historiques de l'IT pour offrir aux entreprises un partenaire unique, du poste de travail à la solution digitale.",
     heroWords: ["Rigueur", "Proximité", "Transparence", "Fiabilité"],
-    heroHint: "Du poste de travail au produit digital",
+    heroHint: "Du poste de travail à la solution digitale",
     anchor: "Nos valeurs",
     values: [
       { title: "Rigueur", text: "Devis tenus, délais respectés, travail documenté." },

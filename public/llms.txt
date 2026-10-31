@@ -25,7 +25,7 @@
 - Managed IT services: https://www.techpalservices.com/en/infogerance-informatique-casablanca
 - TECHPAL AI: https://www.techpalservices.com/en/ia
 - Work (7 solution families): https://www.techpalservices.com/en/projets
-- Products & hardware: https://www.techpalservices.com/en/produits
+- Solutions & hardware: https://www.techpalservices.com/en/solutions
 - IT staffing: https://www.techpalservices.com/en/staffing
 - About: https://www.techpalservices.com/en/a-propos
 - Contact: https://www.techpalservices.com/en/contact

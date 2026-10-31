@@ -38,18 +38,17 @@ export const partners: { name: string; logo: string; href?: string; tall?: boole
 
 /** Clients (page clients) : logos + liens uniquement, sans association avec les projets. */
 export const clients: { name: string; logo?: string; href: string }[] = [
-  { name: "Klaim", logo: "/partners/klaim.png", href: "https://klaim.ai" },
+  //{ name: "Klaim", logo: "/partners/klaim.png", href: "https://klaim.ai" },
   { name: "Novo Nordisk", logo: "/partners/novo.png", href: "https://www.novonordisk.com/" },
-  { name: "Safran", logo: "/partners/safran.svg", href: "https://www.safran-group.com/" },
+  { name: "Safran", logo: "/partners/safran.png", href: "https://www.safran-group.com/" },
+  { name: "HBA Conseil", logo: "/partners/hbaconseil.png", href: "https://hbaconseil.com/" },
   { name: "CBA", logo: "/partners/cba.png", href: "https://cba.ma/" },
   { name: "ICE Maghreb", logo: "/partners/ice.png", href: "https://icemaghreb.com/" },
   { name: "Naviroc", logo: "/partners/naviro.png", href: "https://naviroc.net/" },
-  { name: "Adda", logo: "/partners/adda.png", href: "https://adda.ma/" },
   { name: "IBS Group", logo: "/partners/ibs.png", href: "https://www.groupeibs.com/fr/" },
   { name: "AMIBLU", logo: "/partners/amiblu.png", href: "https://www.amiblu.com/fr/" },
   { name: "Clovi", href: "https://www.clovi.ma/" },
   { name: "FDM Clean", logo: "/partners/fdmclean.png", href: "https://www.fdmclean.ma/" },
-  { name: "HBA Conseil", logo: "/partners/hbaconseil.png", href: "https://hbaconseil.com/" },
   { name: "Forafric", logo: "/partners/forafric.png", href: "https://forafric.com/" },
   { name: "SMC", logo: "/partners/smc.png", href: "https://www.smcworld.com/" },
   { name: "Ademis", logo: "/partners/ademis.png", href: "https://ademis.ma/" },
@@ -61,6 +60,10 @@ export const clients: { name: string; logo?: string; href: string }[] = [
   { name: "Sketch Design", logo: "/partners/sketch.png", href: "https://sketch-design.ma/" },
   { name: "Hexcel", logo: "/partners/hexcel.png", href: "https://www.hexcel.com/" },
   { name: "Corail l'Océan", logo: "/partners/corail.png", href: "https://www.coraillocean.com/fr/" },
+  { name: "Miniso", logo: "/partners/miniso.png", href: "https://www.miniso.com/" },
+  { name: "Afri-Factory", logo: "/partners/corail.png", href: "https://www.afri-factory.com/" },
+
+
 ];
 
 /** Technologies utilisées dans les études de cas (page clients). */
@@ -92,7 +95,7 @@ export const routes: { key: NavKey; path: string }[] = [
   { key: "expertise", path: "expertise" },
   { key: "ia", path: "ia" },
   { key: "projets", path: "projets" },
-  { key: "produits", path: "produits" },
+  { key: "produits", path: "solutions" },
   { key: "staffing", path: "staffing" },
   { key: "apropos", path: "a-propos" },
   { key: "contact", path: "contact" },
@@ -104,7 +107,7 @@ export function href(locale: Locale, path = ""): string {
 
 /** Sequence of pages for the "[ next page ]" flow. */
 export function nextPage(locale: Locale, currentPath: string): { label: string; href: string } {
-  const order = ["", "expertise", "ia", "projets", "produits", "staffing", "a-propos", "contact"];
+  const order = ["", "expertise", "ia", "projets", "solutions", "staffing", "a-propos", "contact"];
   const clean = currentPath.split("/")[2] ?? "";
   const base = order.includes(clean) ? clean : "";
   const idx = order.indexOf(base);

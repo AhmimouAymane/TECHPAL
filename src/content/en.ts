@@ -5,7 +5,7 @@ const en: Dict = {
   nav: {
     expertise: "Expertise",
     ia: "TECHPAL AI",
-    produits: "Hardware",
+    produits: "Solutions",
     staffing: "Staffing",
     projets: "Projects",
     apropos: "About",
@@ -101,19 +101,19 @@ const en: Dict = {
       {
         n: "006",
         title: "Digital transformation",
-        desc: "From business process to production product.",
+        desc: "From business process to a solution in production.",
         points: ["Audit & scoping", "Roadmap", "Go-live"],
       },
     ],
   },
   work: {
-    kicker: "Solution families",
+    kicker: "Our solutions",
     title: "Seven solution families, one standard: production.",
-    intro: "Our work is grouped by product type, from mobile marketplaces to HRIS. Deliberately anonymized: engagements covered by confidentiality agreements are not published.",
+    intro: "Our work is grouped by solution type, from mobile marketplaces to HRIS. Deliberately anonymized: engagements covered by confidentiality agreements are not published.",
     viewAll: "See what we build",
     confidential: "Confidential engagement",
     labels: { createdAt: "Period", name: "Name", type: "Type", scope: "Scope", stack: "Stack", story: "Our approach", points: "What we deliver" },
-    heroTitle: "Products in production, not mockups.",
+    heroTitle: "Solutions in production, not mockups.",
     heroWords: ["Marketplaces", "E-commerce", "Online booking", "Immersive training", "Collaborative ERP", "E-learning", "HRIS"],
     heroHint: "7 solution families - deployed in production",
     technosKicker: "Technologies",
@@ -148,7 +148,7 @@ const en: Dict = {
   cta: {
     kicker: "Stay in touch",
     title: "Tell us about your project.",
-    text: "An idea, a product, a managed IT need? Let's talk - we reply within 24 business hours.",
+    text: "An idea, a solution, a managed IT need? Let's talk - we reply within 24 business hours.",
     button: "Start a project",
   },
   staffing: {
@@ -238,7 +238,7 @@ const en: Dict = {
     heroHint: "From scoping to production",
     anchor: "The deliverables",
     deliverablesKicker: "The deliverables",
-    deliverablesTitle: "From client-facing product to the front desk.",
+    deliverablesTitle: "From client-facing solution to the front desk.",
     deliverables: [
       {
         title: "Web & mobile applications",
@@ -258,9 +258,9 @@ const en: Dict = {
     process: [
       { title: "Scoping", text: "Your needs, edge cases and constraints written down: scope, use cases, priorities." },
       { title: "Design", text: "User journeys, architecture and wireframes validated before the first line of code." },
-      { title: "Development", text: "Regular releases: you see the product from the earliest versions." },
+      { title: "Development", text: "Regular releases: you see the solution from the earliest versions." },
       { title: "Integration", text: "Go-live, data migration, user training." },
-      { title: "Evolution", text: "Fixes, new features and product monitoring after launch." },
+      { title: "Evolution", text: "Fixes, new features and solution monitoring after launch." },
     ],
     stats: [
       { value: "2022", label: "Founded in Casablanca" },
@@ -281,7 +281,7 @@ const en: Dict = {
       },
       {
         title: "Code & documentation",
-        text: "Source code and documentation handed over with the product, so you never depend on us by accident.",
+        text: "Source code and documentation handed over with the solution, so you never depend on us by accident.",
       },
       {
         title: "Handover & maintenance",
@@ -292,9 +292,9 @@ const en: Dict = {
     crossTitle: "One page per need.",
     crossIntro: "Custom development works hand in hand with:",
     cross: [
-      { title: "Odoo integration", desc: "Sales, inventory and accounting on a modular ERP wrapped around your product.", href: "/integration-odoo-maroc" },
-      { title: "AI integration", desc: "Add assistants and automation to your product.", href: "/ia" },
-      { title: "Managed IT & maintenance", desc: "Entrust us with monitoring and maintenance of the delivered product.", href: "/infogerance-informatique-casablanca" },
+      { title: "Odoo integration", desc: "Sales, inventory and accounting on a modular ERP wrapped around your solution.", href: "/integration-odoo-maroc" },
+      { title: "AI integration", desc: "Add assistants and automation to your solution.", href: "/ia" },
+      { title: "Managed IT & maintenance", desc: "Entrust us with monitoring and maintenance of the delivered solution.", href: "/infogerance-informatique-casablanca" },
       { title: "IT staffing", desc: "Reinforce your in-house teams instead of outsourcing.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -302,7 +302,7 @@ const en: Dict = {
     faq: [
       {
         q: "What is custom software development?",
-        a: "An application designed around your real processes instead of a standard product forced to fit: scope, journeys and integrations are defined with you. The software follows your organization, not the other way around.",
+        a: "An application designed around your real processes instead of a standard solution forced to fit: scope, journeys and integrations are defined with you. The software follows your organization, not the other way around.",
       },
       {
         q: "How much does a custom application cost in Morocco?",
@@ -310,7 +310,7 @@ const en: Dict = {
       },
       {
         q: "How long until a first version in production?",
-        a: "The timeline depends on the scope validated during scoping. We split the mission into releases: you see a usable product as early as possible, then regular updates.",
+        a: "The timeline depends on the scope validated during scoping. We split the mission into releases: you see a usable solution as early as possible, then regular updates.",
       },
       {
         q: "Who owns the source code?",
@@ -318,12 +318,12 @@ const en: Dict = {
       },
       {
         q: "What happens after production?",
-        a: "The product stays alive: fixes, evolutions and monitoring, through an evolution package or a managed IT contract. Our method plans this step during scoping, not as an afterthought.",
+        a: "The solution stays alive: fixes, evolutions and monitoring, through an evolution package or a managed IT contract. Our method plans this step during scoping, not as an afterthought.",
       },
     ],
     cta: {
       kicker: "Software development",
-      title: "A product to build?",
+      title: "A solution to build?",
       text: "Describe your project: scoping and firm quote within one business day.",
       button: "Start a project",
     },
@@ -390,7 +390,7 @@ const en: Dict = {
     crossTitle: "One page per need.",
     crossIntro: "AI integration works hand in hand with:",
     cross: [
-      { title: "Custom development", desc: "The product hosting your AI use cases, when existing tools are not enough.", href: "/developpement-logiciel-sur-mesure" },
+      { title: "Custom development", desc: "The solution hosting your AI use cases, when existing tools are not enough.", href: "/developpement-logiciel-sur-mesure" },
       { title: "Managed IT & maintenance", desc: "Monitoring of the infrastructure your AI runs on.", href: "/infogerance-informatique-casablanca" },
       { title: "IT staffing", desc: "Data and AI profiles to reinforce your internal projects.", href: "/staffing" },
     ],
@@ -487,7 +487,7 @@ const en: Dict = {
     crossTitle: "One page per need.",
     crossIntro: "Managed IT works hand in hand with:",
     cross: [
-      { title: "Products & networks", desc: "Supply, installation and licenses to equip your fleet.", href: "/produits" },
+      { title: "Solutions & networks", desc: "Supply, installation and licenses to equip your fleet.", href: "/solutions" },
       { title: "AI integration", desc: "Automate repetitive tasks in your support and documents.", href: "/ia" },
       { title: "IT staffing", desc: "Temporarily reinforce your in-house IT teams.", href: "/staffing" },
     ],
@@ -637,7 +637,7 @@ const en: Dict = {
       },
       {
         title: "Hardware & IT fleet",
-        text: "Workstations, screens, printers, servers and storage: hardware from partner brands, prepared then deployed, with the full catalogue on the Hardware page.",
+        text: "Workstations, screens, printers, servers and storage: hardware from partner brands, prepared then deployed, with the full catalogue on the Solutions page.",
       },
       {
         title: "Keeping it operational",
@@ -684,7 +684,7 @@ const en: Dict = {
     crossIntro: "Infrastructure works hand in hand with:",
     cross: [
       { title: "Managed IT & monitoring", desc: "Your infrastructures monitored 24/7 under a managed IT contract.", href: "/infogerance-informatique-casablanca" },
-      { title: "Hardware catalogue", desc: "Computers, printing, network and servers: the full range.", href: "/produits" },
+      { title: "Hardware catalogue", desc: "Computers, printing, network and servers: the full range.", href: "/solutions" },
       { title: "IT staffing", desc: "A network technician to reinforce your teams during the projects.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -696,7 +696,7 @@ const en: Dict = {
       },
       {
         q: "Do you supply IT hardware?",
-        a: "Yes: workstations, printing, network and servers, from a catalogue of partner brands detailed on the Hardware page. Each piece of equipment is prepared then deployed in your environment.",
+        a: "Yes: workstations, printing, network and servers, from a catalogue of partner brands detailed on the Solutions page. Each piece of equipment is prepared then deployed in your environment.",
       },
       {
         q: "Do you handle cabling and network deployment?",
@@ -740,7 +740,7 @@ const en: Dict = {
       {
         id: "applications",
         title: "Intelligent applications",
-        text: "AI at the heart of the product: recommendation, prediction, decision.",
+        text: "AI at the heart of the solution: recommendation, prediction, decision.",
         items: ["Decision support", "Detection & prediction", "Conversational interfaces"],
       },
     ],
@@ -793,15 +793,15 @@ const en: Dict = {
     cta: "Discuss your project",
   },
   produits: {
-    kicker: "Hardware",
-    title: "IT hardware & products, supplied and maintained.",
+    kicker: "Solutions",
+    title: "IT hardware & solutions, supplied and maintained.",
     intro:
-      "Supply, installation and maintenance of your hardware, by product family, with a single point of contact.",
+      "Supply, installation and maintenance of your hardware, by range, with a single point of contact.",
     heroWords: ["Computers", "Printing", "Network & security", "Servers & data center", "Video surveillance", "Software & licenses", "Accessories"],
     heroHint: "Supplied, installed, maintained - one point of contact",
     anchor: "The full range",
     brandsLabel: "Partner brands",
-    typesLabel: "Product lines",
+    typesLabel: "Ranges",
     categories: [
       {
         id: "ordinateurs",
@@ -887,11 +887,11 @@ const en: Dict = {
   },
   about: {
     kicker: "About",
-    title: "An IT partner that thinks product.",
+    title: "An IT partner that thinks solution.",
     intro:
-      "TECHPAL brings together software engineering and the traditional IT trades to give businesses a single partner, from the workstation to the digital product.",
+      "TECHPAL brings together software engineering and the traditional IT trades to give businesses a single partner, from the workstation to the digital solution.",
     heroWords: ["Rigor", "Proximity", "Transparency", "Reliability"],
-    heroHint: "From the workstation to the digital product",
+    heroHint: "From the workstation to the digital solution",
     anchor: "Our values",
     values: [
       { title: "Rigor", text: "Quotes kept, deadlines met, documented work." },

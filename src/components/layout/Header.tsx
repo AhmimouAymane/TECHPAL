@@ -56,7 +56,7 @@ export function Header({ locale, nav }: { locale: Locale; nav: Dict["nav"] }) {
 
   const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
 
-  const DARK_HERO_PATHS = ["ia", "projets", "expertise", "staffing", "a-propos", "contact", "produits"];
+  const DARK_HERO_PATHS = ["ia", "projets", "expertise", "staffing", "a-propos", "contact", "solutions"];
   const onDark = DARK_HERO_PATHS.some((p) => pathname === `/${locale}/${p}`) && !scrolled && !open;
 
   return (
