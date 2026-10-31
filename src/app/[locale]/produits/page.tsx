@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const dict = locale === "fr" ? fr : en;
   return constructMetadata({
     locale,
-    path: "/solutions",
+    path: "/produits",
     title: dict.meta.produits.title,
     description: dict.meta.produits.description,
   });
 }
 
-export default async function SolutionsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ProduitsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = locale === "fr" ? fr : en;
@@ -43,7 +43,7 @@ export default async function SolutionsPage({ params }: { params: Promise<{ loca
         ctaLabel={p.cta}
         ctaHref={`/${locale}/contact`}
         secondaryLabel={`${p.anchor} ↓`}
-        secondaryHref={`/${locale}/solutions#ordinateurs`}
+        secondaryHref={`/${locale}/produits#ordinateurs`}
       />
 
       {/* Une famille de produits par section, séparées */}

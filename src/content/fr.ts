@@ -6,7 +6,7 @@ const fr = {
   nav: {
     expertise: "Expertise",
     ia: "TECHPAL IA",
-    produits: "Solutions",
+    produits: "Produits",
     staffing: "Staffing",
     projets: "Projets",
     apropos: "À propos",
@@ -292,7 +292,7 @@ const fr = {
     crossTitle: "Une page par besoin.",
     crossIntro: "L'infogérance s'articule avec vos autres chantiers :",
     cross: [
-      { title: "Solutions & réseaux", desc: "Fourniture, installation et licences pour équiper votre parc.", href: "/solutions" },
+      { title: "Produits & réseaux", desc: "Fourniture, installation et licences pour équiper votre parc.", href: "/produits" },
       { title: "Intégration IA", desc: "Automatisez les tâches répétitives de votre support et vos documents.", href: "/ia" },
       { title: "Staffing IT", desc: "Renforcez temporairement vos équipes IT internes.", href: "/staffing" },
     ],
@@ -638,7 +638,7 @@ const fr = {
       },
       {
         title: "Matériel & parc IT",
-        text: "Postes de travail, écrans, imprimantes, serveurs et stockage : du matériel de marques partenaires, préparé puis déployé, avec le catalogue complet sur la page Solutions.",
+        text: "Postes de travail, écrans, imprimantes, serveurs et stockage : du matériel de marques partenaires, préparé puis déployé, avec le catalogue complet sur la page Produits.",
       },
       {
         title: "Maintien en condition opérationnelle",
@@ -685,7 +685,7 @@ const fr = {
     crossIntro: "L'infrastructure s'articule avec vos autres chantiers :",
     cross: [
       { title: "Infogérance & supervision", desc: "Vos infrastructures suivies 24/7 sous contrat d'infogérance.", href: "/infogerance-informatique-casablanca" },
-      { title: "Catalogue matériel", desc: "Ordinateurs, impression, réseau et serveurs : la gamme complète.", href: "/solutions" },
+      { title: "Catalogue matériel", desc: "Ordinateurs, impression, réseau et serveurs : la gamme complète.", href: "/produits" },
       { title: "Staffing IT", desc: "Un technicien réseau en renfort dans vos équipes pendant les chantiers.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -697,7 +697,7 @@ const fr = {
       },
       {
         q: "Fournissez-vous le matériel informatique ?",
-        a: "Oui : postes de travail, impression, réseau et serveurs, à partir d'un catalogue de marques partenaires détaillé sur la page Solutions. Chaque équipement est préparé puis déployé dans votre environnement.",
+        a: "Oui : postes de travail, impression, réseau et serveurs, à partir d'un catalogue de marques partenaires détaillé sur la page Produits. Chaque équipement est préparé puis déployé dans votre environnement.",
       },
       {
         q: "Faites-vous le câblage et le déploiement réseau ?",
@@ -794,10 +794,10 @@ const fr = {
     cta: "Parler de votre projet",
   },
   produits: {
-    kicker: "Solutions",
-    title: "Matériel & solutions IT, fournis et maintenus.",
+    kicker: "Produits",
+    title: "Matériel & produits IT, fournis et maintenus.",
     intro:
-      "Fourniture, installation et maintenance de votre matériel, par gamme, avec un interlocuteur unique.",
+      "Fourniture, installation et maintenance de votre matériel, par famille de produits, avec un interlocuteur unique.",
     heroWords: ["Ordinateurs", "Impression", "Réseau & sécurité", "Serveurs & Datacenter", "Vidéosurveillance", "Logiciels & licences", "Accessoires"],
     heroHint: "Fourni, installé, maintenu - un seul interlocuteur",
     anchor: "Toute la gamme",

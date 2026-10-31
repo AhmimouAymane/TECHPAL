@@ -95,7 +95,7 @@ export const routes: { key: NavKey; path: string }[] = [
   { key: "expertise", path: "expertise" },
   { key: "ia", path: "ia" },
   { key: "projets", path: "projets" },
-  { key: "produits", path: "solutions" },
+  { key: "produits", path: "produits" },
   { key: "staffing", path: "staffing" },
   { key: "apropos", path: "a-propos" },
   { key: "contact", path: "contact" },
@@ -107,7 +107,7 @@ export function href(locale: Locale, path = ""): string {
 
 /** Sequence of pages for the "[ next page ]" flow. */
 export function nextPage(locale: Locale, currentPath: string): { label: string; href: string } {
-  const order = ["", "expertise", "ia", "projets", "solutions", "staffing", "a-propos", "contact"];
+  const order = ["", "expertise", "ia", "projets", "produits", "staffing", "a-propos", "contact"];
   const clean = currentPath.split("/")[2] ?? "";
   const base = order.includes(clean) ? clean : "";
   const idx = order.indexOf(base);

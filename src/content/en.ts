@@ -5,7 +5,7 @@ const en: Dict = {
   nav: {
     expertise: "Expertise",
     ia: "TECHPAL AI",
-    produits: "Solutions",
+    produits: "Hardware",
     staffing: "Staffing",
     projets: "Projects",
     apropos: "About",
@@ -487,7 +487,7 @@ const en: Dict = {
     crossTitle: "One page per need.",
     crossIntro: "Managed IT works hand in hand with:",
     cross: [
-      { title: "Solutions & networks", desc: "Supply, installation and licenses to equip your fleet.", href: "/solutions" },
+      { title: "Products & networks", desc: "Supply, installation and licenses to equip your fleet.", href: "/produits" },
       { title: "AI integration", desc: "Automate repetitive tasks in your support and documents.", href: "/ia" },
       { title: "IT staffing", desc: "Temporarily reinforce your in-house IT teams.", href: "/staffing" },
     ],
@@ -637,7 +637,7 @@ const en: Dict = {
       },
       {
         title: "Hardware & IT fleet",
-        text: "Workstations, screens, printers, servers and storage: hardware from partner brands, prepared then deployed, with the full catalogue on the Solutions page.",
+        text: "Workstations, screens, printers, servers and storage: hardware from partner brands, prepared then deployed, with the full catalogue on the Hardware page.",
       },
       {
         title: "Keeping it operational",
@@ -684,7 +684,7 @@ const en: Dict = {
     crossIntro: "Infrastructure works hand in hand with:",
     cross: [
       { title: "Managed IT & monitoring", desc: "Your infrastructures monitored 24/7 under a managed IT contract.", href: "/infogerance-informatique-casablanca" },
-      { title: "Hardware catalogue", desc: "Computers, printing, network and servers: the full range.", href: "/solutions" },
+      { title: "Hardware catalogue", desc: "Computers, printing, network and servers: the full range.", href: "/produits" },
       { title: "IT staffing", desc: "A network technician to reinforce your teams during the projects.", href: "/staffing" },
     ],
     faqKicker: "FAQ",
@@ -696,7 +696,7 @@ const en: Dict = {
       },
       {
         q: "Do you supply IT hardware?",
-        a: "Yes: workstations, printing, network and servers, from a catalogue of partner brands detailed on the Solutions page. Each piece of equipment is prepared then deployed in your environment.",
+        a: "Yes: workstations, printing, network and servers, from a catalogue of partner brands detailed on the Hardware page. Each piece of equipment is prepared then deployed in your environment.",
       },
       {
         q: "Do you handle cabling and network deployment?",
@@ -793,15 +793,15 @@ const en: Dict = {
     cta: "Discuss your project",
   },
   produits: {
-    kicker: "Solutions",
-    title: "IT hardware & solutions, supplied and maintained.",
+    kicker: "Hardware",
+    title: "IT hardware & products, supplied and maintained.",
     intro:
-      "Supply, installation and maintenance of your hardware, by range, with a single point of contact.",
+      "Supply, installation and maintenance of your hardware, by product family, with a single point of contact.",
     heroWords: ["Computers", "Printing", "Network & security", "Servers & data center", "Video surveillance", "Software & licenses", "Accessories"],
     heroHint: "Supplied, installed, maintained - one point of contact",
     anchor: "The full range",
     brandsLabel: "Partner brands",
-    typesLabel: "Ranges",
+    typesLabel: "Product lines",
     categories: [
       {
         id: "ordinateurs",

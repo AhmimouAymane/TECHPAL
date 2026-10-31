@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "infogerance-informatique-casablanca",
     "ia",
     "staffing",
-    "solutions",
+    "produits",
     "projets",
     "a-propos",
     "contact",
