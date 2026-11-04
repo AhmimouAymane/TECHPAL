@@ -155,16 +155,16 @@ const en: Dict = {
     kicker: "IT staffing",
     title: "The right profiles, right on time.",
     intro:
-      "TECHPAL Staffing places pre-vetted IT talent inside your teams: developers, data, cloud and support. Fast onboarding, replacement guarantee, zero paperwork.",
+      "TECHPAL Staffing places pre-vetted IT talent inside your teams: developers, data, cloud and support. Fast onboarding, replacement guarantee, one point of contact.",
     heroWords: ["Developers", "Data & AI", "Cloud & DevOps", "Support & network"],
-    heroHint: "Vetted, tested, onboarded - within 48 business hours",
+    heroHint: "Vetted, tested, onboarded - ready to start",
     anchor: "The process",
     unitsKicker: "Who you can strengthen",
-    unitsTitle: "Profiles that join your team, not your paperwork.",
+    unitsTitle: "Three profile families, one standard.",
     units: [
       {
         title: "Software engineers",
-        text: "Backend, frontend, full-stack and mobile. Developers up and running within the first week, without endless hiring cycles.",
+        text: "Backend, frontend, full-stack and mobile. Developers up and running, without endless hiring cycles.",
       },
       {
         title: "Data & AI",
@@ -179,7 +179,7 @@ const en: Dict = {
     processTitle: "Four steps, one profile on board.",
     process: [
       { title: "Share the need", text: "Stack, seniority, duration: a 30-minute brief is enough." },
-      { title: "Receive the profiles", text: "2 to 3 pre-vetted profiles within 48 business hours, with CVs and test results." },
+      { title: "Receive the profiles", text: "2 to 3 pre-vetted profiles, with CVs and test results." },
       { title: "Validate & onboard", text: "You choose; we handle contract, hardware and onboarding." },
       { title: "Rest easy", text: "Monthly quality review and a 90-day replacement guarantee." },
     ],
@@ -193,21 +193,38 @@ const en: Dict = {
       { title: "Soft skills", text: "Communication, autonomy, French, English and Arabic." },
     ],
     stats: [
-      { value: "48 h", label: "First profiles delivered" },
-      { value: "< 7 d", label: "Average onboarding" },
+      { value: "2 to 3", label: "Profiles per shortlist" },
+      { value: "4", label: "Selection filters" },
       { value: "95%", label: "Retention rate" },
       { value: "90 d", label: "Replacement guarantee" },
     ],
-    partnerKicker: "Partnerships",
-    partnerTitle: "Teams that grow with us.",
-    partnerText:
-      "Our staffing continuously strengthens our clients' teams: pre-vetted profiles, quality reviews and committed outcomes.",
+    modelsKicker: "Engagement models",
+    modelsTitle: "Three ways to work together.",
+    modelsText:
+      "One reinforcement profile, a dedicated squad or a fixed-price project: the frame is clear, profiles remain TECHPAL employees.",
+    models: [
+      {
+        title: "Time & Materials",
+        text: "You run the activity day to day, we carry the contract and the admin. Billed on time spent, guaranteed availability and a monthly quality review.",
+        meta: "Time-based",
+      },
+      {
+        title: "Fixed-price",
+        text: "A defined scope, validated milestones and a firm price. We commit to the outcome and deliver the solution without adding management overhead.",
+        meta: "Firm price",
+      },
+      {
+        title: "Dedicated squad",
+        text: "A cross-functional squad (dev, data, cloud) that plugs into your roadmap. Progressive ramp-up and continuity guaranteed.",
+        meta: "Custom build",
+      },
+    ],
     faqKicker: "FAQ",
     faqTitle: "Frequently asked questions.",
     faq: [
       {
         q: "Under which model do you place profiles?",
-        a: "Time & materials or fixed price, under a clear service agreement. Profiles remain TECHPAL employees: no charges, no paperwork for you.",
+        a: "Time & materials or fixed price, under a clear service agreement. Profiles remain TECHPAL employees: we carry the employment contract and admin, you run the mission.",
       },
       {
         q: "What if the profile is not a fit?",
@@ -225,7 +242,7 @@ const en: Dict = {
     cta: {
       kicker: "Staffing",
       title: "An urgent need?",
-      text: "Describe the profile you're looking for: first CVs within 48 business hours.",
+      text: "Describe the profile you're looking for: we reply within 24 business hours with a first selection.",
       button: "Request profiles",
     },
   },
@@ -965,7 +982,7 @@ const en: Dict = {
     },
     staffing: {
       title: "IT Staffing & Team Augmentation in Casablanca | TECHPAL",
-      description: "Pre-vetted IT talent embedded in your teams: developers, data, cloud, and support in Morocco. Profiles ready within 48 business hours.",
+      description: "Pre-vetted IT talent embedded in your teams: developers, data, cloud, and support in Morocco. Handled contract, dedicated point of contact.",
     },
     infogerance: {
       title: "Managed IT Services in Casablanca | TECHPAL",

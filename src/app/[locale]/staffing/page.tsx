@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { GradientButton } from "@/components/motion/GradientButton";
 import { NeuralHero } from "@/components/ia/NeuralHero";
-import { partners, site } from "@/content/site";
+import { site } from "@/content/site";
 import fr from "@/content/fr";
 import en from "@/content/en";
 import { isLocale, locales } from "@/lib/i18n";
@@ -153,42 +152,46 @@ export default async function StaffingPage({ params }: { params: Promise<{ local
         </Container>
       </section>
 
-      {/* Partenariats */}
+      {/* Modèles d'engagement */}
       <section className="band-navy relative overflow-hidden py-24 md:py-32">
         <div className="hero-grid" aria-hidden />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_50%_50%,rgba(201,58,56,0.14),transparent_70%)]"
         />
-        <Container className="relative grid gap-8 md:grid-cols-[0.4fr_1fr] md:gap-16">
-          <span className="label text-[rgba(226,232,255,0.6)]">{s.partnerKicker}</span>
-          <div>
-            <h2 className="display display-md max-w-[20ch] text-balance">{s.partnerTitle}</h2>
-            <p className="mt-6 max-w-[58ch] font-mono text-xs leading-relaxed text-[rgba(226,232,255,0.66)]">{s.partnerText}</p>
-            <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-              {partners.map((p) => (
-                <li key={p.name}>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={p.name}
-                    className="group flex h-full items-center justify-center rounded-[var(--radius-site)] bg-paper p-5 transition-transform duration-300 hover:-translate-y-1"
-                  >
-                    <span className="relative flex h-14 w-full max-w-[210px] items-center justify-center">
-                      <Image
-                        src={p.logo}
-                        alt={p.name}
-                        fill
-                        sizes="(min-width:1024px) 210px, 45vw"
-                        className={`object-contain transition-opacity duration-300 group-hover:opacity-80 ${p.tall ? "p-2" : ""}`}
-                      />
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <Container className="relative">
+          <div className="grid gap-8 md:grid-cols-[0.4fr_1fr] md:gap-16">
+            <span className="label text-[rgba(226,232,255,0.6)]">{s.modelsKicker}</span>
+            <div>
+              <h2 className="display display-md max-w-[20ch] text-balance text-[var(--paper)]">{s.modelsTitle}</h2>
+              <p className="mt-6 max-w-[58ch] font-mono text-xs leading-relaxed text-[rgba(226,232,255,0.66)]">{s.modelsText}</p>
+            </div>
           </div>
+          <ol className="mt-14">
+            {s.models.map((model, i) => (
+              <li
+                key={model.title}
+                className="group grid gap-4 border-t border-white/15 py-8 transition-colors duration-300 md:grid-cols-[0.16fr_1fr_auto] md:items-start md:gap-10 md:py-10 hover:bg-white/[0.03]"
+              >
+                <div className="flex items-center gap-4 md:pt-1">
+                  <span className="display display-sm text-[rgba(226,232,255,0.35)] transition-colors duration-300 group-hover:text-accent">
+                    0{i + 1}
+                  </span>
+                  <span aria-hidden className="h-px flex-1 bg-white/10 transition-colors duration-300 group-hover:bg-accent/60 md:hidden" />
+                </div>
+                <div>
+                  <h3 className="display text-[1.6rem] leading-tight text-[var(--paper)] transition-colors duration-300 group-hover:text-white md:text-4xl">
+                    {model.title}
+                  </h3>
+                  <p className="mt-3 max-w-[56ch] text-sm leading-relaxed text-[rgba(226,232,255,0.66)]">{model.text}</p>
+                </div>
+                <span className="label text-[rgba(226,232,255,0.55)] md:justify-self-end md:pt-2 md:text-right">
+                  {model.meta}
+                </span>
+              </li>
+            ))}
+            <li aria-hidden className="border-t border-white/15" />
+          </ol>
         </Container>
       </section>
 

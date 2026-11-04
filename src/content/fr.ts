@@ -156,16 +156,16 @@ const fr = {
     kicker: "Staffing IT",
     title: "Les bons profils, au bon moment.",
     intro:
-      "TECHPAL Staffing place des talents IT pré-qualifiés dans vos équipes : développeurs, data, cloud et support. Intégration rapide, remplacement garanti, zéro paperasse.",
+      "TECHPAL Staffing place des talents IT pré-qualifiés dans vos équipes : développeurs, data, cloud et support. Intégration rapide, remplacement garanti, un interlocuteur unique.",
     heroWords: ["Développeurs", "Data & IA", "Cloud & DevOps", "Support & réseau"],
-    heroHint: "Recruté, testé, intégré - sous 48 h",
+    heroHint: "Recruté, testé, intégré - prêt à démarrer",
     anchor: "Le processus",
     unitsKicker: "Qui pouvez-vous renforcer",
-    unitsTitle: "Des profils qui rejoignent vos équipes, pas votre paperasse.",
+    unitsTitle: "Trois familles de profils, un même niveau d'exigence.",
     units: [
       {
         title: "Ingénieurs logiciels",
-        text: "Backend, frontend, full-stack et mobile. Des développeurs opérationnels dès la première semaine, sans cycle de recrutement interminable.",
+        text: "Backend, frontend, full-stack et mobile. Des développeurs opérationnels sans cycle de recrutement interminable.",
       },
       {
         title: "Data & IA",
@@ -180,7 +180,7 @@ const fr = {
     processTitle: "Quatre étapes, un profil en poste.",
     process: [
       { title: "Exprimez le besoin", text: "Stack, niveau d'expérience, durée : un brief de 30 minutes suffit." },
-      { title: "Recevez les profils", text: "2 à 3 profils pré-qualifiés sous 48 h ouvrées, CV et résultats de tests à l'appui." },
+      { title: "Recevez les profils", text: "2 à 3 profils pré-qualifiés, CV et résultats de tests à l'appui." },
       { title: "Validez & intégrez", text: "Vous choisissez, nous gérons contrat, matériel et onboarding." },
       { title: "Suivez sereinement", text: "Point de qualité mensuel et remplacement garanti pendant 90 jours." },
     ],
@@ -194,21 +194,38 @@ const fr = {
       { title: "Soft skills", text: "Communication, autonomie, français, anglais et arabe." },
     ],
     stats: [
-      { value: "48 h", label: "Premiers profils reçus" },
-      { value: "< 7 j", label: "Intégration moyenne" },
+      { value: "2 à 3", label: "Profils par shortlist" },
+      { value: "4", label: "Filtres de sélection" },
       { value: "95%", label: "Taux de rétention" },
       { value: "90 j", label: "Garantie de remplacement" },
     ],
-    partnerKicker: "Partenariats",
-    partnerTitle: "Des équipes qui grandissent avec nous.",
-    partnerText:
-      "Notre staffing alimente en continu les équipes de nos clients : profils pré-qualifiés, suivi de qualité et engagement de résultat.",
+    modelsKicker: "Modèles d'engagement",
+    modelsTitle: "Trois façons de travailler ensemble.",
+    modelsText:
+      "Un profil en renfort, une équipe dédiée ou un projet au forfait : le cadre est clair, les profils restent salariés TECHPAL.",
+    models: [
+      {
+        title: "Régie",
+        text: "Vous pilotez l'activité au quotidien, nous portons le contrat et l'administratif. Facturation au temps passé, disponibilité garantie et point de qualité mensuel.",
+        meta: "Temps passé",
+      },
+      {
+        title: "Forfait",
+        text: "Un périmètre défini, des jalons validés et un prix ferme. Nous engageons le résultat et livrons la solution sans impacter votre management.",
+        meta: "Prix ferme",
+      },
+      {
+        title: "Équipe dédiée",
+        text: "Une squad pluridisciplinaire (dev, data, cloud) qui s'intègre à votre roadmap. Montée en charge progressive et continuité assurée.",
+        meta: "Sur-mesure",
+      },
+    ],
     faqKicker: "FAQ",
     faqTitle: "Questions fréquentes.",
     faq: [
       {
         q: "Sous quel modèle placez-vous les profils ?",
-        a: "Régie ou forfait, via un contrat de prestation clair. Les profils restent salariés TECHPAL : aucune charge, aucune paperasse pour vous.",
+        a: "Régie ou forfait, via un contrat de prestation clair. Les profils restent salariés TECHPAL : nous portons le contrat de travail et l'administratif, vous pilotez la mission.",
       },
       {
         q: "Que se passe-t-il si le profil ne convient pas ?",
@@ -226,7 +243,7 @@ const fr = {
     cta: {
       kicker: "Staffing",
       title: "Un besoin urgent ?",
-      text: "Décrivez le profil recherché : premiers CV sous 48 h ouvrées.",
+      text: "Décrivez le profil recherché : réponse sous 24 h ouvrées avec une première sélection.",
       button: "Demander des profils",
     },
   },
@@ -965,7 +982,7 @@ const fr = {
     },
     staffing: {
       title: "Renfort d'équipe & Staffing IT à Casablanca | TECHPAL",
-      description: "Talents IT pré-qualifiés intégrés à vos équipes au Maroc : développeurs, data, cloud et support. Profils sous 48 h ouvrées.",
+      description: "Talents IT pré-qualifiés intégrés à vos équipes au Maroc : développeurs, data, cloud et support. Profils sélectionnés, contrat porté par TECHPAL.",
     },
     infogerance: {
       title: "Infogérance informatique à Casablanca | TECHPAL",
