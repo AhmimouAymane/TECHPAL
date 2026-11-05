@@ -93,7 +93,9 @@ export function ScrollReel({ dict }: { dict: Dict }) {
           <div className="py-16 md:py-24">
             <div className="flex items-center gap-3 text-muted">
               <span className="label">{dict.reel.kicker}</span>
-              <span className="label text-accent">— {dict.reel.labels[5]}</span>
+              <span className="label text-accent">
+                {String(SHOT_RANGES.length).padStart(2, "0")} - {dict.reel.labels[5]}
+              </span>
             </div>
             <div className="mt-8 overflow-hidden rounded-[var(--radius-site)] bg-gradient-to-br from-[#020b52] via-brand to-[#0a0a14] px-6 py-20 text-center md:py-28">
               <p className="label text-paper/60">{dict.reel.note}</p>
@@ -127,7 +129,7 @@ export function ScrollReel({ dict }: { dict: Dict }) {
             <p className={`label ${lightShot ? "text-ink/80" : "text-paper/80"}`}>
               <span className="text-accent">{String(shot + 1).padStart(2, "0")}</span>
               {" / "}
-              {String(SHOT_RANGES.length).padStart(2, "0")} — {dict.reel.labels[shot]}
+              {String(SHOT_RANGES.length).padStart(2, "0")} - {dict.reel.labels[shot]}
             </p>
             <p className={`label hidden md:block ${lightShot ? "text-ink/40" : "text-paper/40"}`}>TECHPAL · CASABLANCA</p>
           </div>

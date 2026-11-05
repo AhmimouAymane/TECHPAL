@@ -167,7 +167,7 @@ function paintNetwork(ctx: CanvasRenderingContext2D, lp: number, w: number, h: n
   ctx.fillText("CASABLANCA · 33.5°N 7.6°W", cx, cy + m * 0.16);
   ctx.fillStyle = "rgba(244,244,251,0.5)";
   ctx.textAlign = "left";
-  ctx.fillText("02 — NETWORK MESH", w * 0.06, h * 0.12);
+  ctx.fillText("02 - NETWORK MESH", w * 0.06, h * 0.12);
   ctx.textAlign = "left";
 }
 
@@ -230,7 +230,7 @@ function paintCode(ctx: CanvasRenderingContext2D, lp: number, w: number, h: numb
 
   ctx.font = `500 ${Math.round(m * 0.024)}px ${f.mono}`;
   ctx.fillStyle = "rgba(244,244,251,0.5)";
-  ctx.fillText("03 — API & APPS", w * 0.06, h * 0.12);
+  ctx.fillText("03 - API & APPS", w * 0.06, h * 0.12);
   ctx.textAlign = "left";
 }
 
@@ -322,7 +322,7 @@ function paintCloud(ctx: CanvasRenderingContext2D, lp: number, w: number, h: num
   ctx.fillStyle = "rgba(244,244,251,0.5)";
   ctx.font = `500 ${Math.round(m * 0.024)}px ${f.mono}`;
   ctx.textAlign = "left";
-  ctx.fillText("04 — CLOUD & INFRA", w * 0.06, h * 0.12);
+  ctx.fillText("04 - CLOUD & INFRA", w * 0.06, h * 0.12);
   ctx.textAlign = "left";
 }
 
