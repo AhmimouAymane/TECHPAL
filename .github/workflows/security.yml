@@ -1,0 +1,35 @@
+name: Security audit
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday 06:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Rapport des dependances a risque, sans bloquer le build/deploy :
+      # le but est la visibilite (les PR Dependabot font le correctif).
+      - name: npm audit (advisory)
+        run: npm audit --audit-level=high
+        continue-on-error: true

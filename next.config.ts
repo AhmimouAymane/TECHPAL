@@ -5,6 +5,31 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.100.5"],
   // Masque le badge Next.js en bas d'écran en mode dev
   devIndicators: false,
+  // En-têtes de sécurité conservateurs (aucune fonction de l'app cassée).
+  // CSP strict volontairement absent tant qu'il n'a pas été testé en préprod.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-DNS-Prefetch-Control", value: "on" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=15552000",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+          },
+          { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     // Temporaire (direction, oct. 2026) : version française en révision,
     // tout /fr renvoie vers son équivalent /en. Pour réactiver le FR :
