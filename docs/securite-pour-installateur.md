@@ -1,90 +1,123 @@
-# TECHPAL — Installation sécurité VPS (version simplifiée)
+# TECHPAL VM-HEXCEL — Plan complet de finalisation sécurité
 
-**À qui je m'adresse** : la personne qui a l'accès root/installation au serveur.
-**Temps nécessaire** : ~15 minutes. **Compilation des étapes** : dans l'ordre, sans en sauter.
-**Règle d'or** : rien dans `/opt/Techpal/TECHPAL`, ni `/etc/nginx`, ni `sshd_config` ne doit être modifié. Si un doute existe, on s'arrête et on nous demande.
+**Serveur :** `46.105.135.232` (Ubuntu 20.04.6 LTS) — **Maison actuelle des services :** TECHPAL (Next.js `:3010`), Odoo (8069/8072), Odoo 17 (`:8090`), MailHog.
+**Règle absolue :** rien sur `/opt/Techpal/TECHPAL`, nginx, ni le service `techpal-next`. Chaque étape se termine par une vérification avant de passer à la suivante.
 
-## Ce qu'il faut savoir avant de commencer
+**Fait et vérifié** : Fail2ban (jail sshd active), `unattended-upgrades` configuré (redémarrage auto désactivé), TECHPAL en prod 200, Nginx testé OK.
 
-Le site Next.js tourne déjà sur le port **3010** sous `techpal-next.service`.
-Ce document ne touche **pas** le site : il ajoute seulement une protection aux portes d'entrée (SSH) + un maintien à jour automatique.
+---
 
-## Étape 0 — Se connecter
+## Étape 0 — MailHog : fermer la porte ouverte (priorité 1, 2 min)
 
-```bash
-ssh <votre-compte-root>@46.105.135.232
-```
+MailHog écoute sur `*:1025` (SMTP) et `*:8025` (UI) avec des connexions distantes constatées. C'est un outil de dev qui ne doit **jamais** être accessible depuis Internet.
 
-## Étape 1 — Mises à jour de sécurité automatiques (5 min)
+- Confirmer auprès de l'équipe dev d'abord :
+  - **S'il n'est pas utilisé** (le plus probable) :
+    ```bash
+    sudo systemctl disable --now mailhog
+    ss -tlnp | grep -E '1025|8025'   # attendu : aucun PID mailhog ; si encore présent, redémarrer le service après édition de l'unit
+    ```
+  - **S'il est utilisé pour les mails de test Odoo**, le restreindre au loopback : modifier `/etc/systemd/system/mailhog.service` et remplacer `ExecStart=/usr/local/bin/mailhog` par :
+    ```ini
+    ExecStart=/usr/local/bin/mailhog -smtp-bind-addr 127.0.0.1:1025 -http-bind-addr 127.0.0.1:8025
+    ```
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart mailhog
+    ss -tlnp | grep -E '1025|8025'   # attendu : 127.0.0.1 uniquement
+    ```
 
-Copier-coller chaque ligne une par une :
+## Étape 1 — Activer le pare-feu UFW (5 min, après Étape 0)
 
-```bash
-python3 --version   # INFO : indique la version du système, pas grave si vide
-sudo apt update
-sudo apt install -y unattended-upgrades
-sudo dpkg-reconfigure -f noninteractive unattended-upgrades
-sudo systemctl enable --now unattended-upgrades
-```
-
-Si aucune erreur rouge : c'est ok.
-
-## Étape 2 — Fail2ban : blocage des brute-force SSH (5 min)
-
-```bash
-sudo apt install -y fail2ban
-sudo tee /etc/fail2ban/jail.local >/dev/null <<'EOF'
-[DEFAULT]
-bantime  = 1h
-findtime = 10m
-maxretry = 5
-
-[sshd]
-enabled = true
-EOF
-sudo systemctl enable --now fail2ban
-sudo systemctl restart fail2ban
-```
-
-Vérification (pas obligé, mais conseillé) :
+Les règles sont déjà préparées (`22/80/443 allow`, `1025/8025 deny`), l'option est **complètement safe** pour ce serveur puisque 3010 est local, et Odoo passe par Nginx.
 
 ```bash
-sudo fail2ban-client status sshd
-```
-
-Ça doit afficher `Server ready: true` et une liste (même vide) de banissements.
-
-## Étape 3 — Pare-feu : commandes exactes
-
-Configuration vérifiée du serveur : **Nginx sur 80/443 (reverse proxy) → 127.0.0.1:3010** ; SSH sur le port **22** ; 3010 n'est **pas** exposé.
-
-Dans l'ordre, copier-coller :
-
-```bash
+# 1. Garder la session SSH actuelle OUVERTE et en ouvrir une seconde en parallèle pour vérifier
 sudo ss -tlnp
+sudo ufw status verbose
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw allow OpenSSH              # = 22/tcp
-sudo ufw allow 80/tcp               # HTTP (nginx)
-sudo ufw allow 443/tcp              # HTTPS (nginx)
-sudo ufw logging on
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+# PAS 8069 / 8072 : Odoo est proxyficé par Nginx, un accès direct n'est pas requis
 sudo ufw --force enable
 sudo ufw status verbose
 ```
 
-Points de contrôle :
+Validations :
 
-1. Le port **3010 ne doit PAS** apparaître dans `ss -tlnp` avec une adresse publique (il reste sur `127.0.0.1:3010`) : c'est le cas, vérifié. On ne l'ouvre pas dans ufw.
-2. Avant d'activer : garder **une session SSH ouverte**, ouvrir une **nouvelle session SSH** de test dans un autre terminal. Si la nouvelle session passe, tout va bien ; on peut fermer l'ancienne.
-3. Si un service inconnu écoute sur un port autre que 22/80/443 (dans `ss -tlnp`), vous arrêter AVANT d'activer et nous envoyer le résultat de `ss -tlnp`.
+- la **nouvelle session SSH** s'ouvre sans problème (l'ancienne est gardée en secours) ;
+- depuis n'importe où : `curl -I https://www.techpalservices.com/en` → **HTTP/2 200** ;
+- `curl -I https://hexcel.techpalservices.com/web/login` → **200** ;
+- `sudo ufw status verbose` affiche `Status: active` et les 3 règles `ALLOW` + 2 `DENY`.
 
-Vérification finale (depuis n'importe où, même votre machine) :
+Rollback si besoin : `sudo ufw disable` puis, si perte totale d'accès, utiliser la console VPS de l'hébergeur.
+
+## Étape 2 — Odoo : erreurs 500 sur la racine (coordination Odoo)
+
+`https://hexcel.techpalservices.com/` répond HTTP 500 alors que `/web/login` répond 200. Ce n'est pas un problème de pare-feu, mais un problème applicatif/route.
 
 ```bash
-curl -I https://www.techpalservices.com/en | head -1   # attendu : HTTP/2 200
+journalctl -u odoo-server --since "2 hours ago" --no-pager | grep -Ei 'error|traceback' | tail -40
 ```
 
-## Étape 3bis — CrowdSec + collection nginx (optionnel, recommandé)
+➡️ Transmettre la sortie à l'équipe Odoo / à l'intégrateur (BDD `hexcel_demo`, module personnalisé ?) avant de fermer l'étape.
+
+## Étape 3 — Mises à jour en attente + redémarrage libssl1.1 (fenêtre calme)
+
+- 167 paquets en attente ; `/var/run/reboot-required` indique `libssl1.1`.
+- Décision : planifier une fenêtre de 30-60 min hors pics :
+```bash
+sudo cp -a /etc /etc.backup-$(date +%Y%m%d) 2>/dev/null || true
+sudo apt update
+sudo apt upgrade -y
+sudo reboot
+```
+- Après reboot : `systemctl is-active techpal-next odoo-server odoo17 nginx` — tous attendus `active`.
+- `unattended-upgrades` est déjà en place pour la suite, avec **pas de reboot auto** (conservé volontairement).
+
+## Étape 4 — Ubuntu 20.04 EOL : ESM ou migration (décision business)
+
+Ubuntu 20.04 n'a plus de support standard ; la VM n'est pas rattachée à Ubuntu Pro.
+
+Option A — **garder focal + ESM** (gratuit jusqu'à 5 machines) :
+- créer un compte sur `ubuntu.com/pro`, générer un jeton, puis `sudo pro attach <jeton>` ;
+- vérifier : `pro status` → `esm-infra` en `enabled`.
+
+Option B — **migrer** vers Ubuntu 22.04/24.04 : planifiée avec l'équipe infra (sauvegarde BDD + migration + tests Odoo).
+
+➡️ À décider avec la direction technique. ESM fait gagner du temps sans migration.
+
+## Étape 5 — Renforcement SSH (après validation des clés)
+
+SSH actif : `PermitRootLogin yes`, `PasswordAuthentication yes`.
+
+1. Sur une machine de l'entreprise : `ssh-keygen -t ed25519 -C "techpal-admin"` ;
+2. installer la clé sur le serveur : `ssh-copy-id -i ~/.ssh/id_ed25519.pub root@46.105.135.232` (adapter le user si ce n'est pas root) ;
+3. ouvrir un nouveau terminal et vérifier la connexion **sans mot de passe** ;
+4. sauvegarder `/etc/ssh/sshd_config` puis, dans un fichier maintenu par l'installateur :
+```bash
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak.$(date +%Y%m%d)
+sudo sed -i 's/^#*\s*PermitRootLogin.*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
+sudo sed -i 's/^#*\s*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sshd -t
+sudo systemctl reload ssh
+```
+5. Garder la session actuelle ouverte jusqu'à validation d'une nouvelle connexion.
+
+## Étape 6 — Monitoring externe (gratuit, zéro install)
+
+- https://uptimerobot.com → `New Monitor` → `HTTPS` → `https://www.techpalservices.com/en` → intervalle 5 min → alertes e-mail/SMS.
+- Tester l'alerte en coupant temporairement le site (stop de `techpal-next` 1 minute, puis `systemctl start`).
+
+## Étape 7 — Sauvegardes testées (validation restauration)
+
+- PostgreSQL / Odoo : sauvegarde `pg_dump` des bases `hexcel_demo`, `IBS-TEST`, et `odoo` (rôles), plus le filestore (voir `data_dir` dans `/etc/odoo-server.conf`).
+- Restaurer **une copie** de test sur une base de travail (ex. `restore_test`) et vérifier `SELECT count(*)` sur une table critique.
+- Nginx et conf TECHPAL : déjà dans le git, les sauvegarder avec `/etc/nginx` sous `/root/security-backups` (le backup existe déjà pour UFW ; compléter avec nginx).
+
+## Étape 8 — Optionnel : CrowdSec (défense communautaire)
 
 ```bash
 curl -s https://install.crowdsec.net | sudo sh
@@ -95,18 +128,18 @@ sudo systemctl restart nginx
 sudo cscli decisions list
 ```
 
-## Étape 4 — Supervision du site (optionnel, 5 min)
+## Interdits
 
-Pas encore : on le fera via un service gratuit en ligne (UptimeRobot), sans rien installer sur le serveur.
+- NE PAS activer/redémarrer le VPS sans fenêtre et console de secours.
+- NE PAS modifier `/etc/nginx`, `/opt/Techpal/TECHPAL`, le service `techpal-next`.
+- NE PAS rebooter le serveur sans prévenir TECHPAL.
+- NE PAS passer la clé GitHub Actions en admin.
 
-## Ce dont on a besoin de vous
+## À renvoyer pour clôture
 
-1. Confirmation que les étapes 1, 2 et 3 sont passées (ou le message d'erreur, sans tenter de corriger vous-même).
-2. Le résultat de `sudo ufw status verbose` si activé.
-
-## Ce qu'il/elle ne faut PAS faire
-
-- Modifier `sshd_config` (aucun réglage SSH)
-- Éteindre ou redémarrer le VPS
-- Toucher à `/opt/Techpal/TECHPAL`
-- Supprimer le service `techpal-next.service`
+1. Sortie de l'étape 0 (MailHog inactif ou loopback) — preuve `ss -tlnp`.
+2. Sortie `sudo ufw status verbose` après activation.
+3. Nouveau comportement `/web/login` et TECHPAL OK.
+4. Jeton ESM attaché ou plan de migration Ubuntu validé par la direction.
+5. URL du moniteur UptimeRobot + preuve d'alerte de test.
+6. Renvoyer l'erreur Odoo 500 si elle persiste.
