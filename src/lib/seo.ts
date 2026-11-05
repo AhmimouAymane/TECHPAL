@@ -27,6 +27,10 @@ export function constructMetadata({
   return {
     title,
     description,
+    // Search Console (Google) : jeton de vérification ajouté sur toutes les pages.
+    verification: {
+      google: "BV-SO6dG7vOCw9ofe6F9sjzSe2Sjy_JcmawdqYFeOEM",
+    },
     alternates: {
       canonical: canonicalUrl,
       // FR momentanément redirigé vers EN : seules les URLs EN sont publiées.
