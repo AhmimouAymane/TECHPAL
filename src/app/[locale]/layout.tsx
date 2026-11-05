@@ -54,6 +54,9 @@ export async function generateMetadata({
       template: "%s",
     },
     description: dict.meta.home.description,
+    verification: {
+      google: "BV-SO6dG7vOCw9ofe6F9sjzSe2Sjy_JcmawdqYFeOEM",
+    },
   };
 }
 
