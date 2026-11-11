@@ -123,7 +123,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                   >
                     {c.logo ? (
                       /* eslint-disable-next-line @next/next/no-img-element */
-                      <img src={c.logo} alt="" className="max-h-10 w-auto max-w-[150px] object-contain" loading="lazy" />
+                      <img src={c.logo} alt="" className="max-h-10 w-auto max-w-full object-contain" loading="lazy" />
                     ) : (
                       <span className="display text-xl">
                         {c.name} <span aria-hidden className="align-middle text-base">↗</span>
