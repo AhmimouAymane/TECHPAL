@@ -40,10 +40,12 @@ export const partners: { name: string; logo: string; href?: string; tall?: boole
 export const clients: { name: string; logo?: string; href: string }[] = [
   // Classement : groupes internationaux d'abord, puis entreprises marocaines,
   // puis structures locales ; à ajuster librement, l'ordre d'affichage suit ce tableau.
+  { name: "TotalEnergies", logo: "/partners/totalenergies.png", href: "https://totalenergies.com/" },
   { name: "Novo Nordisk", logo: "/partners/novo.png", href: "https://www.novonordisk.com/" },
   { name: "Safran", logo: "/partners/safran.png", href: "https://www.safran-group.com/" },
   { name: "Hexcel", logo: "/partners/hexcel.png", href: "https://www.hexcel.com/" },
   { name: "Miniso", logo: "/partners/miniso.png", href: "https://www.miniso.com/" },
+  { name: "Joe & The Juice", logo: "/partners/joejuice.png", href: "https://www.joejuice.com/" },
   { name: "SMC", logo: "/partners/smc.png", href: "https://www.smcworld.com/" },
   { name: "Canpack", logo: "/partners/canpack.png", href: "https://www.canpack.com/" },
   { name: "CBA", logo: "/partners/cba.png", href: "https://cba.ma/" },
