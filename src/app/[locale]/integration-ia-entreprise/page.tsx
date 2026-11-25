@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/integration-ia-entreprise",
     title: dict.meta.iaentreprise.title,
     description: dict.meta.iaentreprise.description,
+    noindex: true,
   });
 }
 

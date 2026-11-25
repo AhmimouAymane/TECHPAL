@@ -34,6 +34,7 @@ export async function generateMetadata({
     title,
     description,
     image: p.image || "/og.jpg",
+    noindex: true,
   });
 }
 

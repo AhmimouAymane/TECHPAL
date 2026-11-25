@@ -972,9 +972,9 @@ const fr = {
   },
   meta: {
     home: {
-      title: "TECHPAL – Développement logiciel, IA & infogérance IT à Casablanca",
+      title: "TECHPAL – Solutions Digitales d'Entreprise, Logiciels Sur Mesure & IA",
       description:
-        "Ingénierie digitale à Casablanca : logiciels sur mesure, IA, cloud, réseaux, support et infogérance IT pour les entreprises au Maroc. Réponse sous 24 h.",
+        "Solutions technologiques pour entreprises : développement logiciel sur mesure, automatisation IA, architectures cloud et plateformes métier en production.",
     },
     expertise: {
       title: "Expertise : logiciel, IA, cloud & infogérance à Casablanca | TECHPAL",
@@ -1010,24 +1010,24 @@ const fr = {
         "Réseau d'entreprise, câblage, postes de travail et serveurs : fourniture, installation et maintenance à Casablanca. Audit gratuit, devis ferme.",
     },
     projets: {
-      title: "Réalisations : 7 familles de solutions en production | TECHPAL",
-      description: "Familles de solutions TECHPAL : marketplaces mobiles, e-commerce, réservation, serious games VR, ERP, e-learning et SIRH, livrés à Casablanca et au Maroc.",
+      title: "Solutions Digitales & Plateformes d'Entreprise | TECHPAL",
+      description: "Découvrez nos solutions digitales d'entreprise : ERP collaboratifs, automatisation IA, applications métier sur mesure et plateformes transactionnelles.",
     },
     ia: {
       title: "Intelligence Artificielle & Automatisation en production | TECHPAL",
       description: "Intégration d'IA générative, RAG, automatisation de processus et assistants intelligents en entreprise à Casablanca.",
     },
     produits: {
-      title: "Matériel informatique, Réseaux & Licences à Casablanca | TECHPAL",
-      description: "Fourniture, installation et maintenance de matériel et réseaux d'entreprise : Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+      title: "Infrastructure IT, Réseaux & Systèmes d'Entreprise | TECHPAL",
+      description: "Architecture, déploiement et infogérance d'infrastructures IT pour entreprises : postes de travail, serveurs, réseaux Cisco/Fortinet, cloud et licences professionnelles.",
     },
     apropos: {
       title: "À propos de TECHPAL | Entreprise de services numériques à Casablanca",
       description: "TECHPAL accompagne les entreprises au Maroc dans leur ingénierie logicielle, modernisation cloud et infogérance IT depuis 2022.",
     },
     contact: {
-      title: "Contact & Devis | TECHPAL Casablanca",
-      description: "Parlez-nous de votre projet digital ou informatique à Casablanca. Devis gratuit et réponse sous 24 h ouvrées.",
+      title: "Contact & Cadrage de Solutions | TECHPAL",
+      description: "Échangez avec nos architectes de solutions pour concevoir et déployer votre projet digital d'entreprise. Cadrage et devis sous 24 h ouvrées.",
     },
     mentions: {
       title: "Mentions légales | TECHPAL Casablanca",

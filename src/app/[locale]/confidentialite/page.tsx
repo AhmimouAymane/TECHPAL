@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/confidentialite",
     title: dict.meta.confidentialite.title,
     description: dict.meta.confidentialite.description,
+    noindex: true,
   });
 }
 

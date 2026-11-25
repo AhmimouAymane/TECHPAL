@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/ia",
     title: dict.meta.ia.title,
     description: dict.meta.ia.description,
+    noindex: true,
   });
 }
 

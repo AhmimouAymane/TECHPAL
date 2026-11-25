@@ -972,9 +972,9 @@ const en: Dict = {
   },
   meta: {
     home: {
-      title: "TECHPAL – Custom Software Development, AI & Managed IT in Casablanca",
+      title: "TECHPAL – Enterprise Digital Solutions, Custom Software & AI",
       description:
-        "Digital engineering in Casablanca: custom software, AI, cloud, networks, support, and managed IT services for companies in Morocco. Reply within 24h.",
+        "Enterprise digital solutions, custom software engineering, AI workflow platforms, and technology infrastructure. Built for production and business scale.",
     },
     expertise: {
       title: "Expertise: Software, AI, Cloud & Managed IT in Casablanca | TECHPAL",
@@ -1010,24 +1010,24 @@ const en: Dict = {
         "Enterprise network, cabling, workstations, and servers: supply, installation, and maintenance in Casablanca. Free survey, firm quote.",
     },
     projets: {
-      title: "Work: 7 Solution Families in Production | TECHPAL",
-      description: "TECHPAL solution families: mobile marketplaces, e-commerce, booking, VR serious games, ERP, e-learning, and HRIS, delivered in Casablanca and Morocco.",
+      title: "Enterprise Digital Solutions & Platforms in Production | TECHPAL",
+      description: "Explore our delivered enterprise solutions: collaborative ERPs, custom business platforms, AI automation, e-commerce, and digital transformation.",
     },
     ia: {
       title: "Artificial Intelligence & Automation in Production | TECHPAL",
       description: "Generative AI, RAG, business process automation, and intelligent agents deployed for enterprises in Casablanca.",
     },
     produits: {
-      title: "IT Hardware, Networking & Licensing in Casablanca | TECHPAL",
-      description: "Supply, installation, and maintenance of enterprise hardware & network infrastructure: Dell, HP, Cisco, Fortinet, Ubiquiti, Microsoft 365, AWS, Azure.",
+      title: "Enterprise IT Infrastructure, Hardware & Networking | TECHPAL",
+      description: "Architecture, deployment, and lifecycle management of enterprise IT hardware, high-availability networks, servers, and cloud licensing in Morocco.",
     },
     apropos: {
       title: "About TECHPAL | Digital Engineering Firm in Casablanca",
       description: "TECHPAL supports organizations across Morocco with tailored software development, cloud modernization, and managed IT services since 2022.",
     },
     contact: {
-      title: "Contact & Quote Request | TECHPAL Casablanca",
-      description: "Tell us about your software or IT infrastructure project in Casablanca. Free estimate and reply within 24 business hours.",
+      title: "Contact & Solution Advisory | TECHPAL",
+      description: "Connect with our solution architects to scope, build, and deploy your custom enterprise digital solution. Free advisory and roadmap within 24 hours.",
     },
     mentions: {
       title: "Legal Notice | TECHPAL Casablanca",

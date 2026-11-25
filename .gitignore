@@ -42,3 +42,12 @@ next-env.d.ts
 
 # raw source photos (copies live in public/team/)
 team pic/
+
+
+# documents & pdf
+*.pdf
+*.html
+/docs/
+*.md
+!README.md
+!AGENTS.md

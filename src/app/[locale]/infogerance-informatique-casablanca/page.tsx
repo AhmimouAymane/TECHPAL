@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/infogerance-informatique-casablanca",
     title: dict.meta.infogerance.title,
     description: dict.meta.infogerance.description,
+    noindex: true,
   });
 }
 

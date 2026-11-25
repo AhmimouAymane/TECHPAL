@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/integration-odoo-maroc",
     title: dict.meta.odoo.title,
     description: dict.meta.odoo.description,
+    noindex: true,
   });
 }
 

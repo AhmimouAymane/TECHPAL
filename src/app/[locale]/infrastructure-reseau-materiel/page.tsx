@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/infrastructure-reseau-materiel",
     title: dict.meta.infrastructure.title,
     description: dict.meta.infrastructure.description,
+    noindex: true,
   });
 }
 

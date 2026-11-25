@@ -9,6 +9,7 @@ export interface PageSeoOptions {
   description: string;
   image?: string;
   type?: "website" | "article";
+  noindex?: boolean;
 }
 
 export function constructMetadata({
@@ -18,6 +19,7 @@ export function constructMetadata({
   description,
   image = "/og.jpg",
   type = "website",
+  noindex = false,
 }: PageSeoOptions): Metadata {
   const cleanPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
   const canonicalUrl = `${site.url}/${locale}${cleanPath}`;
@@ -27,6 +29,14 @@ export function constructMetadata({
   return {
     title,
     description,
+    ...(noindex
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+          },
+        }
+      : {}),
     // Search Console (Google) : jeton de vérification ajouté sur toutes les pages.
     verification: {
       google: "BV-SO6dG7vOCw9ofe6F9sjzSe2Sjy_JcmawdqYFeOEM",

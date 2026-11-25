@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/expertise",
     title: dict.meta.expertise.title,
     description: dict.meta.expertise.description,
+    noindex: true,
   });
 }
 

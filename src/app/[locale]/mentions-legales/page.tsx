@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/mentions-legales",
     title: dict.meta.mentions.title,
     description: dict.meta.mentions.description,
+    noindex: true,
   });
 }
 
